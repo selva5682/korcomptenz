@@ -1,0 +1,315 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.featured_top: Items for the featured top region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.featured_bottom_first: Items for the first featured bottom region.
+ * - page.featured_bottom_second: Items for the second featured bottom region.
+ * - page.featured_bottom_third: Items for the third featured bottom region.
+ * - page.footer_first: Items for the first footer column.
+ * - page.footer_second: Items for the second footer column.
+ * - page.footer_third: Items for the third footer column.
+ * - page.footer_fourth: Items for the fourth footer column.
+ * - page.footer_fifth: Items for the fifth footer column.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see bartik_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+{% include '@korone/header-cmshome.html.twig' %} 
+<!--Content-->
+<div class="main-container innerpage">
+<section class="image-bg   page-title-2  innerBanner parallax">
+<div class="background-image-holder"><img alt="Background Image" class="background-image" src="themes/custom/korone/images/landingpage_banner2.jpg" /></div>
+
+<div class="container">
+<h2>REQUEST A CONSULTATION</h2>
+</div>
+</section>
+
+<section class="responsiveContent responsiveTopOut">
+<div class="container">
+<div class="responsiveTop">
+<article>
+
+<div class="col-sm-12 pb30">
+<div class="row">
+<div class="col-sm-8"><h2 class="mb40">Choosing an Ideal Content Management System</h2></div>
+<div class="col-sm-4 mt10"><a class="btn btn-primary" href="#">REQUEST A CONSULTATION</a></div>
+</div><!-- row -->
+
+<h3>Balancing Organizational growth, Technology Needs, and Total Cost of Ownership in the age of customer</h3>
+<p>
+Choosing a Content Management System is one of the most important decisions an organization can make, but finding the ideal solution can be difficult in a market with hundreds of platforms and options available.  The situation can be further complicated by an organization’s existing technology infrastructure, in-house resources and skillsets, and short and long term strategic plan.  Add in a wide variety of price points, from no-cost open source solutions to six-figure proprietary systems, all with very similar features, and it’s not surprising you might need some expert help. <br /><br />
+KORCOMPTENZ is your total transformation partner, and we’re pleased to present our new whitepaper on Choosing an Ideal CMS to guide you through the initial stages of the process. If you are looking to empower your customer with content , enhance visitor experience, looking for ease of use, scalability that fits your growth, ensure mobile readiness and plug ins, we can be of help.
+</p>
+<p>
+This no-cost resource contains important information to help guide your decision making:
+</p>
+<div class="clearfix"></div>
+
+<div class="col-sm-3 mt20">
+<img class="center-block" src="themes/custom/korone/images/cms-land/ico1.jpg" alt="" />
+<p class="text-center">The key items to consider before you start looking at the options available</p></div>
+<div class="col-sm-3 mt20">
+<img class="center-block" src="themes/custom/korone/images/cms-land/ico2.jpg" alt="" />
+<p class="text-center">Tips for how to focus on the most important features for your organization</p></div>
+<div class="col-sm-3 mt20">
+<img class="center-block" src="themes/custom/korone/images/cms-land/ico3.jpg" alt="" />
+<p class="text-center">The different ways a solution needs to be customized to fit your specific needs</p></div>
+<div class="col-sm-3 mt20">
+<img class="center-block" src="themes/custom/korone/images/cms-land/ico4.jpg" alt="" />
+<p class="text-center">The factors that influence total cost of ownership</p></div>
+
+</div>
+<div class="col-sm-12"><div class="col-sm-12 borbt"></div></div>
+<div class="clearfix"></div>
+
+<div class="col-sm-10 col-sm-offset-1 bacbx mt40 mb30">
+<div class="col-sm-6">
+<div class="aio100 mt20 fl">
+<h3 class="mb20 ml15 cob3">Download our exclusive whitepaper on</h3>
+<img class="aio100" src="themes/custom/korone/images/cms-land/whitepaper_cms.png" alt="" />
+<h4 class="mt20 pkcol">The whitepaper includes important information on choosing the ideal solution for your next generation website</h4>
+</div>
+</div>
+<div class="col-sm-6">
+<div class="aio100 bafor mt40 mb40"> 
+--------
+  {{ page.content }}
+  </div><!-- aio100 -->
+</div>
+</div><!--col12-->
+
+<div class="col-sm-12">
+<div class="row">
+<div class="col-sm-6">
+<div class="clearfix"></div>
+<h3>Extensive Content Management System Experience</h3>
+<p>
+KORCOMPTENZ has successfully completed hundreds of projects across these platforms and more, including integration with leading CRM and Marketing Automation software such as Salesforce and Microsoft Dynamics.
+</p>
+
+<h3 class="mb20">The Next Generation Website Opportunity</h3>
+<p>Redesigning your website with a new CMS and KORCOMPTENZ can provide measurable benefits to your organization, including:</p>
+<ul>
+<li>Increase your return on investment and accelerating your business results with a full suite of personalization and marketing automation tools to engage your customers</li>
+<li>Reduce the time required to manage and maintain your website with easy-to-use tools for administrators and best-in-class editing capabilities</li>
+<li>Decrease development work and total cost of ownership, plus speed time to market with a robust, flexible technology architecture and hundreds of pre-built components</li>
+</ul>
+
+</div>
+
+<div class="col-sm-6 mt30">
+<img class="img-responsive" src="themes/custom/korone/images/cms-land/allcms.jpg" alt="" />
+</div>
+</div><!--row-->
+
+<div class="row mt30">
+<div class="col-sm-12">
+
+<div class="clearfix"></div>
+
+<div class="bs-example mt30" data-example-id="bordered-table">
+    <table class="table">
+      
+      <tbody>
+        <tr>
+          <td>
+		  <img class="center-block" src="themes/custom/korone/images/cms-land/num1.png" alt="" />
+		  <p class="text-center mt15">reduction in total cost of ownership</p>
+		  </td>
+          <td>
+		  <img class="center-block" src="themes/custom/korone/images/cms-land/num2.png" alt="" />
+		  <p class="text-center mt15">more cross-sell and up-sell revenue</p></td>
+          <td>
+		  <img class="center-block" src="themes/custom/korone/images/cms-land/num3.png" alt="" />
+		  <p class="text-center mt15">greater return on marketing investment</p></td>
+          <td>
+		  <img class="center-block" src="themes/custom/korone/images/cms-land/num4.png" alt="" />
+		  <p class="text-center mt15">higher conversion rates for website visitors</p></td>
+          <td>
+		  <img class="center-block" src="themes/custom/korone/images/cms-land/num5.png" alt="" />
+		  <p class="text-center mt15">reduction in time to market</p></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+
+</div>
+
+</div>
+
+
+<div class="row mb40">
+<div class="col-sm-12 borbt mt40 mb20"></div>
+
+
+<div class="col-sm-12">
+<h3>KORCOMPTENZ</h3>
+
+<!-- <div class="row"><div class="col-sm-12 h3bl"><h3>KORCOMPTENZ By The Numbers</h3></div></div> -->
+<div class="clearfix"></div>
+<div class="col-sm-3 mt20"> 
+<div class="aio bldco aio100">
+<img class="center-block" src="themes/custom/korone/images/cms-land/fotn1.jpg" alt="" />
+<p class="text-center">
+Years of technology experience
+</p>
+</div>
+</div>
+
+<div class="col-sm-3 mt20">
+<div class="aio bldco aio100">
+<img class="center-block" src="themes/custom/korone/images/cms-land/fotn2.jpg" alt="" />
+<p class="text-center">
+Thousands of completed <br />projects
+</p>
+</div>
+</div>
+
+<div class="col-sm-3 mt20">
+<div class="aio bldco aio100">
+<img class="center-block" src="themes/custom/korone/images/cms-land/fotn3.jpg" alt="" />
+<p class="text-center">
+Global team <br />members
+</p>
+</div>
+</div>
+
+
+<div class="col-sm-3 mt20">
+<div class="aio bldco aio100">
+<img class="center-block" src="themes/custom/korone/images/cms-land/fotn4.jpg" alt="" />
+<p class="text-center">
+Total cost of ownership Savings
+</p>
+</div>
+</div>
+
+
+
+
+<div class="col-sm-12 borbt mt40 mb30"></div>
+
+<div class="clearfix"></div>
+<h3>More About KORCOMPTENZ</h3>
+<p>
+KORCOMPTENZ is your total technology transformation partner, helping you engage your customers and prospects, enable your business, and accelerate your results.  Request a consultation to learn more about our web and marketing technology services, business management solutions, mobile apps and custom development, and infrastructure management services.
+</p>
+
+<h3 class="mt30">Key Solution Areas</h3>
+<div class="bs-example2 mb40" data-example-id="bordered-table">
+    <table class="table table-bordered cacoa">
+      
+      <tbody>
+        <tr>
+          <td class="colac1"><a href="/web-marketing-technology">Web + Marketing Technology</a></td>
+          <td class="colac2"><a href="/microsoft-dynamics-business-solutions">Microsoft Dynamics Business Management Solutions</a></td>
+          <td class="colac3"><a href="/mobile-apps-and-custom-solutions">Mobile Apps + Custom Development</a> </td>
+          <td class="colac4"><a href="/cloud-infrastructure-management">Infrastructure + Cloud Management</a> </td>
+          <td class="colac5"><a href="/professional-staffing">Professional Staffing</a> </td>
+        </tr>
+        
+      </tbody>
+    </table>
+</div>
+
+<div class="clearfix"></div>
+
+</div>
+</div>
+
+</div>
+
+<div class="clearfix"></div>
+
+</article>
+</div>
+</div>
+</section>
+  <!-- thank ydou Modal -->
+  {% if page.footer_features %}
+  <section class="responsiveBottomOut">
+    <div class="container">
+      <div class="responsiveBottom">
+        {{ page.footer_features }}
+      </div>
+    </div>
+    
+  </section>
+  {% endif %}
+  {% if page.footer_video %}
+ <section class="responsiveContent ">    
+    <div class="videoPresentation">
+	 {{ page.footer_video }}      
+    </div>
+  </section> 
+  {% endif %}
+ 
+ {% if page.footer_services %}
+ <section class="ProductBottom ServicesTxt">
+	 {{ page.footer_services }}
+</section> 	 
+  {% endif %}
+  
+  {% if page.footer_first %}
+  <section class="blueband">
+  <div class="fullwidth ">
+  {{ page.footer_first }}
+  </div>
+  </section>
+  {% endif %}
+  {% if page.footer_second %}
+  <section class="greybandOut">
+    <div class="container">
+	{{ page.footer_second }}      
+    </div>
+  </section>
+  {% endif %}
+</div>
+<!--Content End-->
+
+{% include '@korone/footer.html.twig' %}

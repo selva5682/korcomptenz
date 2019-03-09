@@ -1,0 +1,335 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ *
+ * @ingroup themeable
+ */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KL4BPR6');</script>
+<!-- End Google Tag Manager -->
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+	<link rel="stylesheet" href="themes/custom/korone/css/custom.css"  />	
+<link rel="stylesheet" href="themes/custom/korone/css/style.css"  />
+<link rel="stylesheet" href="themes/custom/korone/css/bootstrap.css"  />
+<link rel="stylesheet" href="themes/custom/korone/css/bootstrap.new.css"  />
+
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+<script src="{{ base_path ~ directory }}/new-stlyes/js/jqueryslim/jquery-3.2.1.slim.min.js" ></script> 
+<script src="{{ base_path ~ directory }}/new-stlyes/js/jqueryslim/popper.min.js" ></script> 
+<script src="{{ base_path ~ directory }}/new-stlyes/js/bootstrap/bootstrap.min.js" ></script> 
+<script src="{{ base_path ~ directory }}/new-stlyes/js/custom/custom.js" ></script> 
+
+<!-- Global site tag (gtag.js) - Google AdWords: 973070435 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-973070435"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-973070435');
+</script>
+
+<!-- Hotjar Tracking Code for https://www.korcomptenz.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:630394,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+
+  </head>
+  <body{{ attributes }}>
+   <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KL4BPR6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <a href="#main-content" class="visually-hidden focusable">
+      {{ 'Skip to main content'|t }}
+    </a>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+	<!-- Google Code for Remarketing Tag -->
+<!--------------------------------------------------
+Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+--------------------------------------------------->
+<script type="text/javascript">
+var google_tag_params = {
+dynx_itemid: 'REPLACE_WITH_VALUE',
+dynx_itemid2: 'REPLACE_WITH_VALUE',
+dynx_pagetype: 'REPLACE_WITH_VALUE',
+dynx_totalvalue: 'REPLACE_WITH_VALUE',
+};
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 973070435;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/973070435/?guid=ON&amp;script=0"/>
+</div>
+</noscript>
+<script type="text/javascript">
+function app_count(){
+			
+				
+				var total_devices = parseInt($("#edit-windows").val()) + parseInt($("#edit-apple").val()) +parseInt($("#edit-smart").val());
+				var total_servers = parseInt($("#edit-physical-servers").val()) + parseInt($("#edit-virtual-servers").val()) + parseInt($("#edit-private-cloud-physical-servers").val()) + parseInt($("#edit-virtualcloud-physical-servers").val()) + parseInt($("#edit-azure-aws-rackspace").val());
+				//alert(total_devices);
+				//alert(total_servers);
+				if(total_devices<=15 && total_servers<=5 &&	parseInt($("#edit-mailboxes").val())<15 && parseInt($("#edit-extensions").val())<15){	 //alert('1');
+						$("#amount1").attr('checked','checked');
+						$( "#email_hosted" ).val('$1000-$2000');
+				}else if(total_devices>15 && total_devices<=30 && total_servers<=10 && $("#edit-mailboxes").val()<30 && $("#edit-extensions").val()<30){	//alert('2');
+						$("#amount2").attr('checked','checked');
+						$( "#email_hosted" ).val('$2000-$3000');
+				}else if(total_devices>30 && total_devices<=50 && total_servers<=15 && $("#edit-mailboxes").val()<50 && $("#edit-extensions").val()<50){	//alert('3');
+						$("#amount3").attr('checked','checked');
+						$( "#email_hosted" ).val('$3000-$4000');
+				}else if(total_devices>50 && total_devices<=70 && total_servers<=20 && $("#edit-mailboxes").val()<70 && $("#edit-extensions").val()<70){	//alert('4');
+						$("#amount4").attr('checked','checked');
+						$( "#email_hosted" ).val('$4000-$5000');
+				}else if(total_devices>70 && total_servers>20 && $("#edit-mailboxes").val()>70 && $("#edit-extensions").val()>70){	//alert('5');
+						$("#amount5").attr('checked','checked');
+						$( "#email_hosted" ).val('Contact Us');
+				}else{
+						$("#amount5").attr('checked','checked');
+						$( "#email_hosted" ).val('Contact Us');
+				}
+				
+  }
+    $(document).ready(function() {
+    $('.carousel').carousel({
+      interval: 13500
+    });
+	
+$('.carousel-control.right').trigger('click');
+
+			$("#ex6").slider();
+			$("#ex6").on('slide', function(slideEvt) {			
+				$("#ex6SliderVal").text(slideEvt.value);
+				$("#edit-windows").val(slideEvt.value);			
+			    var total = parseInt($("#edit-windows").val()) + parseInt($("#edit-apple").val()) + parseInt($("#edit-smart").val());	
+				$("#total_devices").text(total);			  
+				//app_count();
+			});
+			
+			$("#ex7").slider();
+			$("#ex7").on('slide', function(slideEvt) {
+				$("#ex7SliderVal").text(slideEvt.value);
+				$("#edit-apple").val(slideEvt.value);
+				var total = parseInt($("#edit-windows").val()) + parseInt($("#edit-apple").val()) + parseInt($("#edit-smart").val());	
+				$("#total_devices").text(total);
+				//app_count();
+			});
+			
+			$("#ex8").slider();
+			$("#ex8").on('slide', function(slideEvt) {
+				$("#ex8SliderVal").text(slideEvt.value);
+				$("#edit-smart").val(slideEvt.value);
+				var total = parseInt($("#edit-windows").val()) + parseInt($("#edit-apple").val()) + parseInt($("#edit-smart").val());	
+				$("#total_devices").text(total);
+				//app_count();
+			});
+			
+			$("#ex9").slider();
+			$("#ex9").on('slide', function(slideEvt) {
+				$("#ex9SliderVal").text(slideEvt.value);
+				$("#edit-physical-servers").val(slideEvt.value);
+				var total = parseInt($("#edit-physical-servers").val()) + parseInt($("#edit-virtual-servers").val()) + parseInt($("#edit-private-cloud-physical-servers").val()) + parseInt($("#edit-virtualcloud-physical-servers").val()) + parseInt($("#edit-azure-aws-rackspace").val());	
+				$("#total_servers").text(total);
+				//app_count();
+			});
+			
+			$("#ex10").slider();
+			$("#ex10").on('slide', function(slideEvt) {
+				$("#ex10SliderVal").text(slideEvt.value);
+				$("#edit-virtual-servers").val(slideEvt.value);
+				var total = parseInt($("#edit-physical-servers").val()) + parseInt($("#edit-virtual-servers").val()) + parseInt($("#edit-private-cloud-physical-servers").val()) + parseInt($("#edit-virtualcloud-physical-servers").val()) + parseInt($("#edit-azure-aws-rackspace").val());	
+				$("#total_servers").text(total);				
+				//app_count();
+			});
+			
+			$("#ex11").slider();
+			$("#ex11").on('slide', function(slideEvt) {
+				$("#ex11SliderVal").text(slideEvt.value);
+				$("#edit-tb").val(slideEvt.value);
+				var total = parseInt($("#edit-physical-servers").val()) + parseInt($("#edit-virtual-servers").val()) + parseInt($("#edit-private-cloud-physical-servers").val()) + parseInt($("#edit-virtualcloud-physical-servers").val()) + parseInt($("#edit-azure-aws-rackspace").val());	
+				$("#total_servers").text(total);				
+				//app_count();
+			});
+			
+			$("#ex12").slider();
+			$("#ex12").on('slide', function(slideEvt) {
+				$("#ex12SliderVal").text(slideEvt.value);
+				$("#edit-private-cloud-physical-servers").val(slideEvt.value);
+				var total = parseInt($("#edit-physical-servers").val()) + parseInt($("#edit-virtual-servers").val()) + parseInt($("#edit-private-cloud-physical-servers").val()) + parseInt($("#edit-virtualcloud-physical-servers").val()) + parseInt($("#edit-azure-aws-rackspace").val());	
+				$("#total_servers").text(total);				
+				//app_count();
+			});
+			
+			$("#ex13").slider();
+			$("#ex13").on('slide', function(slideEvt) {
+				$("#ex13SliderVal").text(slideEvt.value);
+				$("#edit-virtualcloud-physical-servers").val(slideEvt.value);
+				var total = parseInt($("#edit-physical-servers").val()) + parseInt($("#edit-virtual-servers").val()) + parseInt($("#edit-private-cloud-physical-servers").val()) + parseInt($("#edit-virtualcloud-physical-servers").val()) + parseInt($("#edit-azure-aws-rackspace").val());	
+				$("#total_servers").text(total);				
+				//app_count();
+			});
+			
+			$("#ex14").slider();
+			$("#ex14").on('slide', function(slideEvt) {
+				$("#ex14SliderVal").text(slideEvt.value);
+				$("#edit-tb1").val(slideEvt.value);
+				app_count();
+			});
+			
+			$("#ex15").slider();
+			$("#ex15").on('slide', function(slideEvt) {
+				$("#ex15SliderVal").text(slideEvt.value);
+				$("#edit-azure-aws-rackspace").val(slideEvt.value);
+				var total = parseInt($("#edit-physical-servers").val()) + parseInt($("#edit-virtual-servers").val()) + parseInt($("#edit-private-cloud-physical-servers").val()) + parseInt($("#edit-virtualcloud-physical-servers").val()) + parseInt($("#edit-azure-aws-rackspace").val());	
+				$("#total_servers").text(total);				
+				//app_count();
+			});
+			
+			$("#ex16").slider();
+			$("#ex16").on('slide', function(slideEvt) {
+				$("#ex16SliderVal").text(slideEvt.value);
+				$("#edit-tb3").val(slideEvt.value);
+				//app_count();
+			});
+			
+			$("#edit-mailboxes").blur(function(){
+				var text = $("#edit-mailboxes").val();
+				$("#edit-no-mailboxes").val( text );
+				//app_count();
+			}); 
+			
+			$("#edit-extensions").blur(function(){
+				var text = $("#edit-extensions").val();
+				$("#edit-number-of-extensions").val( text );
+				//app_count();
+			});
+			$("#edit-current-app1").blur(function(){
+				var text = $("#edit-current-app1").val();
+				$("#edit-current-app").val( text );			
+			});
+			$("#edit-current-inhouse1").blur(function(){
+				var text = $("#edit-current-inhouse1").val();
+				$("#edit-current-inhouse").val( text );					
+			});
+			$("#Name2").blur(function(){
+				var text = $("#Name2").val();
+				$("#edit-name").val(text);			
+			});
+			$("#exampleInputEmail2").blur(function(){
+				var text = $("#exampleInputEmail2").val();
+				$("#edit-email").val(text);				
+			});
+			$("#exampleInputName2").blur(function(){
+				var text = $("#exampleInputName2").val();
+				$("#edit-phone").val(text);				
+			});
+
+			$("#click-here").click(function() {
+				//e.preventDefault();
+                app_count();
+           });
+			
+		
+		
+        //Horizontal Tab
+        $('#parentHorizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+
+        // Child Tab
+        $('#ChildVerticalTab_1').easyResponsiveTabs({
+            type: 'vertical',
+            width: 'auto',
+            fit: true,
+            tabidentify: 'ver_1', // The tab groups identifier
+            activetab_bg: '#fff', // background color for active tabs in this group
+            inactive_bg: '#F5F5F5', // background color for inactive tabs in this group
+            active_border_color: '#c1c1c1', // border color for active tabs heads in this group
+            active_content_border_color: '#5AB1D0' // border color for active tabs contect in this group so that it matches the tab head border
+        });
+
+        //Vertical Tab
+        $('#parentVerticalTab').easyResponsiveTabs({
+            type: 'vertical', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo2');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+    });
+  
+  
+
+</script>
+  </body>
+</html>

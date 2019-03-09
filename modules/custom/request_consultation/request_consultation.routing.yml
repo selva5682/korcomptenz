@@ -1,0 +1,14 @@
+request_consultation.form:
+  path: '/request_consultation/form'
+  defaults:
+    _form: '\Drupal\request_consultation\Form\RequestConsultationForm'
+    _title: 'Request a Consultation form'
+  requirements:
+    _permission: 'access content'
+request_consultation.modal:
+  path: '/request_consultation/modal'
+  defaults:
+    _form: '\Drupal\request_consultation\Form\RequestConfirmationForm'
+    _title: 'Request Confirmation form'
+  requirements:
+    _permission: 'access content'

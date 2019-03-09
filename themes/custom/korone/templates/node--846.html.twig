@@ -1,0 +1,194 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,   
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,    
+	'image-bg',
+	'page-title-2',
+	'innerBanner',
+	
+  ]
+%}
+<!--Inner Banner-->
+<div class="main-container innerpage">
+  <section class="Microsoft-DynamicsOut">
+<div id="Carousel" class="carousel slide carousel-fade  col-md-12">
+        <ol class="carousel-indicators">
+            <li data-target="Carousel" data-slide-to="0" class="active"></li>
+            <li data-target="Carousel" data-slide-to="1"></li>
+            <li data-target="Carousel" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="item active">
+            <div class="MSDbannerTxt">
+            <h2>Making Connections That Matters </h2>
+				<p>Functional and friendly apps that delight users and provide measurable results</p>
+                <p class="box-subtitle">Digital transformation powered by meaningful mobile apps</p>
+</div>
+                <img alt="Microsoft Dynamic" src="/themes/custom/korone/images/mobile-app/mobile-app-01.jpg" class="img-responsive">
+            </div>
+           <div class="item">
+                       <div class="MSDbannerTxt">
+            <h2> Healthcare + Wellness is a Sweet Spot</h2>
+			<p> We Build Custom Apps That Weave Together Mobile, Web, and Wearable Technologies to Make Impactful Connections and Deliver the Desired Results</p>
+            <p class="box-subtitle"> Digital transformation powered by meaningful mobile apps</p>
+</div>
+                <img alt="Microsoft Dynamic" src="/themes/custom/korone/images/mobile-app/mobile-app-02.jpg" class="img-responsive">
+            </div> 
+			<div class="item">
+                       <div class="MSDbannerTxt">
+            <h2>Native + Hybrid Mobile App Development</h2>
+			<p>KORCOMPTENZ Combines Deep App Development Expertise with Wearable and Geolocation Experience </p>
+            <p class="box-subtitle">Digital transformation powered by meaningful mobile apps</p>
+
+</div>
+                <img alt="Microsoft Dynamic" src="/themes/custom/korone/images/mobile-app/mobile-app-03.jpg" class="img-responsive">
+            </div>
+        </div>
+
+        <a class="left carousel-control" href="#Carousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#Carousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+</div>
+  </section>
+  <!--Inner Banner End-->
+  {{ content.body }}
+  <!-- <section class="responsiveContent responsiveTopOut">
+    <div class="container">
+	<div class="responsiveTop">
+        
+      </div>	  
+	  </div>
+  </section> -->
+<section class="responsiveContent responsiveTopOut sap-hana">
+<div class="container-fluid mtsstop">
+<div class="container">
+<div class="row mb60">
+<h1>How does it work ?</h1>
+<p> If you have a great idea for a mobile app, but are unsure how to make your vision a reality, contact the KORCOMPTENZ mobile app team and we will walk you through our proen process.</p>
+<div class="responsiveBottom">
+<img src="/themes/custom/korone/images/mobile-app/how03.png" title="" class="img-responsive mt30 align-center" >
+</div>
+</div>
+
+
+<div class="responsiveTop">
+<h1>What can we do for your mobile app ?</h1>
+<h2>Full Service App Design, Development, and Support for Your Unique Business Needs</h2>
+
+<div class="col-sm-3 mt15"><img class="mb20" alt="Maintenance Strategy" src="/themes/custom/korone/images/mobile-app/001_customer_apps.png" />
+<h4>CONSUMER + ECOMMERCE <br /> APPS</h4>
+
+<div class="dafln-mobile">&nbsp;</div>
+
+<div class="clearfix">&nbsp;</div>
+
+<p>Extend your business into the mobile world or launch a new product for consumers</p>
+</div>
+
+<div class="col-sm-3 mt15"><img class="mb20" alt="Maintenance Planner" src="/themes/custom/korone/images/mobile-app/002_internalapps.png" />
+<h4>INTERNAL APPS FOR <br /> YOUR BUSINESS</h4>
+
+<div class="dafln-mobile">&nbsp;</div>
+
+<div class="clearfix">&nbsp;</div>
+
+<p>Engage employees and accelerate business processes with internal apps</p>
+</div>
+
+<div class="col-sm-3 mt15"><img class="mb20" alt="Maintenance Certificate" src="/themes/custom/korone/images/mobile-app/003_microsoft_mobility.png" />
+<h4>MOBILITY SOLUTIONS FOR <br /> MICROSOFT  + SALESFORCE</h4>
+
+<div class="dafln-mobile">&nbsp;</div>
+
+<div class="clearfix">&nbsp;</div>
+
+<p>Integrate with best-in-class systems like Microsoft Office 365, Dynamics and Salesforce</p>
+</div>
+
+<div class="col-sm-3 mt15"><img class="mb20" alt="Maintenance Deliveries" src="/themes/custom/korone/images/mobile-app/004_support.png" />
+<h4>FULL SERVICE <br /> SUPPORT +  MAINTENANCE</h4>
+
+<div class="dafln-mobile">&nbsp;</div>
+
+<div class="clearfix">&nbsp;</div>
+
+<p>Manage, maintain, and launch new versions of your app, plus report on performance</p>
+</div>
+</div>
+
+</div>
+
+
+</div><!-- container-fluid -->
+</section>
+<div class="clearfix"></div>
+
+<!--container-fluid-->
+

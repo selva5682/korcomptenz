@@ -1,0 +1,644 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.featured_top: Items for the featured top region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.featured_bottom_first: Items for the first featured bottom region.
+ * - page.featured_bottom_second: Items for the second featured bottom region.
+ * - page.featured_bottom_third: Items for the third featured bottom region.
+ * - page.footer_first: Items for the first footer column.
+ * - page.footer_second: Items for the second footer column.
+ * - page.footer_third: Items for the third footer column.
+ * - page.footer_fourth: Items for the fourth footer column.
+ * - page.footer_fifth: Items for the fifth footer column.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see bartik_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+{% include '@korone/header.html.twig' %} 
+
+<!--Content-->
+<div class="flat-fee">
+<form autocomplete="off" id="webform-submission-price-slider-node-726-form">
+<!--Inner Banner-->
+  <section class="image-bg price-slider-banner landingPageBanner">
+  <div class="container">
+      <h1>Flat Fee </h1>
+      <p><a href="/" title="Korcomptenz">Korcomptenz</a> - <a href="/cloud-infrastructure-management">Infrastructure  + Cloud Management</a> - Flat Fee </p> 	
+    </div>
+  </section>  
+  <!--Inner Banner End--> 
+<section class="responsiveContent responsiveTopOut price-table">
+	<div class="container">
+	<div class="row">
+		<div class="col-12 responsiveTop rep-text">
+		<h2>Flat Fee</h2>
+		
+		<p>As a business owner you are constantly trying to achieve operational efficiencies to reduce costs and minimize management. You employ partners and employees that are independently handling their jobs and contributing to the bottom-line.  KORCOMPTENZ flat fee engagement model enables you to retain the best of our talent, maximise ROI and grow your revenue with scalable solutions for businesses of every size.</p>
+		
+		<p><strong>Please fill in the questionnaire provided below, on the number of Devices, Servers, back up space, emails and telephones you have and we will provide you an approximate estimate onscreen</strong>.</p>
+		
+		<p> Please remember these are estimates and are only approximate and may not be accurate, so we request to sign up for a free consultation with our team for best possible savings and help you offer the best Infrastructure solution.</p>
+		
+		</div>
+	</div></div>
+</section>
+
+<div id="flat_free_form">
+
+  <section class="ff-devices container-fluid" id="total_devices">
+    <div class="container ff-devices">
+      <h2>Devices</h2>
+      <hr>
+      <div class="row">
+        <div class="col-lg-4 col-12 animation-element slide-left">
+          <div class="media">
+             <img class="media-object " width="100" src="/themes/custom/korone/images/flat-fee/calc-design1.png" alt="placeholder image" style="cursor:pointer; float: right;">
+            <div class="media-body">
+              <h4 class="media-heading">Count for Windows Desktops + Laptops </h4>
+              Select no. of devices
+			  <div class="radio">
+                <input id="radio-none" name="windows_radio" value="0" type="radio" >
+                <label for="radio-none" class="radio-label">None</label>
+              </div>
+              <div class="radio">
+                <input id="radio-1" name="windows_radio" value="1" type="radio" >
+                <label for="radio-1" class="radio-label">1 to 5</label>
+              </div>
+              <div class="radio">
+                <input id="radio-2" name="windows_radio" value="6" type="radio" >
+                <label for="radio-2" class="radio-label">6 to 20</label>
+              </div>
+              <div class="radio">
+                <input id="radio-3" name="windows_radio" type="radio" value="21">
+                <label for="radio-3" class="radio-label">21 to 50</label>
+              </div>
+			  <div class="radio">
+                <input id="radio-4" name="windows_radio" type="radio" value="51">
+                <label for="radio-4" class="radio-label">51 to 75</label>
+              </div>
+			  <div class="radio">
+                <input id="radio-5" name="windows_radio" type="radio" value="75">
+                <label for="radio-5" class="radio-label">75 Above</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 animation-element slide-left">
+          <div class="media">
+             <img class="media-object " width="100" src="/themes/custom/korone/images/flat-fee/calc-design02.png" alt="placeholder image" style="cursor:pointer; float: right;">
+            <div class="media-body">
+              <h4 class="media-heading">Count for Apple Desktops + Laptops </h4>
+              Select no. of devices
+			  <div class="radio">
+                <input id="radio-none1" name="apple_radio" value="0" type="radio" >
+                <label for="radio-none1" class="radio-label">None</label>
+              </div>
+              <div class="radio">
+                <input id="radio-6" name="apple_radio" value="1" type="radio" >
+                <label for="radio-6" class="radio-label">1 to 5</label>
+              </div>
+              <div class="radio">
+                <input id="radio-7" name="apple_radio" value="6" type="radio" >
+                <label for="radio-7" class="radio-label">6 to 20</label>
+              </div>
+              <div class="radio">
+                <input id="radio-8" name="apple_radio" type="radio" value="21">
+                <label for="radio-8" class="radio-label">21 to 50</label>
+              </div>
+			  <div class="radio">
+                <input id="radio-9" name="apple_radio" type="radio" value="51">
+                <label for="radio-9" class="radio-label">51 to 75</label>
+              </div>
+			  <div class="radio">
+                <input id="radio-10" name="apple_radio" type="radio" value="75">
+                <label for="radio-10" class="radio-label">75 Above</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12 animation-element slide-left">
+          <div class="media">
+            <img class="media-object" width="100" src="/themes/custom/korone/images/flat-fee/calc-design03.png" alt="placeholder image" style="cursor:pointer; float: right;">
+            <div class="media-body">
+              <h4 class="media-heading">Count of Smart Phones + Tablets </h4>
+              Select no. of devices
+			  <div class="radio">
+                <input id="radio-none2" name="smart_radio" value="0" type="radio" >
+                <label for="radio-none2" class="radio-label">None</label>
+              </div>
+              <div class="radio">
+                <input id="radio-11" name="smart_radio" value="1" type="radio" >
+                <label for="radio-11" class="radio-label">1 to 5</label>
+              </div>
+              <div class="radio">
+                <input id="radio-12" name="smart_radio" value="6" type="radio" >
+                <label for="radio-12" class="radio-label">6 to 20</label>
+              </div>
+              <div class="radio">
+                <input id="radio-13" name="smart_radio" type="radio" value="21">
+                <label for="radio-13" class="radio-label">21 to 50</label>
+              </div>
+			  <div class="radio">
+                <input id="radio-14" name="smart_radio" type="radio" value="51">
+                <label for="radio-14" class="radio-label">51 to 75</label>
+              </div>
+			  <div class="radio">
+                <input id="radio-15" name="smart_radio" type="radio" value="75">
+                <label for="radio-15" class="radio-label">75 Above</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container-fluid ff-server" id="total_servers">
+    <div class="container">
+      <h2>Server</h2>
+      <hr>
+      <div class="row">
+        <div class="ff-server-cont col-12 "><div class="row">
+          <div class="col-lg-4 col-12 animation-element slide-left">
+            <div class="media-object-default">
+              <div class="media">
+                <div class="media-left"> 
+				<img class="media-object img-circle" src="/themes/custom/korone/images/flat-fee/calc-design04.png" alt="placeholder image" style="cursor:pointer;">  </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Count for On-premises Physical Servers</h4>
+                  Select no. of devices
+				  <div class="radio">
+					<input id="radio-none3" name="physical_server" value="0" type="radio" >
+					<label for="radio-none3" class="radio-label">None</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-16" name="physical_server" type="radio" value="1" />
+					<label for="radio-16" class="radio-label">1 to 5</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-17" name="physical_server" type="radio" value="6"  />
+					<label for="radio-17" class="radio-label">6 to 10</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-18" name="physical_server" type="radio" value="11" />
+					<label for="radio-18" class="radio-label">11 to 15</label>
+				  </div>
+				  <!--<div class="radio">
+					<input id="radio-19" name="physical_server" type="radio" value="15" />
+					<label for="radio-19" class="radio-label">15 to 20</label>
+				  </div>-->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-12 animation-element slide-left">
+            <div class="media">
+              <div class="media-left"> 
+			  <img class="media-object img-circle" src="/themes/custom/korone/images/flat-fee/calc-design05.png" alt="placeholder image" style="cursor:pointer;">
+			  </div>
+              <div class="media-body">
+                <h4 class="media-heading">Count for On-premises Virtual Servers </h4>
+                Select no. of devices
+				<div class="radio">
+					<input id="radio-none4" name="virtual_server" value="0" type="radio" >
+					<label for="radio-none4" class="radio-label">None</label>
+				  </div>
+                <div class="radio">
+					<input id="radio-20" name="virtual_server" type="radio" value="1" />
+					<label for="radio-20" class="radio-label">1 to 5</label>
+				</div>
+				  <div class="radio">
+					<input id="radio-21" name="virtual_server" type="radio" value="6"  />
+					<label for="radio-21" class="radio-label">6 to 10</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-22" name="virtual_server" type="radio" value="11" />
+					<label for="radio-22" class="radio-label">11 to 15</label>
+				  </div>
+				  <!--<div class="radio">
+					<input id="radio-23" name="virtual_server" type="radio" value="15" />
+					<label for="radio-23" class="radio-label">15 to 20</label>
+				  </div>-->
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-12 animation-element slide-left">
+            <blockquote>
+              <div class="media">
+                <div class="media-left">
+				<img class="media-object img-circle" width="120" src="/themes/custom/korone/images/flat-fee/hard-disk-design10.png" alt="placeholder image" style="cursor:pointer;">					</div>
+                <div class="media-body">
+                  <h4 class="media-heading">Total On-Premises Backup size in TB</h4>
+                  Select no. of devices
+				  <div class="radio">
+					<input id="radio-none5" name="size_data" value="0" type="radio" >
+					<label for="radio-none5" class="radio-label">None</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-24" name="size_data" type="radio" value="1" />
+					<label for="radio-24" class="radio-label">1 to 5</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-25" name="size_data" type="radio" value="6"  />
+					<label for="radio-25" class="radio-label">6 to 10</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-26" name="size_data" type="radio" value="11" />
+					<label for="radio-26" class="radio-label">11 to 15</label>
+				  </div>
+				  <!--<div class="radio">
+					<input id="radio-27" name="size_data" type="radio" value="15" />
+					<label for="radio-27" class="radio-label">15 to 20</label>
+				  </div>-->
+                </div>
+              </div>
+            </blockquote>
+          </div> </div>
+        </div>
+        <div class="ff-server-cont col-12"><div class="row">
+          <div class="col-lg-4 col-12 animation-element slide-left">
+            <div class="media">
+              <div class="media-left"> <img class="media-object img-circle" src="/themes/custom/korone/images/flat-fee/calc-design07.png" alt="placeholder image" style="cursor:pointer;"></div>
+              <div class="media-body">
+                <h4 class="media-heading">Count for Datacenter/Private Cloud Physical Servers</h4>
+                Select no. of devices
+				<div class="radio">
+					<input id="radio-none6" name="server_device" value="0" type="radio" >
+					<label for="radio-none6" class="radio-label">None</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-28" name="server_device" type="radio" value="1" />
+					<label for="radio-28" class="radio-label">1 to 5</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-29" name="server_device" type="radio" value="6"  />
+					<label for="radio-29" class="radio-label">6 to 10</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-30" name="server_device" type="radio" value="11" />
+					<label for="radio-30" class="radio-label">11 to 15</label>
+				  </div>
+				  <!--<div class="radio">
+					<input id="radio-31" name="server_device" type="radio" value="15" />
+					<label for="radio-31" class="radio-label">15 to 20</label>
+				  </div>-->
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-12 animation-element slide-left">
+            <div class="media">
+              <div class="media-left"> <img class="media-object img-circle" src="/themes/custom/korone/images/flat-fee/calc-design08.png" alt="placeholder image" style="cursor:pointer;"> </div>
+              <div class="media-body">
+                <h4 class="media-heading">Count for Datacenter/Private Cloud Virtual Servers</h4>
+                Select no. of devices
+				<div class="radio">
+					<input id="radio-none7" name="private_server_device" value="0" type="radio" >
+					<label for="radio-none7" class="radio-label">None</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-32" name="private_server_device" type="radio" value="1" />
+					<label for="radio-32" class="radio-label">1 to 5</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-33" name="private_server_device" type="radio" value="6"  />
+					<label for="radio-33" class="radio-label">6 to 10</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-34" name="private_server_device" type="radio" value="11" />
+					<label for="radio-34" class="radio-label">11 to 15</label>
+				  </div>
+				  <!--<div class="radio">
+					<input id="radio-35" name="private_server_device" type="radio" value="15" />
+					<label for="radio-35" class="radio-label">15 to 20</label>
+				  </div>-->
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-12 animation-element slide-left">
+		  
+            <blockquote>
+              <div class="media">
+                <div class="media-left"> <img class="media-object img-circle" width="120" src="/themes/custom/korone/images/flat-fee/hard-disk-design10.png" alt="placeholder image" style="cursor:pointer;"></div>
+                <div class="media-body">
+                  <h4 class="media-heading">Total Private Cloud Backup size in TB </h4>
+                  Select no. of devices
+				  <div class="radio">
+					<input id="radio-none8" name="size_data2" value="0" type="radio" >
+					<label for="radio-none8" class="radio-label">None</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-36" name="size_data2" type="radio" value="1" />
+					<label for="radio-36" class="radio-label">1 to 5</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-37" name="size_data2" type="radio" value="6"  />
+					<label for="radio-37" class="radio-label">6 to 10</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-38" name="size_data2" type="radio" value="11" />
+					<label for="radio-38" class="radio-label">11 to 15</label>
+				  </div>
+				  <!--<div class="radio">
+					<input id="radio-39" name="size_data2" type="radio" value="15" />
+					<label for="radio-39" class="radio-label">15 to 20</label>
+				  </div>-->
+                </div>
+              </div>
+            </blockquote>
+          </div></div>
+        </div>
+        <div class="ff-server-cont col-12"><div class="row">
+		  <div class="col-lg-4 col-12 animation-element slide-left">
+            <div class="media">
+              <div class="media-left"> <img class="media-object img-circle" src="/themes/custom/korone/images/flat-fee/calc-design11.png" alt="placeholder image" style="cursor:pointer;"> </div>
+              <div class="media-body">
+                <h4 class="media-heading">Count for Public Cloud Physical Server</h4>
+                Select no. of devices
+				<div class="radio">
+					<input id="radio-none9" name="public_physical_device" value="0" type="radio" >
+					<label for="radio-none9" class="radio-label">None</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-cps" name="public_physical_device" type="radio" value="1" />
+					<label for="radio-cps" class="radio-label">1 to 5</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-cps1" name="public_physical_device" type="radio" value="6"  />
+					<label for="radio-cps1" class="radio-label">6 to 10</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-cps2" name="public_physical_device" type="radio" value="11" />
+					<label for="radio-cps2" class="radio-label">11 to 15</label>
+				  </div>
+				  <!--<div class="radio">
+					<input id="radio-cps3" name="public_physical_device" type="radio" value="15" />
+					<label for="radio-cps3" class="radio-label">15 to 20</label>
+				  </div>-->
+              </div>
+            </div>
+          </div>	
+          <div class="col-lg-4 col-12 animation-element slide-left">
+            <div class="media">
+              <div class="media-left"> <img class="media-object img-circle" src="/themes/custom/korone/images/flat-fee/calc-design10.png" alt="placeholder image" style="cursor:pointer;"></div>
+              <div class="media-body">
+                <h4 class="media-heading">Count for Public Cloud Virtual Servers</h4>
+                Select no. of devices
+				<div class="radio">
+					<input id="radio-none10" name="virtualcloud" value="0" type="radio" >
+					<label for="radio-none10" class="radio-label">None</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-40" name="virtualcloud" type="radio" value="1" />
+					<label for="radio-40" class="radio-label">1 to 5</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-41" name="virtualcloud" type="radio" value="6"  />
+					<label for="radio-41" class="radio-label">6 to 10</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-42" name="virtualcloud" type="radio" value="11" />
+					<label for="radio-42" class="radio-label">11 to 15</label>
+				  </div>
+				 <!--<div class="radio">
+					<input id="radio-43" name="virtualcloud" type="radio" value="15" />
+					<label for="radio-43" class="radio-label">15 to 20</label>
+				  </div>-->
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-12 animation-element slide-left">
+            <blockquote>
+              <div class="media">
+                <div class="media-left"><img class="media-object img-circle" width="120" src="/themes/custom/korone/images/flat-fee/hard-disk-design10.png" alt="placeholder image" style="cursor:pointer;"> </div>
+                <div class="media-body">
+                  <h4 class="media-heading">Total Public Cloud Backup size in TB</h4>
+                  Select no. of devices
+				  <div class="radio">
+					<input id="radio-none11" name="size_data3" value="0" type="radio" >
+					<label for="radio-none11" class="radio-label">None</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-44" name="size_data3" type="radio" value="1" />
+					<label for="radio-44" class="radio-label">1 to 5</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-45" name="size_data3" type="radio" value="6"  />
+					<label for="radio-45" class="radio-label">6 to 10</label>
+				  </div>
+				  <div class="radio">
+					<input id="radio-46" name="size_data3" type="radio" value="11" />
+					<label for="radio-46" class="radio-label">11 to 15</label>
+				  </div>
+				  <!--<div class="radio">
+					<input id="radio-47" name="size_data3" type="radio" value="15" />
+					<label for="radio-47" class="radio-label">15 to 20</label>
+				  </div>-->
+                </div>
+              </div>
+            </blockquote>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+  <section class="ff-form" id="email_hosted">
+    <div class="container">
+      
+      <div class=" col-xs-12 col-md-6 radio animation-element slide-left">
+        <div class="col-xs-12 col-md-7 ">
+          <label for="exampleInputEmail1">Where is your email hosted?<span class="mandate">*</span></label>
+          <input type="radio" id="radio-60" name="email_hosted" value="On-premises"  />
+          <label for="radio-60" class="radio-label">On-premises</label>
+          <input type="radio" id="radio-61"  name="email_hosted" value="3rd Party Hosting Provider" />
+          <label for="radio-61" class="radio-label">3rd Party Hosting Provider</label>
+          <input type="radio" id="radio-62" name="email_hosted" value="Office 365"  />
+          <label for="radio-62" class="radio-label">Office 365</label>
+          <input type="radio" id="radio-63" name="email_hosted" value="Google Suite"  />
+          <label for="radio-63" class="radio-label">Google Suite</label>
+        </div>
+        <div class="col-xs-12 col-md-5">
+          <label for="exampleInputEmail1">Number of Mailboxes <br/>(User + Group)<span class="mandate">*</span></label>
+          <input type="text" class="form-control" id="mailboxes" name="mailboxes" value="">
+        </div>
+      </div>
+      <div class=" col-xs-12 col-md-6 radio animation-element slide-left">
+        <div class="col-xs-12 col-md-7 ">
+          <label for="exampleInputEmail1">Current Telephone System type <span class="mandate">*</span></label>
+          <input type="radio" id="radio-84" name="telephone_type" value="VOIP On Premises/Hosted"  />
+          <label for="radio-84" class="radio-label">VOIP On Premises/Hosted</label>
+          <input type="radio" id="radio-93"  name="telephone_type" value="Digital" />
+          <label for="radio-93" class="radio-label">Digital</label>
+        </div>
+        <div class="col-xs-12 col-md-5 ">
+          <label for="exampleInputEmail1">Number of extensions<span class="mandate">*</span></label>
+          <input type="text" class="form-control" id="telephone_system" name="telephone_system">
+        </div>
+      </div>
+      <div class="col-xs-12 form-group animation-element slide-left">
+        <label for="exampleInputEmail1">Describe in few words about your current applications and software that run on Servers (like Finance Applications) and Desktops (Like MS Office, Adobe Creative Suite)<span class="mandate">*</span></label>
+        <textarea class="form-control" rows="5" id="current_app" name="current_app"></textarea>
+      </div>
+      <div class="col-xs-12 form-group animation-element slide-left">
+        <label for="exampleInputEmail1">Describe in few words about your current in-house IT Team or IT Support Vendor</label>
+        <textarea class="form-control" rows="5" id="current_inhouse" name="current_inhouse"></textarea>
+      </div>
+    </div>
+  </section>
+  <section class="ff-userform" id="email_form">
+    <div class="row">
+      <div class="container">
+        <div class="col-xs-12 animation-element slide-left">
+          <p class="text-center">To know approximate costing based on your infrastructure requirements</p>
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="Name*" name="enter_name" id="enter_name" />
+            <input class="form-control" type="text" class="form-control" placeholder="Email*" name="enter_email" id="enter_email" />
+            <input class="form-control" type="text" class="form-control" placeholder="Phone" name="enter_phone" id="enter_phone" />
+          </div>
+          <div class="form-group sub-btn">
+            <div class="btn btn-primary" onclick="add_cost();" style="padding: 10px 50px !important; border: none; border-radius: 3px;">
+				<span style="cursor:pointer;">Submit for Consultation</span>
+			</div>
+			<!--<input type="submit" class="btn-primary" value="Submit for Consultation" onClick="add_cost();">-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ </div>
+</form>
+	 <div id="myFlatfeepopup" class="flat-fee-modal">
+		  <!-- Modal content -->
+		  <div class="flat-fee-modal-content">
+		  <div class="ff-modal-container">
+			<div class="flat-fee-modal-header">
+			  <span class="flat-fee-close">×</span>
+			  <h2>Summary Reports</h2>
+			  <hr>
+			</div>
+			<div class="flat-fee-modal-body col-xs-12 ">
+		  <div class="ff-devices-box col-md-4 col-lg-3 col-xs-12">
+		  <div class="ff-devices-box-inr">
+		  <img src="/themes/custom/korone/images/flat-fee/devices-icons.png">
+			<p class="ff-nos"><span id="total_devices_count"></span></p>
+			<p>Devices</p>
+			</div>
+			<ul>
+				<li>Windows / <br> Desktops / Laptops <span id="window_count"></span></li>
+				<li>Apple / <br> Desktops / Laptops <span id="apple_count"></span></li>
+				<li>Smart Phones / <br> Tablets  <span id="smart_count"></span></li>
+			</ul>
+		  </div>
+		  <div class="ff-devices-box col-md-7 col-lg-6 col-md-offset-2 col-xs-12">
+		  <div class="ff-devices-box-inr">
+		  <img src="/themes/custom/korone/images/flat-fee/servers-icons.png">
+			<p class="ff-nos"><span id="total_servers_count"></span></p>
+			<p>Servers</p>
+			</div>
+			<ul>
+				<li>On-Premises Physical Servers <span id="server1"></span></li>
+				<li>On-Premises Virtual Servers <span id="server2"></span></li>
+				<li>Datacenter/Private Cloud Physical Servers <span id="server3"></span></li>
+				<li>Datacenter/Private Cloud Virtual Servers <span id="server4"></span></li>
+				<li>Public Cloud Physical Servers <span id="server5"></span></li>
+				<li>Public Cloud Virtual Servers <span id="server6"></span></li>
+			</ul>
+		  </div>
+			  <div class="col-xs-12 ff-costing">			  
+			   <p>Approximate costing based on your infrastructure requirements: <span id="total_costs"></span></p>
+			  	<div class="col-xs-12">
+				<hr>
+				 {{ page.content }}
+			  	<div class="btn btn-success flat-fee-edit" style="margin-top: -62px; border: none;margin-left: 170px;">Edit</div> 
+				</div>
+				</div>
+			
+			</div>
+			</div>
+		  </div>
+		  
+	 </div> 
+</div>
+  <!-- thank ydou Modal -->
+  {% if page.footer_features %}
+  <section class="responsiveBottomOut">
+    <div class="container">
+      <div class="responsiveBottom">
+        {{ page.footer_features }}
+      </div>
+    </div>
+    
+  </section>
+  {% endif %}
+  {% if page.footer_video %}
+ <section class="responsiveContent ">    
+    <div class="videoPresentation">
+	 {{ page.footer_video }}      
+    </div>
+  </section> 
+  {% endif %}
+ 
+ {% if page.footer_services %}
+ <section class="ProductBottom ServicesTxt">
+	 {{ page.footer_services }}
+</section> 	 
+  {% endif %}
+  
+  {% if page.footer_first %}
+  <section class="blueband">
+  <div class="fullwidth ">
+  {{ page.footer_first }}
+  </div>
+  </section>
+  {% endif %}
+  {% if page.footer_second %}
+  <section class="greybandOut">
+    <div class="container">
+	{{ page.footer_second }}      
+    </div>
+  </section>
+  {% endif %}
+</div>
+<!--Content End-->
+
+{% include '@korone/footer.html.twig' %}

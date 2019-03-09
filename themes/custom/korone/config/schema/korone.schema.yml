@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Korone theme.
+
+korone.settings:
+  type: theme_settings
+  label: 'Korone settings'

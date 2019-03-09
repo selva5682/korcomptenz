@@ -1,0 +1,566 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.featured_top: Items for the featured top region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.featured_bottom_first: Items for the first featured bottom region.
+ * - page.featured_bottom_second: Items for the second featured bottom region.
+ * - page.featured_bottom_third: Items for the third featured bottom region.
+ * - page.footer_first: Items for the first footer column.
+ * - page.footer_second: Items for the second footer column.
+ * - page.footer_third: Items for the third footer column.
+ * - page.footer_fourth: Items for the fourth footer column.
+ * - page.footer_fifth: Items for the fifth footer column.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see bartik_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+{% include '@korone/header-cmshome.html.twig' %}  
+<!--Content-->
+<div class="main-container innerpage"> 
+  <!--Inner Banner-->
+  <section class="image-bg mobile-bg-banner PatientJourneyBannerNew">
+    <div class="PatientJourneyBannerNewIn">
+      <div class="PatientJourneyBannerRight" style="margin-top: 25px;">
+	  <h2>Making Connections <br />That Matter</h2>
+         <h3>Develop custom Mobile + Web Applications that <br />make personalized and meaningful connections <br />with your customers and internal teams</h3>
+		 
+	   </div>
+    <div class="bi-banner-form">
+     <h2>Sign up for a Free Consultation</h2>
+<div class="col-md-12">
+{{ page.kentico_supercharged }}
+</div>
+     </div>
+    </div>
+  </section>
+  <!--Inner Banner End-->
+  
+<section class="responsiveContent responsiveTopOut sap-hana">
+<div class="container-fluid mtsstop">
+<div class="container">
+<div class="mb60">
+<h1>How does it work ?</h1>
+<p>If you have a great idea for a mobile + web application, but are unsure how to make your vision a reality, contact the KORCOMPTENZ pro development team, and we will walk you through our Proven process.</p>
+<div class="responsiveBottom">
+<img src="/themes/custom/korone/images/mobile-app/how03.png" title="" class="img-responsive mt30 align-center" >
+</div>
+</div>
+
+
+<div class="responsiveTop">
+<h1>What can we do for your mobile + web applications ?</h1>
+<h2>Full Service App Design, Development, and Support for Your Unique Business Needs</h2>
+
+<div class="col-sm-3 mt15"><img class="mb20" alt="Maintenance Strategy" src="/themes/custom/korone/images/mobile-app/001_customer_apps.png" />
+<h4>CONSUMER + ECOMMERCE <br /> APPS</h4>
+
+<div class="dafln-mobile">&nbsp;</div>
+
+<div class="clearfix">&nbsp;</div>
+
+<p>Extend your business into the mobile world or launch a new product for consumers</p>
+</div>
+
+<div class="col-sm-3 mt15"><img class="mb20" alt="Maintenance Planner" src="/themes/custom/korone/images/mobile-app/002_internalapps.png" />
+<h4>INTERNAL APPS FOR <br /> YOUR BUSINESS</h4>
+
+<div class="dafln-mobile">&nbsp;</div>
+
+<div class="clearfix">&nbsp;</div>
+
+<p>Engage employees and accelerate business processes with internal apps</p>
+</div>
+
+<div class="col-sm-3 mt15"><img class="mb20" alt="Maintenance Certificate" src="/themes/custom/korone/images/mobile-app/003_microsoft_mobility.png" />
+<h4>MOBILITY SOLUTIONS FOR <br /> MICROSOFT  + SALESFORCE</h4>
+
+<div class="dafln-mobile">&nbsp;</div>
+
+<div class="clearfix">&nbsp;</div>
+
+<p>Integrate with best-in-class systems like Microsoft Office 365, Dynamics and Salesforce</p>
+</div>
+
+<div class="col-sm-3 mt15"><img class="mb20" alt="Maintenance Deliveries" src="/themes/custom/korone/images/mobile-app/004_support.png" />
+<h4>FULL SERVICE <br /> SUPPORT +  MAINTENANCE</h4>
+
+<div class="dafln-mobile">&nbsp;</div>
+
+<div class="clearfix">&nbsp;</div>
+
+<p>Manage, maintain, and launch new versions of your app, plus report on performance</p>
+</div>
+</div>
+
+</div>
+
+
+</div><!-- container-fluid -->
+</section>
+<div class="clearfix"></div>
+
+<!--container-fluid-->
+<section class="responsiveContent responsiveTopOut wordpress  new-font">
+<div class="cms-pdf">
+
+<!-- container-fluid -->
+
+<div class="container-fluid rmco2">
+<div class="container">
+<h2> Key Features of Mobile App Development</h2>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                 Wearables + Health Kits integrations
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <p> Today's mobile apps extend beyond the traditional smartphone and tablet interface with versions that run on wearable devices and integrate with leading providers.  KORCOMPTENZ management and development teams are experienced at navigating the complexities of advanced integrations, and can help your app take advantage of these leading trends.</p>
+						<h3 class="mt40 text-center">Health Kits</h3>	
+                        <div class="col-sm-12 sado1">
+                        <div class="col-sm-1">&nbsp;</div>
+                        
+                        <div class="col-sm-2 stff"><img alt="" class="center-block mobile-icons-wd" src="/themes/custom/korone/images/mobile-app/003_01_fitbit.png"><p class="text-center">FitBit
+                        </p>
+                        </div>
+                        
+                        <div class="col-sm-2 stff"><img alt="" class="center-block mobile-icons-wd" src="/themes/custom/korone/images/mobile-app/003_02_apple_fit.png"><p class="text-center">Apple Healthkit
+                        </p>
+                        </div>
+                        
+                        <div class="col-sm-2 stff"><img alt="" class="center-block mobile-icons-wd" src="/themes/custom/korone/images/mobile-app/003_03_google_fit.png"><p class="text-center">Google Fit
+                        </p>
+                        </div>
+                        
+                        <div class="col-sm-2 stff"><img alt="" class="center-block mobile-icons-wd" src="/themes/custom/korone/images/mobile-app/003_04_samsung_health.png"><p class="text-center">Samsung Health
+                        </p>
+                        </div>
+                        
+                        <div class="col-sm-2 stff"><img alt="" class="center-block mobile-icons-wd" src="/themes/custom/korone/images/mobile-app/003_05_health_walgreen.png"><p class="text-center">Walgreens
+                        </p>
+                        </div>
+                        </div> 
+                        
+                        <div class="clearfix">&nbsp;</div>
+						
+                         <h3 class="mt40 text-center">Wearable Devices</h3>
+                        <div class="col-sm-12 sado1 ">
+                        <div class="col-sm-3 stff"><img alt="" class="center-block mobile-icons-wd-1" src="/themes/custom/korone/images/mobile-app/4_apple_watch.png"><p class="text-center">Apple Watch
+                        </p>
+                        </div>
+                        
+                        <div class="col-sm-3 stff"><img alt="" class="center-block mobile-icons-wd-1" src="/themes/custom/korone/images/mobile-app/42_android_wear.png"><p class="text-center">Android Wear
+                        </p>
+                        </div>
+                        
+                        
+                        <div class="col-sm-3 stff"><img alt="" class="center-block mobile-icons-wd-1" src="/themes/custom/korone/images/mobile-app/43_samsung_gear.png"><p class="text-center">Samsung Gear
+                        </p>
+                        </div>
+                        
+                        <div class="col-sm-3 stff"><img alt="" class="center-block mobile-icons-wd-1" src="/themes/custom/korone/images/mobile-app/44_fitbit.png"><p class="text-center">FitBit
+                        </p>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+
+
+
+
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Geofencing + Beacons
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                           <div class="container-fluid mtmobile con-color"> 
+                                <p>Next generation geofencing and beacon technology allows your app to be aware of the devices location and trigger actions based on your unique business needs including recognizing nearby facilities, generating targeted notifications, or mapping team members in the field.  The possibilities are unlimited for internal and external engagement.</p>
+                                <div class="col-sm-12">
+                                <div class="col-sm-4 mb40">
+                                <div class="axb3o">
+                                <img class="center-block" src="/themes/custom/korone/images/mobile-app/51_gimbel.png" alt="Time on the market">
+                                <p class="text-center mt15">Gimbal</p>
+                                </div>
+                                </div>
+                                <div class="col-sm-4 mb15">
+                                <div class="axb3o">
+                                <img class="center-block" src="/themes/custom/korone/images/mobile-app/52_numberoofusers.png" alt="Number of users">
+                                <p class="text-center mt15">TransistorSoft</p>
+                                </div>
+                                </div>
+                                <div class="col-sm-4 mb15">
+                                <div class="axb3o">
+                                <img class="center-block" src="/themes/custom/korone/images/mobile-app/53_connectthing.png" alt="Frequency of updates">
+                                <p class="text-center mt15">ConnectThings</p>
+                                </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-sm-4 mb15">
+                                <div class="axb3o">
+                                <img class="center-block" src="/themes/custom/korone/images/mobile-app/54_beacon_weather.png" alt="Validated reviews">
+                                <p class="text-center mt15">BeaconWatcher</p>
+                                </div>
+                                </div>
+                                <div class="col-sm-4 mb15">
+                                <div class="axb3o">
+                                <img class="center-block" src="/themes/custom/korone/images/mobile-app/55_plot.png" alt="Features and documentation">
+                                <p class="text-center mt15">PlotProjects</p>
+                                </div>
+                                </div>
+                                <div class="col-sm-4 mb15">
+                                <div class="axb3o">
+                                <img class="center-block" src="/themes/custom/korone/images/mobile-app/56_eddystone.png" alt="Deep web searches">
+                                <p class="text-center mt15">EddyStone</p>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Push Notifications + Messaging
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                           <div class="container-fluid">
+                                <div class="row">
+                                <p>Mobile apps can also be used to engage customers and associates with targeted, customized messaging that provides relevant information and prompts important actions.</p>
+                                <div class="col-20pr">
+                                <div class="inaiomobile-1">
+                                <img class="center-block" src="/themes/custom/korone/images/mobile-app/61_firebase.png" alt="" />
+                                <p class="text-center">Firebase</p>
+                                </div>
+                                </div>
+                                
+                                <div class="col-20pr">
+                                <div class="inaiomobile-1">
+                                <img class="center-block" src="/themes/custom/korone/images/mobile-app/62_salesforce.png" alt="" />
+                                <p class="text-center">Salesforce Marketing Cloud</p>
+                                </div>
+                                </div>
+                                
+                                <div class="col-20pr">
+                                <div class="inaiomobile-1">
+                                <img class="center-block" src="/themes/custom/korone/images/mobile-app/63_clever_tap.png" alt="" />
+                                <p class="text-center">CleverTap</p>
+                                </div>
+                                </div>
+                                
+                                <div class="col-20pr">
+                                <div class="inaiomobile-1">
+                                <img class="center-block" src="/themes/custom/korone/images/mobile-app/64_kumulos.png" alt="" />
+                                <p class="text-center">Kumulos</p>
+                                </div>
+                                </div>
+                                
+                                <div class="col-20pr">
+                                <div class="inaiomobile-1">
+                                <img class="center-block" src="/themes/custom/korone/images/mobile-app/65_ometouch.png" alt="" />
+                                <p class="text-center">One Signal</p>
+                                </div>
+                                </div>
+                                </div>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+				<div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingfour">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Internet of Things
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
+                        <div class="panel-body">
+                           <p>The internet is becoming another key element in our lives, as pervasive and necessary as the air we breathe at times.  The next evolution in internet technology is complete connectivity with the products we use in our day-to-day lives.</p>
+
+<p>A microwave, a fridge, a pillow, a door lock—almost anything can be connected with a mobile app.  A recent report predicts that the world will have around 50 billion connected devices in 2-3 years. The evolution of communication between wireless objects and mobile phones creates a space for endless machine-to-machine (M2M) connectivity options, leading to a new Internet of Things (IoT).</p>
+
+<p>This M2M driven IoT accelerates the usage of mobile phones towards the automation of processes and can redefine the standard of living.  KORCOMPTENZ is an early believer in the future impact of IoT, and we've already piloted contributions to several "Smart Projects", including "Smart Healthcare Devices", "Smart Electrical Objects", "Smart Home Appliances", "Smart Pillow", "Smart Locks" etc.</p>
+
+<p>Whatever you can imagine, we're ready to take this exciting journey with you.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="container-fluid rmcol0 mt30">
+<div class="container">
+<div class="">
+<h2 class="w3cwt">App Development Technologies</h2>
+<p class="w3cwt">KORCOMPTENZ proven teams develop and support apps on a wide variety of technologies including hybrid, native  and web application options depending on your unique needs and target audiences.</p>
+<div class="col-20pr">
+<div class="inaio">
+<img class="center-block" src="/themes/custom/korone/images/mobile-app/02001_iOS_app.png" alt="" />
+<p class="text-center">iOS / XCode</p>
+</div>
+</div>
+
+<div class="col-20pr">
+<div class="inaio">
+<img class="center-block" src="/themes/custom/korone/images/mobile-app/02002_android_deve.png" alt="" />
+<p class="text-center">Android / Android Studio</p>
+</div>
+</div>
+
+<div class="col-20pr">
+<div class="inaio">
+<img class="center-block" src="/themes/custom/korone/images/mobile-app/02003_phonegap.png" alt="" />
+<p class="text-center">Phonegap / Cordova</p>
+</div>
+</div>
+
+<div class="col-20pr">
+<div class="inaio">
+<img class="center-block" src="/themes/custom/korone/images/mobile-app/02004_xamarin.png" alt="" />
+<p class="text-center">Xamarin</p>
+</div>
+</div>
+
+<div class="col-20pr">
+<div class="inaio">
+<img class="center-block" src="/themes/custom/korone/images/mobile-app/02005_reactnative.png" alt="" />
+<p class="text-center">React Native</p>
+</div>
+</div>
+</div>
+</div>
+</div><!--container-fluid-->
+
+<!--container-fluid-->
+<div class="container-fluid mtmobile staff-across con-color"> 
+<div class="container">
+<h2>Why You Need  To Have Mobile App Strategy </h2>
+
+<p>In January 2017, 71% of people's digital time in the United States was spent on a mobile device.  There are more mobile users than traditional users worldwide, and spending on mobile ads now exceeds desktops and tablets.  Salesforce also reports that 71% of marketers feel mobile is important to their business and 58% have a dedicated mobile team.</p>
+<div class="col-sm-12">
+<div class="col-20pr">
+<div class="tnet25">
+<p class="text-center">A third of mobile users read email exclusively on their devices
+</p>
+</div>
+</div>
+<div class="col-20pr">
+<div class="tnet25">
+<p class="text-center">More than three quarters of internet users have a smartphone
+</p>
+</div>
+</div>
+<div class="col-20pr">
+<div class="tnet25">
+<p class="text-center">Almost half of mobile users start researching on a search engine
+</p>
+</div>
+</div>
+<div class="col-20pr">
+<div class="tnet25">
+<p class="text-center">Apps account for almost 90% of media viewing time
+</p>
+</div>
+</div>
+<div class="col-20pr">
+<div class="tnet25">
+<p class="text-center">More than half of users check their phone immediately upon waking up
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid rmcol5 mt30">
+<div class="container">
+<div class="row">
+<h2 class="w3cwt-mo">Some of our work</h2>
+<a href="/healthcare-app" title="Healthcare App">
+<div class="col-20pr mobile-app-ho">
+<div class="inaio">
+<img class="center-block" src="/themes/custom/korone/images/mobile-app/healthcare-app.png" alt="Healthcare App" />
+<p class="text-center">Healthcare App</p>
+</div>
+</div>
+</a>
+
+<a href="/social-networking-app" title="Social Networking App">
+<div class="col-20pr mobile-app-ho">
+<div class="inaio">
+<img class="center-block" src="/themes/custom/korone/images/mobile-app/social-networking-app.png" alt="Social Networking App" />
+<p class="text-center">Social Networking App</p>
+</div>
+</div>
+</a>
+
+<a href="/maintenance-app" title="Maintenance App">
+<div class="col-20pr mobile-app-ho">
+<div class="inaio">
+<img class="center-block" src="/themes/custom/korone/images/mobile-app/maintenance-app.png" alt="Maintenance App" />
+<p class="text-center">Maintenance App</p>
+</div>
+</div>
+</a>
+
+<a href="/roadside-assistance-app" title="Roadside Assistance App">
+<div class="col-20pr mobile-app-ho">
+<div class="inaio">
+<img class="center-block" src="/themes/custom/korone/images/mobile-app/roadsideassistance.png" alt="Roadside Assistance App" />
+<p class="text-center">Roadside Assistance App</p>
+</div>
+</div>
+</a>
+
+<a href="/deals-app" title="Deals App">
+<div class="col-20pr mobile-app-ho">
+<div class="inaio">
+<img class="center-block" src="/themes/custom/korone/images/mobile-app/deals-app.png" alt="Deals App" />
+<p class="text-center">Deals App </p>
+</div>
+</div>
+</a>
+
+<a href="/rna-registered-nurse-alert-app" title="Registered Nurse Alert App">
+<div class="col-20pr mobile-app-ho">
+<div class="inaio">
+<img class="center-block" src="/themes/custom/korone/images/mobile-app/Nurse-Alert-App-icon.png" alt="Registered Nurse Alert" App />
+<p class="text-center">Registered Nurse Alert App</p>
+</div>
+</div>
+</a>
+
+</div>
+</div>
+</div><!--container-fluid-->
+<div class="container-fluid mtmobile con-color">
+<div class="container">
+<h2>Why Korcomptenz ?</h2>
+<p>KORCOMPTENZ full-service, fully custom, and cost-effective mobile + web application development and support services for iOS, Android,  hybrid, web platforms (PHP, Wordpress, Magento, Yii2, MySQL, JQuery, CSS, HTML, JSON, XML etc.) allow our customers to benefit from a unique combination of skills, experience, and value. Extensive expertise with third-party integrations, custom application development, geofencing, healthkits, and wearable technologies offers a unique opportunity to develop innovative, powerful mobile + web applications for your unique business needs.</p>
+</div>
+</div>
+
+ {% if page.footer_total_transformation_blog %}
+  <div class="container-fluid coldbl7 mt40">
+	<div class="container">
+		<div class="row form2">
+		<div class="col-sm-12"><h3 class="text-center">SUGGESTED READS</h3></div>
+		<div class="clearfix"></div>
+			<div class="col-md-1"></div>
+			<div class="suggsld col-md-10">
+       			 {{ page.footer_total_transformation_blog }}
+			</div>
+			<div class="col-md-1"></div>
+    </div>    
+  </div>
+  {% endif %}
+  
+ 
+  
+</section>
+</div>
+  <!-- thank ydou Modal -->
+  {% if page.footer_features %}
+  <section class="responsiveBottomOut">
+    <div class="container">
+      <div class="responsiveBottom">
+        {{ page.footer_features }}
+      </div>
+    </div>
+    
+  </section>
+  {% endif %}
+  {% if page.footer_video %}
+ <section class="responsiveContent ">    
+    <div class="videoPresentation">
+	 {{ page.footer_video }}      
+    </div>
+  </section> 
+  {% endif %}
+ 
+ {% if page.footer_services %}
+ <section class="ProductBottom ServicesTxt">
+	 {{ page.footer_services }}
+</section> 	 
+  {% endif %}
+  
+  {% if page.footer_first %}
+  <section class="blueband">
+  <div class="fullwidth ">
+  {{ page.footer_first }}
+  </div>
+  </section>
+  {% endif %}
+  {% if page.footer_second %}
+  <section class="greybandOut">
+    <div class="container">
+	{{ page.footer_second }}      
+    </div>
+  </section>
+  {% endif %}
+</div>
+<!--Content End-->
+
+{% include '@korone/footer.html.twig' %}

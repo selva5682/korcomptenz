@@ -1,0 +1,143 @@
+{#
+/**
+ * @file
+ * Default view template to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+	<section class="image-bg   page-title-2  innerBanner parallax Resourcebanner">
+		<div class="background-image-holder"><img alt="Background Image" class="background-image" src="{{ url('<front>') }}/themes/custom/korone/images/resource_page/resource.jpg" /></div>
+		<div class="container">
+			<h2 class="onlyMobile">Resources</h2>
+			<ul>
+				<li><a href="/resources?types=All&category=41"><img src="{{ url('<front>') }}/themes/custom/korone/images/resource_page/eBooks-icon.png" width="75" height="75"><span>eBooks</span></a></li>
+				<li><a href="/resources?types=All&category=46"><img src="{{ url('<front>') }}/themes/custom/korone/images/resource_page/Webinars-icon.png" width="75" height="75"><span>Webinars</span></a></li>
+				<li><a href="/resources?types=All&category=51"><img src="{{ url('<front>') }}/themes/custom/korone/images/resource_page/Infographics-icon.png" width="75" height="75"><span>Data Sheets</span></a></li>
+				<li><a href="/resources?types=All&category=56"><img src="{{ url('<front>') }}/themes/custom/korone/images/resource_page/Data-Sheets-icon.png" width="75" height="75"><span>Whitepapers</span></a></li>
+				<li><a href="/resources?types=All&category=61"><img src="{{ url('<front>') }}/themes/custom/korone/images/resource_page/Videos-icon.png" width="75" height="75"><span>Videos</span></a></li>
+				
+				<li><a href="/resources?types=All&category=66"><img src="{{ url('<front>') }}/themes/custom/korone/images/resource_page/Data-Sheets-icon.png" width="75" height="75"><span>Case Studies</span></a></li>
+				
+			</ul>		 
+		</div>
+	</section>
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+  {% if header %}
+    <div class="view-header">
+      {{ header }}
+    </div>
+  {% endif %}
+  {% if exposed %}
+	<div class="ResourcebannerBototm">
+		<div class="col-md-3"></div>
+		<div class="col-md-3"></div>
+		<div class="col-md-3"></div>
+		<div class="col-md-3"></div>
+	</div>
+    <!--Inner Banner End-->
+	<section class="blogSearch ResourceSearch">
+		<div class="container selectOut">
+		  {{ exposed }}
+		</div>
+	</section>
+  {% endif %}
+  {% if attachment_before %}
+    <div class="attachment attachment-before">
+      {{ attachment_before }}
+    </div>
+  {% endif %}
+  
+  {% set resource_count = rows | length %} 
+  {% if resource_count==0 %}
+	<section class="responsiveContent Resourceinner responsiveTopOut">
+		<div class="container">
+			<div class="mt-4">
+				<p>No record found.</p>
+			</div>
+		</div>
+	</section>
+  {% endif %}
+  
+  {% if rows %}
+    <section class="responsiveContent Resourceinner responsiveTopOut">
+		<div class="container">
+		  {{ rows }}
+		</div>
+	</section>
+  {% elseif empty %}
+    <div class="view-empty">
+      {{ empty }}
+    </div>
+  {% endif %}
+  {% if pager|render|trim %}
+    <div class="clearfix resource-pager">
+      <div class="container">
+        <div class="detailed-pager detailed-pager--bottom clearfix" style="margin-top: -62px;">
+          <div class="row">
+            <div class="col-sm-12">
+              {{ pager }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if attachment_after %}
+    <div class="attachment attachment-after">
+      {{ attachment_after }}
+    </div>
+  {% endif %}
+  {% if more %}
+    {{ more }}
+  {% endif %}
+  {% if footer %}
+    <div class="view-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+  {% if feed_icons %}
+    <div class="feed-icons">
+      {{ feed_icons }}
+    </div>
+  {% endif %}
+</div>

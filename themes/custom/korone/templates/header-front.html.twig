@@ -1,0 +1,336 @@
+{#
+/**
+ * @file
+ * Korone's theme implementation to display a single page.
+ *
+ * Header file
+ */
+#}
+<!--Home Section-->
+{# Header #}
+<div id="cookies_content_overlay"></div>
+<header id="homepage_nav">
+	<div id="kor_header" class="">
+		<div class="row d-sm-none d-md-block d-none sub-nav">
+			<div class="col-12"> 
+					{% if page.header_top_highlighted_first %}						
+						{{ page.header_top_highlighted_first }}
+					{% endif %}		
+				<div class="float-right d-none d-lg-block">
+					{% if page.header_top_highlighted_second %}						
+						{{ page.header_top_highlighted_second }}
+					{% endif %}		
+				</div>
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg ">
+			<div class="col-12"> 
+				<a class="navbar-brand mt-2 mt-lg-0" href="/">
+					<img src="{{ base_path ~ directory }}/images/korcomptenz-white-logo.png" alt="Korcomptenz" class="mt-2" />
+				</a> 
+				<!--<span class="floater">Creating Lasting Value. Providing Competitive Advantage</span>--> 
+				<button style="font-size:30px;cursor:pointer" class="navbar-toggler" onclick="openNav()"> 
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</button>
+			  <div class="collapse navbar-collapse float-right " id="navbarSupportedContent"> 
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+				<ul class="navbar-nav sidenav " id="mySidenav">
+					<li class="nav-item mobile-only-menu"><a class="nav-link" href="/about-us">About</a></li>
+					<li class="nav-item mobile-only-menu"><a class="nav-link" href="/request-consultation">Contact</a></li>
+					<li class="nav-item mobile-only-menu"><a class="nav-link" href="/careers">Careers</a></li>
+					<li class="nav-item mobile-only-menu"><a class="nav-link" href="/why-korcomptenz">Why Korcomptenz?</a></li>
+					<li class="nav-item mobile-only-menu"><a class="nav-link" href="/resources">Resources</a></li>
+					<li class="nav-item mobile-only-menu"><a class="nav-link" href="/blog">Blog</a></li>
+				  <li class="nav-item dropdown"> 
+					<a class="nav-link dropdown-toggle mobilmenu openmenu1 d-none d-lg-block" href="/" aria-haspopup="true" aria-expanded="false"> <span>Our </span> <br> SOLUTIONS </a> 
+					<a class="nav-link dropdown-toggle mobilmenu openmenu1 d-block d-lg-none" href="#" aria-haspopup="true" aria-expanded="false"> <span>Our </span> <br> SOLUTIONS </a> 
+						<strong class="openmenu1">&nbsp;</strong>
+					<div class="dropdown-menu opensubmenu1" aria-labelledby="navbarDropdown">
+					  <div class="row py-5 pl-lg-0 pl-3">
+						<div class="col-12 col-lg-3 offset-lg-1 box-menu"> <a href="/web-mobile-technology"><span style="font-size: 1rem; font-weight: normal;">WEB + MOBILE </span>
+						  <p>Technology</p></a>
+						  <hr>
+						  <a class="btn-menu" data-toggle="collapse" href="#web_solutions" role="button" aria-expanded="false" aria-controls="web_solutions">Web Solutions</a>
+							<div class="row">
+								<div class="col-12">
+									<div class="collapse multi-collapse" id="web_solutions">
+									  <div class="card-body">
+										<hr>
+										<a href="/website-development" class="btn-menu" title="Website Development"> Website Development</a>
+										<a href="/website-design" class="btn-menu" title="Website Development"> Website Design</a>
+										<a href="/web-support-and-hosting" class="btn-menu" title="Web Support and Hosting"> Web Support and Hosting</a>
+										<a href="/web-integration" class="btn-menu" title="Web Integration"> Web Integration</a>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<a class="btn-menu" data-toggle="collapse" href="#mobile_solutions" role="button" aria-expanded="false" aria-controls="mobile_solutions">Mobile Solutions</a>
+							<div class="row">	
+								<div class="col-12">
+									<div class="collapse multi-collapse" id="mobile_solutions">
+									  <div class="card-body">
+										<hr>	
+										<a href="/" class="btn-menu" title="Android"> Android</a>
+										<a href="/" class="btn-menu" title="IOS"> IOS</a>
+										<a href="/" class="btn-menu" title="Enterprise Mobility Applications"> Enterprise Mobility Applications</a>										
+									  </div>
+									</div>
+								</div>
+							</div>
+							<a class="btn-menu" data-toggle="collapse" href="#engagement_solutions" role="button" aria-expanded="false" aria-controls="engagement_solutions">Engagement Solution</a>
+							<div class="row">	
+								<div class="col-12">
+									<div class="collapse multi-collapse" id="engagement_solutions">
+									  <div class="card-body">
+										<hr>
+										<a href="/magento" class="btn-menu" title="Magento"> Magento</a>
+										<a href="/salesforce" class="btn-menu" title="Salesforce"> Salesforce</a>
+										<a href="/" class="btn-menu" title="MS CRM"> MS CRM</a>
+										<a href="/mautic" class="btn-menu" title="Mautic"> Mautic</a>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<a class="btn-menu" data-toggle="collapse" href="#consulting_stratgey" role="button" aria-expanded="false" aria-controls="consulting_stratgey">Consulting & Stratgey</a>
+							<div class="row">	
+								<div class="col-12">
+									<div class="collapse multi-collapse" id="consulting_stratgey">
+									  <div class="card-body">
+										<hr>
+										<a href="/small-midsize-business-solutions" class="btn-menu" title="Small-midsize Business"> Small-midsize Business</a>
+										<a href="/enterprise-business-solutions" class="btn-menu" title="Enterprise"> Enterprise</a>
+										<a href="/advertising-agency" class="btn-menu" title="Advertising Agencies"> Advertising Agencies</a>
+									  </div>
+									</div>
+								</div>
+							</div>
+							<a class="btn-menu" data-toggle="collapse" href="#How_it_Works" role="button" aria-expanded="false" aria-controls="How_it_Works">How it Works ?</a>
+							<div class="row">	
+								<div class="col-12">
+									<div class="collapse multi-collapse" id="How_it_Works">
+									  <div class="card-body">
+										<hr>
+										<a href="/dedicated-teams" class="btn-menu" title="Dedicated Teams"> Dedicated Teams</a>
+										<a href="/fixed-bid-projects" class="btn-menu" title="Fixed Bid Projects"> Fixed Bid Projects</a>
+										<a href="/time-and-materials" class="btn-menu" title="Time and Material"> Time and Material</a>
+									  </div>
+									</div>
+								</div>
+							</div>
+						  <!--<a href="/web-marketing-technology" class="btn-menu" title="Web + Marketing Technology Strategy"> Web + Marketing Technology Strategy</a>
+						  <a href="/responsive-web-design" class="btn-menu">Responsive Web Design</a> 
+						  <a href="/cms" class="btn-menu"> Content Management Systems</a> 
+						  <a href="/customer-journeys-marketing-automation" class="btn-menu"> Customer Journeys + Marketing Automation</a> 
+						  <a href="/mobile-app-development" class="btn-menu"> Mobile Apps</a> 
+						  <a href="/email-marketing-digital-messaging" class="btn-menu"> Email Marketing + Digital Messaging</a>--> 						   
+						  </div>
+						<div class="col-12 col-lg-2 box-menu"> 
+						  <a href="/microsoft-dynamics-business-solutions"><span style="font-size: 1rem; font-weight: normal;">MICROSOFT DYNAMICS</span>
+						  <p>ERP Solutions</p></a>
+						  <hr>
+							  <a href="/microsoft-dynamics365" class="btn-menu"> Microsoft Dynamics 365</a> 
+							  <a href="/microsoft-dynamics-nav" class="btn-menu">Microsoft Dynamics NAV</a> 
+							  <!--<a href="" class="btn-menu"> Customer Portal For NAV</a>--> 
+							  <a href="/microsoft-dynamics-gp" class="btn-menu"> Microsoft Dynamics GP</a> 
+							  <a href="/microsoft-dynamics-ax" class="btn-menu"> Microsoft Dynamics AX</a> 
+							  <a href="/microsoft-dynamics-crm" class="btn-menu">Microsoft Dynamics CRM</a> 
+							  <a href="/microsoft-dynamics-bi" class="btn-menu"> Microsoft Dynamics Power BI</a> 
+						  </div>
+						<div class="col-12 col-lg-2 box-menu"><a href="/sap-hana-business-solutions"> <span style="font-size: 1rem; font-weight: normal;">SAP HANA </span>
+						  <p>ERP Solutions</p></a>
+						  <hr>
+							  <a href="/sap-hana-product" class="btn-menu"> SAP HANA Product</a> 
+							  <a href="/sap-hana-platform" class="btn-menu">SAP HANA Platform</a> 
+							  <a href="/sap-benefits" class="btn-menu"> SAP Benefits</a> 
+							  <a href="/sap-hana-cloud" class="btn-menu"> SAP - HANA - Cloud</a> 
+							  <a href="/sap-services" class="btn-menu"> SAP Services</a> 
+						  </div>
+						<div class="col-12 col-lg-3 box-menu"> 
+						  <a href="/infrastructure-cloud-management"><span style="font-size: 1rem; font-weight: normal;">INFRASTRUCTURE +</span>
+						  <p>Cloud  Management</p></a>
+						  <hr>
+						  <a href="/managed-service-provider" class="btn-menu"> Managed IT Services</a> 
+						  <a href="/office-365-g-suite-sharepoint" class="btn-menu">Office365 +  G suite  + SharePoint</a> 
+						  <a href="/disaster-recovery-and-business-continuity" class="btn-menu"> Disaster Recovery and Business Continuity</a> 
+						  <a href="/hosting-cloud-services" class="btn-menu"> Hosting and Cloud Services</a> 
+						  <a href="/virtualization" class="btn-menu"> Virtualization (Hyper-V, VMware, Citrix)</a> 
+						  <a href="/network-security-audit" class="btn-menu">Network Security + Audit</a>
+						</div>               
+						
+					  </div>
+					</div>
+				  </li>
+				  <li class="nav-item dropdown "> 
+				  <a class="openmenu2 nav-link dropdown-toggle mobilmenu d-none d-lg-block" href="/" aria-haspopup="true" aria-expanded="false"> <span>Industries </span> <br>
+					WE SERVE </a>
+					<a class="openmenu2 nav-link dropdown-toggle mobilmenu d-block d-lg-none" href="#" aria-haspopup="true" aria-expanded="false"> <span>Industries </span> <br>
+					WE SERVE </a>
+					<strong class="openmenu2">&nbsp;</strong>
+					<div class="dropdown-menu opensubmenu2" aria-labelledby="navbarDropdown">
+						<div class="row py-5 pl-lg-0 pl-3">
+							<div class="col-12 col-lg-10 offset-lg-1 box-menu"> 
+							  <p>INDUSTRIES WE SERVE</p>
+							  <hr>
+                            <div class="row">
+							<div class="col-12 col-lg-3 "> 
+                              <a href="/manufacturing-industry-solutions" class="btn-menu">Manufacturing</a> 
+							</div>
+							<div class="col-12 col-lg-3 "> 
+							<a href="/retail-fashion-industry-solutions" class="btn-menu">Retail & Fashion</a> 
+							</div>
+							<div class="col-12 col-lg-3 "> 
+							<a href="/non-profit-sector-solutions" class="btn-menu"> Non Profit</a> 
+							</div>
+							</div>
+							<div class="row">
+							<div class="col-12 col-lg-3 ">
+							  <a href="/ecommerce-solutions" class="btn-menu ">Ecommerce</a>	
+							</div>
+							<div class="col-12 col-lg-3 ">
+							<a href="/healthcare-solutions" class="btn-menu "> Healthcare</a> 
+							</div>
+							<div class="col-12 col-lg-3 ">
+							<a href="/financial-services-solutions" class="btn-menu"> Financial Services</a>
+							</div>
+							
+							
+							
+							</div> 
+                            </div>
+						</div>				
+					</div>
+				  </li>
+				  <li class="nav-item dropdown"> 
+				  <a class="openmenu3 nav-link dropdown-toggle mobilmenu d-none d-lg-block" href="/" aria-haspopup="true" aria-expanded="false"> <span>Our Core</span> <br>
+					SERVICES </a>
+				<a class="openmenu3 nav-link dropdown-toggle mobilmenu d-block d-lg-none" href="#" aria-haspopup="true" aria-expanded="false"> <span>Our Core</span> <br>
+					SERVICES </a>
+					<strong class="openmenu3">&nbsp;</strong>
+					<div class="dropdown-menu opensubmenu3" aria-labelledby="navbarDropdown">
+					  <div class="row py-5 pl-lg-0 pl-3">
+						<div class="col-12 col-lg-3 offset-lg-1 box-menu"> <span>ENGAGE</span>
+						  <p>Digital Growth Strategies</p>
+						  <hr>
+							<span>Convert more prospects and retain more customers with next-generation marketing automation, personalization, and data science services supported by best-in-class platforms and technologies from top providers.</span>
+						  <a href="/engage-digital-growth-strategies" class="btn-menu light-blue">Learn More</a> </div>
+						<div class="col-12 col-lg-3 box-menu"> <span>ENABLE</span>
+						  <p>Digital Operations Optimization</p>
+						  <hr>
+							<span>Manage and scale your business better and smarter with enterprise resource planning applications powered by the Microsoft Dynamics suite and supporting platforms that generate industry-leading return on investment.</span>
+						  <a href="/digital-operations-optimization" class="btn-menu light-blue"> Learn More</a> </div>
+						<div class="col-12 col-lg-3 box-menu"> <span>ACCELERATE</span>
+						  <p>Digital Business Transformation</p>
+						  <hr>
+							<span>Achieve your business goals and fuel the next phase of your organization with innovative, cost-effective mobility, cloud, Internet of Things, AI, and data science solutions tailored to your unique needs and industry.</span>
+						  <a href="/digital-business-transformation" class="btn-menu light-blue"> Learn More</a> 
+						</div>
+					  </div>
+					</div>
+				  </li>
+				  <li class="nav-item dropdown">
+				  <a class="openmenu4 nav-link dropdown-toggle mobilmenu d-none d-lg-block" href="/" aria-haspopup="true" aria-expanded="false"> <span>Technology </span> <br>
+					SERVICES </a> 
+					<a class="openmenu4 nav-link dropdown-toggle mobilmenu d-block d-lg-none" href="#" aria-haspopup="true" aria-expanded="false"> <span>Technology </span> <br>
+					SERVICES </a>
+					<strong class="openmenu4">&nbsp;</strong>
+					<div class="dropdown-menu opensubmenu4" aria-labelledby="navbarDropdown">
+						<div class="row py-5 pl-lg-0 pl-3">
+							<div class="col-12 col-lg-3 pl-lg-5 box-menu">
+								<p>ERP</p>
+								<hr>
+								<a href="/microsoft-dynamics" class="btn-menu"> Microsoft Dynamics 365</a>
+								<a href="/business-central" class="btn-menu"> Microsoft Dynamics Business Central</a>
+								<a href="/customer-portal-for-nav" class="btn-menu"> Customer Portal for NAV</a>
+							</div>
+							<div class="col-12 col-lg-4 box-menu"> 
+							  <p>Web Marketing</p>
+							  <hr>
+								<div class="row col-12">
+									<div class="col-6">
+										<a href="/drupal" class="btn-menu"> Drupal</a>
+										<a href="/wordpress" class="btn-menu"> WordPress</a>
+										<a href="/kentico-cms" class="btn-menu"> Kentico</a>
+										<a href="/magento" class="btn-menu"> Magento</a>
+										<a href="/mautic" class="btn-menu"> Mautic</a>
+									</div>
+									<div class="col-6">
+										<a href="/salesforce" class="btn-menu"> Salesforce </a>
+										<a href="/salesforce-support" class="btn-menu"> Salesforce Support</a>
+										<a href="/salesforce-integration" class="btn-menu"> Salesforce Integration</a>
+										<a href="/salesforce-consulting" class="btn-menu"> Salesforce Consulting</a>										
+									</div>
+								</div>		
+							</div>
+							<div class="col-12 col-lg-3 box-menu">
+							  <p>Special Technology Services</p>
+							  <hr>
+								<a href="/patient-journey" class="btn-menu"> Patient Journey</a>
+								<a href="/business-intelligence-big-data-solutions" class="btn-menu"> Business Intelligence + Big Data</a>
+								<a href="/solutions-for-publishers" class="btn-menu"> Solution For Publishers</a>
+								<a href="/kompete-hrm-solution" class="btn-menu"> HRM Solution </a> 
+							</div>
+                            
+							<div class="col-12 col-lg-2 pr-lg-5 box-menu">
+							  <p>Mobile </p>
+							  <hr>
+							  <a href="/android-app-development-company" class="btn-menu"> Android Development</a>
+								<a href="/ios-app-development-company" class="btn-menu"> IOS Development</a>
+								
+							</div>
+							
+                            <div class="col-12 col-lg-12 px-lg-5 box-menu"> 
+							  <p>Infrastructure </p>
+							  <hr>
+							  <div class="row">
+								<div class="col-12 col-lg-3">
+								<a href="/office365-migration" class="btn-menu"> Microsoft Office 365</a>
+								</div>
+								<div class="col-12 col-lg-3">
+								<a href="/hosting-on-azure" class="btn-menu"> Azure Cloud Solutions</a>
+								</div>
+								<div class="col-12 col-lg-3">
+								<a href="/microsoft-sharepoint" class="btn-menu"> Microsoft SharePoint</a> 
+								</div>
+								<div class="col-12 col-lg-3">
+								<a href="/flat-fee" class="btn-menu"> Infra Flat Fee Calculator</a>
+								</dv>
+								</div>
+							</div>
+                            
+						</div>				
+					</div>
+				  </li>
+				  <li class="nav-item dropdown"> 
+				  <a class="openmenu5 nav-link dropdown-toggle mobilmenu pr-0 d-none d-lg-block" href="/" aria-haspopup="true" aria-expanded="false"> <span>Our Work </span> <br>
+					CASE STUDIES </a> 
+					<a class="openmenu5 nav-link dropdown-toggle mobilmenu pr-0 d-block d-lg-none" href="#" aria-haspopup="true" aria-expanded="false"> <span>Our Work </span> <br>
+					CASE STUDIES </a>
+					<strong class="openmenu5">&nbsp;</strong>
+					<div class="dropdown-menu opensubmenu5" aria-labelledby="navbarDropdown">
+						<div class="row py-5 pl-lg-0 pl-3">
+							<div class="col-12 col-lg-10 offset-lg-1 box-menu">
+								<p>CASE STUDIES</p>
+								<hr>
+								<div class="row">
+									<div class="col-12 col-lg-3">
+										<a href="/resources?types=81&amp;category=66" class="btn-menu"> Microsoft Dynamics Business Solutions</a>
+									</div>
+									<div class="col-12 col-lg-3">
+										<a href="/resources?types=86&amp;category=66" class="btn-menu"> Mobile Apps + Custom Development</a>
+									</div>
+									<div class="col-12 col-lg-3">
+										<a href="/resources?types=76&amp;category=66" class="btn-menu"> Infrastructure + Cloud Management</a>
+									</div>
+                                    <div class="col-12 col-lg-3">
+										<a href="/resources?types=106&category=66" class="btn-menu"> Web + Marketing Technology</a>
+									</div>
+								</div>
+							</div>							
+						</div>				
+					</div>
+				  </li>
+				</ul>
+			  </div>
+			</div>
+		</nav>
+	</div> 

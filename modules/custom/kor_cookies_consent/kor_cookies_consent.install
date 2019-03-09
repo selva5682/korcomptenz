@@ -1,0 +1,93 @@
+<?php
+/**
+* Implements hook_install().
+*/
+function kor_cookies_consent_install() {
+  
+}
+function kor_cookies_consent_uninstall() {
+  drupal_uninstall_schema('ip_cookies_consent_lists');
+  #drupal_uninstall_schema('bmi_calculator_response_content');
+}
+/**
+* Implements hook_schema().
+*/
+function kor_cookies_consent_schema() {
+  $schema['ip_cookies_consent_lists'] = array(
+    'fields' => array(
+      'IP_id'=>array(
+        'type'=>'serial',
+        'not null' => TRUE,
+      ),
+      'ip_address'=>array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+	  'isp_name'=>array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'country_code'=>array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ), 
+	  'country_name'=>array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+	  'state_region'=>array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+	  'state_name'=>array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),	  
+      'city_name'=>array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+	  'ip_latitude'=>array(
+        'type' => 'varchar',
+        'length' => 225,
+        'not null' => TRUE,
+      ),
+	  'ip_longitude'=>array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+	  'ip_timezone'=>array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+	  'ip_zip'=>array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'ip_status'=>array(
+        'type' => 'varchar',
+        'length' => 2,
+        'not null' => TRUE,
+      ),
+	  'ip_created_at' => array(
+        'description' => t('The creation date.'),
+        'mysql_type' => 'DATETIME',
+        'not null' => TRUE
+      ),
+    ),
+    'primary key' => array('IP_id'),
+  );
+
+  return $schema;
+
+}

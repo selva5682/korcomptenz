@@ -1,0 +1,6 @@
+kor_cookies_consent.ip_cookies_consent:
+  title: 'Cookies Consent List'
+  parent: system.admin_config_system
+  description: 'Cookies Consent List.'
+  route_name: kor_cookies_consent.ip_cookies_consent
+  

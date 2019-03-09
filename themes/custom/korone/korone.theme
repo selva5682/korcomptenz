@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Bartik theme.
+ */
+ 
+ function korone_preprocess(&$variables, $hook)
+{
+    $variables['base_path'] = base_path();
+}
+ function korone_form_search_block_form_alter(&$form, &$form_state, $form_id) {
+	 $form['search_block_form']['#attributes']['placeholder'] = t("What're we looking for ?");
+ }
+ function korone_preprocess_page(&$variables) {
+  if ($variables['is_front']) {
+   $variables['#attached']['library'][] = 'krone/front-styling';
+  }
+}
+
+/*function korone_preprocess_page(&$variables) {
+  global $base_url, $base_path;
+  
+  $variables['logo'] = $base_url . $base_path . drupal_get_path('theme','THEME') . '/logo.svg';
+
+  ##Uncomment this if you want to use png instead of svg image
+  $variables['logo'] = str_replace('.svg', '.jpg', $variables['logo']);
+}*/
+/*function korone_preprocess_page(&$variables) {
+  if ($variables['is_front']) {
+    $variables['#attached']['library'][] = 'korone/front-styling';
+  }
+}*/

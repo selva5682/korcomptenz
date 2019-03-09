@@ -1,0 +1,14 @@
+   
+mainblockblogsection.get_blogs:
+  path: '/blog' 
+  defaults: 
+    _controller: '\Drupal\mainblockblogsection\Controller\DisplayBlogtremsController::content' 
+    _title: 'Blog'
+  requirements: 
+    _permission: 'access content' 
+  options:
+    no_cache: 'TRUE'	
+   
+
+   
+

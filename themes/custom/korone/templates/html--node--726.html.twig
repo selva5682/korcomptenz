@@ -1,0 +1,733 @@
+{#
+/**
+ * @file
+ * Default theme implementation for the basic structure of a single Drupal page.
+ *
+ * Variables:
+ * - logged_in: A flag indicating if user is logged in.
+ * - root_path: The root path of the current page (e.g., node, admin, user).
+ * - node_type: The content type for the current node, if the page is a node.
+ * - head_title: List of text elements that make up the head_title variable.
+ *   May contain or more of the following:
+ *   - title: The title of the page.
+ *   - name: The name of the site.
+ *   - slogan: The slogan of the site.
+ * - page_top: Initial rendered markup. This should be printed before 'page'.
+ * - page: The rendered page markup.
+ * - page_bottom: Closing rendered markup. This variable should be printed after
+ *   'page'.
+ * - db_offline: A flag indicating if the database is offline.
+ * - placeholder_token: The token for generating head, css, js and js-bottom
+ *   placeholders.
+ *
+ * @see template_preprocess_html()
+ *
+ * @ingroup themeable
+ */
+#}
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KL4BPR6');</script>
+<!-- End Google Tag Manager -->
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
+	
+<link rel="stylesheet" href="/themes/custom/korone/css/custom.css"  />	
+<link rel="stylesheet" href="/themes/custom/korone/css/bootstrap.new.css"  />
+
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+<script src="{{ base_path ~ directory }}/new-stlyes/js/jqueryslim/jquery-3.2.1.slim.min.js" ></script> 
+<script src="{{ base_path ~ directory }}/new-stlyes/js/jqueryslim/popper.min.js" ></script> 
+<script src="{{ base_path ~ directory }}/new-stlyes/js/bootstrap/bootstrap.min.js" ></script> 
+<script src="{{ base_path ~ directory }}/new-stlyes/js/custom/custom.js" ></script> 
+<!-- Global site tag (gtag.js) - Google AdWords: 973070435 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-973070435"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-973070435');
+</script>
+
+<!-- Hotjar Tracking Code for https://www.korcomptenz.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:630394,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<link rel="stylesheet" href="/themes/custom/korone/css/falt-fee.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+</head>
+  <body{{ attributes }}>
+   <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KL4BPR6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <a href="#main-content" class="visually-hidden focusable">
+      {{ 'Skip to main content'|t }}
+    </a>
+    {{ page_top }}
+    {{ page }}
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+
+<script type="text/javascript">
+function flatfeeval(inputval) {
+    var f, fn = document.getElementsByName(inputval);
+     for (f = 0; f < fn.length; f++) {
+       if(fn[f].checked){
+			return fn[f].value;
+		}
+	   //return fn[f].value.checked;
+     }
+     return '';
+}
+
+function getinputname(nameval) {
+    var n, nn = document.getElementsByName(nameval);
+     for (n = 0; n < nn.length; n++) {
+       return nn[n].value;
+     }
+     return '';
+}
+
+
+function add_cost(){
+	var modal = document.getElementById('myFlatfeepopup');
+	
+	var windows = flatfeeval('windows_radio');
+	var apple = flatfeeval('apple_radio');
+	var smart = flatfeeval('smart_radio');
+	
+	document.getElementsByName('windows_radio').checked = false;
+	
+	var physical_server = flatfeeval('physical_server');
+	var virtual_server = flatfeeval('virtual_server');
+	
+	var server_device = flatfeeval('server_device');
+	var private_server_device = flatfeeval('private_server_device');
+	
+	var physical_device = flatfeeval('public_physical_device');
+	var virtualcloud = flatfeeval('virtualcloud');
+	
+	var size_data = flatfeeval('size_data');
+	var size_data2 = flatfeeval('size_data2');
+	var size_data3 = flatfeeval('size_data3'); 
+	
+	var email_hosted = flatfeeval('email_hosted');
+	var telephone_type = flatfeeval('telephone_type');
+	var mailboxes = getinputname('mailboxes');
+	var telephone_system = getinputname('telephone_system');
+	
+	var current_app = getinputname('current_app');
+	var current_inhouse = getinputname('current_inhouse');
+	
+	var enter_name = getinputname('enter_name');
+	var enter_email = getinputname('enter_email');
+	var enter_phone = getinputname('enter_phone');
+
+	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+	var total_devices = -1;
+	var total_servers = -1;
+	
+	if(windows !='' || apple !=''){	
+	 total_devices =  Number(windows) + Number(apple);
+	}
+	//var total_devices = parseInt(windows) + parseInt(apple) + parseInt(smart);
+	//alert(total_devices);
+	
+	if(physical_server !='' || virtual_server !='' || server_device !='' || private_server_device !='' || physical_device !='' || virtualcloud !=''){
+		total_servers = Number(physical_server) + Number(virtual_server) + Number(server_device) + Number(private_server_device) + Number(physical_device) + Number(virtualcloud);	
+	}
+	//var total_servers = parseInt(physical_server) + parseInt(virtual_server) + parseInt(server_device) + parseInt(private_server_device) + parseInt(physical_device) + parseInt(virtualcloud);	
+	//alert(total_servers);
+	
+	var total_backups = Number(size_data) + Number(size_data2) + Number(size_data3);
+	//alert(total_backups);
+	
+	if (total_devices < 0 ) {
+		alert("Please Select Any One Devices");
+		window.location.href='#total_devices';
+		return false;
+	} else if (total_servers < 0 ) {
+		alert("Please Select Any One Servers");
+		window.location.href='#total_servers';
+		return false;
+	} else if(email_hosted <=0){	
+		alert("Please Select Any One Email Hosted");			
+		window.location.href='#email_hosted';
+		return false;			
+	} else if(mailboxes ==''){	
+		alert("Please enter the required field");
+		document.getElementById('mailboxes').style.border = '1px solid #ff0000';	
+		window.location.href='#email_hosted';
+		return false;
+	} else if(telephone_type <=0){	
+		alert("Please Select Any One Telephone System type");			
+		window.location.href='#email_hosted';
+		return false;		
+	} else if(telephone_system ==''){	
+		alert("Please enter the required field!");
+		document.getElementById('mailboxes').style.border = '1px solid #ccc';
+		document.getElementById('telephone_system').style.border = '1px solid #ff0000';	
+		window.location.href='#email_hosted';
+		return false;	
+	} else if(current_app ==''){	
+		alert("Please enter the required field");
+		document.getElementById('mailboxes').style.border = '1px solid #ccc';
+		document.getElementById('telephone_system').style.border = '1px solid #ccc';
+		document.getElementById('current_app').style.border = '1px solid #ff0000';	
+		window.location.href='#email_hosted';
+		return false;	
+	} else if(enter_name ==''){	
+		alert("Please enter your name!");
+		document.getElementById('mailboxes').style.border = '1px solid #ccc';
+		document.getElementById('telephone_system').style.border = '1px solid #ccc';
+		document.getElementById('current_app').style.border = '1px solid #ccc';	
+		document.getElementById('enter_name').style.border = '1px solid #ff0000';	
+		window.location.href='#email_form';
+		return false;
+	} else if(reg.test(enter_email) ==''){	
+		alert("Please enter your valid email!");
+		document.getElementById('mailboxes').style.border = '1px solid #ccc';
+		document.getElementById('telephone_system').style.border = '1px solid #ccc';
+		document.getElementById('current_app').style.border = '1px solid #ccc';	
+		document.getElementById('enter_name').style.border = '1px solid #ccc';	
+		document.getElementById('enter_email').style.border = '1px solid #ff0000';	
+		window.location.href='#email_form';
+		return false;
+	} else {	
+		if(total_devices==0 && total_servers==0){
+		//if(total_devices<=5 && total_servers<=5 &&	parseInt(mailboxes)<15 && parseInt(telephone_system)<15){	//alert('1');
+
+			var total_costs = '$0.00';
+			//alert('$0.00');
+			modal.style.display = "block";
+			var span = document.getElementsByClassName("flat-fee-close")[0];
+			var form_edit = document.getElementsByClassName("flat-fee-edit")[0];
+			span.onclick = function() {
+				modal.style.display = "none";
+			}
+			form_edit.onclick = function() {
+				modal.style.display = "none";
+			}
+			document.getElementById('window_count').innerHTML = windows;
+			document.getElementById('edit-windows').value = windows;
+			
+			document.getElementById('apple_count').innerHTML = apple;
+			document.getElementById('edit-apple').value = apple;
+			
+			document.getElementById('smart_count').innerHTML = smart;
+			document.getElementById('edit-smart').value = smart;
+			
+			document.getElementById('server1').innerHTML = physical_server;
+			document.getElementById('edit-physical-servers').value = physical_server;				
+			
+			document.getElementById('server2').innerHTML = virtual_server;
+			document.getElementById('edit-virtual-servers').value = virtual_server;
+			
+			document.getElementById('server3').innerHTML = server_device;
+			document.getElementById('edit-private-cloud-physical-servers').value = server_device;
+			
+			document.getElementById('server4').innerHTML = private_server_device;
+			document.getElementById('edit-virtualcloud-physical-servers').value = private_server_device;
+			
+			document.getElementById('server5').innerHTML = physical_device;
+			document.getElementById('edit-public-cloud-physical-server').value = physical_device;
+			
+			document.getElementById('server6').innerHTML = virtualcloud;
+			document.getElementById('edit-azure-aws-rackspace').value = virtualcloud;
+			
+			document.getElementById('edit-tb').value = size_data;
+			//document.getElementById('tb1').innerHTML = size_data;
+			document.getElementById('edit-tb1').value = size_data2;
+			//document.getElementById('tb2').innerHTML = size_data2;
+			document.getElementById('edit-tb3').value = size_data3;
+			//document.getElementById('tb3').innerHTML = size_data3;
+			//document.getElementById('backup_size').innerHTML = total_backups;
+			
+			document.getElementById('edit-no-mailboxes').value = mailboxes;
+			document.getElementById('edit-current-app').value = current_app;
+			document.getElementById('edit-current-inhouse').value = current_inhouse;
+			document.getElementById('edit-number-of-extensions').value = telephone_system;
+			document.getElementById('edit-email-hosted').value = email_hosted;
+			document.getElementById('edit-current-tel').value = telephone_type;
+			
+			document.getElementById('edit-name').value = enter_name;
+			document.getElementById('edit-email').value = enter_email;
+			document.getElementById('edit-phone').value = enter_phone;
+			
+			document.getElementById('total_devices_count').innerHTML = total_devices;
+			document.getElementById('total_servers_count').innerHTML = total_servers;
+			document.getElementById('total_costs').innerHTML = total_costs;
+			document.getElementById('edit-appcost').value = total_costs;
+			
+			//document.getElementById('mailbox_count').innerHTML = mailboxes;
+			//document.getElementById('num_extension').innerHTML = telephone_system;
+			
+		} else if(total_devices<=5 && total_servers<=6){
+		//if(total_devices<=15 && total_servers<=5 &&	parseInt(mailboxes)<15 && parseInt(telephone_system)<15){	//alert('1');
+				var total_costs = '$1000-$2000';
+				//alert('$1000-$2000');
+				modal.style.display = "block";
+				var span = document.getElementsByClassName("flat-fee-close")[0];
+				var form_edit = document.getElementsByClassName("flat-fee-edit")[0];
+				span.onclick = function() {
+					modal.style.display = "none";
+				}
+				form_edit.onclick = function() {
+					modal.style.display = "none";
+				}
+				document.getElementById('window_count').innerHTML = windows;
+				document.getElementById('edit-windows').value = windows;
+				
+				document.getElementById('apple_count').innerHTML = apple;
+				document.getElementById('edit-apple').value = apple;
+				
+				document.getElementById('smart_count').innerHTML = smart;
+				document.getElementById('edit-smart').value = smart;
+				
+				document.getElementById('server1').innerHTML = physical_server;
+				document.getElementById('edit-physical-servers').value = physical_server;				
+				
+				document.getElementById('server2').innerHTML = virtual_server;
+				document.getElementById('edit-virtual-servers').value = virtual_server;
+				
+				document.getElementById('server3').innerHTML = server_device;
+				document.getElementById('edit-private-cloud-physical-servers').value = server_device;
+				
+				document.getElementById('server4').innerHTML = private_server_device;
+				document.getElementById('edit-virtualcloud-physical-servers').value = private_server_device;
+				
+				document.getElementById('server5').innerHTML = physical_device;
+				document.getElementById('edit-public-cloud-physical-server').value = physical_device;
+				
+				document.getElementById('server6').innerHTML = virtualcloud;
+				document.getElementById('edit-azure-aws-rackspace').value = virtualcloud;
+				
+				document.getElementById('edit-tb').value = size_data;
+				//document.getElementById('tb1').innerHTML = size_data;
+				document.getElementById('edit-tb1').value = size_data2;
+				//document.getElementById('tb2').innerHTML = size_data2;
+				document.getElementById('edit-tb3').value = size_data3;
+				//document.getElementById('tb3').innerHTML = size_data3;
+				//document.getElementById('backup_size').innerHTML = total_backups;
+				
+				document.getElementById('edit-no-mailboxes').value = mailboxes;
+				document.getElementById('edit-current-app').value = current_app;
+				document.getElementById('edit-current-inhouse').value = current_inhouse;
+				document.getElementById('edit-number-of-extensions').value = telephone_system;
+				document.getElementById('edit-email-hosted').value = email_hosted;
+				document.getElementById('edit-current-tel').value = telephone_type;
+				
+				document.getElementById('edit-name').value = enter_name;
+				document.getElementById('edit-email').value = enter_email;
+				document.getElementById('edit-phone').value = enter_phone;
+				
+				document.getElementById('total_devices_count').innerHTML = total_devices;
+				document.getElementById('total_servers_count').innerHTML = total_servers;
+				document.getElementById('total_costs').innerHTML = total_costs;
+				document.getElementById('edit-appcost').value = total_costs;
+				
+				//document.getElementById('mailbox_count').innerHTML = mailboxes;
+				//document.getElementById('num_extension').innerHTML = telephone_system;
+				
+		} else if(total_devices>6 && total_devices<=12 && total_servers<=10){		
+		//} else if(total_devices>15 && total_devices<=30 && total_servers<=10 && parseInt(mailboxes)<30 && parseInt(telephone_system)<30){	//alert('2');
+				//$("input[name='donation_amount']").removeAttr('checked');	
+				//$("#amount2").prop('checked',true);
+				//$( "#email_hosted" ).val('$2000-$3000');
+				//alert('$2000-$3000');
+				var total_costs = '$2000-$3000';
+				modal.style.display = "block";
+				var span = document.getElementsByClassName("flat-fee-close")[0];
+				var form_edit = document.getElementsByClassName("flat-fee-edit")[0];
+				span.onclick = function() {
+					modal.style.display = "none";
+				}
+				form_edit.onclick = function() {
+					modal.style.display = "none";
+				}
+				document.getElementById('window_count').innerHTML = windows;
+				document.getElementById('edit-windows').value = windows;
+				
+				document.getElementById('apple_count').innerHTML = apple;
+				document.getElementById('edit-apple').value = apple;
+				
+				document.getElementById('smart_count').innerHTML = smart;
+				document.getElementById('edit-smart').value = smart;
+				
+				document.getElementById('server1').innerHTML = physical_server;
+				document.getElementById('edit-physical-servers').value = physical_server;				
+				
+				document.getElementById('server2').innerHTML = virtual_server;
+				document.getElementById('edit-virtual-servers').value = virtual_server;
+				
+				document.getElementById('server3').innerHTML = server_device;
+				document.getElementById('edit-private-cloud-physical-servers').value = server_device;
+				
+				document.getElementById('server4').innerHTML = private_server_device;
+				document.getElementById('edit-virtualcloud-physical-servers').value = private_server_device;
+				
+				document.getElementById('server5').innerHTML = physical_device;
+				document.getElementById('edit-public-cloud-physical-server').value = physical_device;
+				
+				document.getElementById('server6').innerHTML = virtualcloud;
+				document.getElementById('edit-azure-aws-rackspace').value = virtualcloud;
+				
+				document.getElementById('edit-tb').value = size_data;
+				//document.getElementById('tb1').innerHTML = size_data;
+				document.getElementById('edit-tb1').value = size_data2;
+				//document.getElementById('tb2').innerHTML = size_data2;
+				document.getElementById('edit-tb3').value = size_data3;
+				//document.getElementById('tb3').innerHTML = size_data3;
+				//document.getElementById('backup_size').innerHTML = total_backups;
+				
+				document.getElementById('edit-no-mailboxes').value = mailboxes;
+				document.getElementById('edit-current-app').value = current_app;
+				document.getElementById('edit-current-inhouse').value = current_inhouse;
+				document.getElementById('edit-number-of-extensions').value = telephone_system;
+				document.getElementById('edit-email-hosted').value = email_hosted;
+				document.getElementById('edit-current-tel').value = telephone_type;
+				
+				document.getElementById('edit-name').value = enter_name;
+				document.getElementById('edit-email').value = enter_email;
+				document.getElementById('edit-phone').value = enter_phone;
+				
+				document.getElementById('total_devices_count').innerHTML = total_devices;
+				document.getElementById('total_servers_count').innerHTML = total_servers;
+				document.getElementById('total_costs').innerHTML = total_costs;
+				document.getElementById('edit-appcost').value = total_costs;
+				
+				//document.getElementById('mailbox_count').innerHTML = mailboxes;
+				//document.getElementById('num_extension').innerHTML = telephone_system;
+				
+		} else if(total_devices>21 && total_devices<=42 && total_servers<=16){
+		//} else if(total_devices>30 && total_devices<=50 && total_servers<=15 && parseInt(mailboxes)<50 && parseInt(telephone_system)<50){	//alert('3');
+				//$("input[name='donation_amount']").removeAttr('checked');	
+				//$("#amount3").prop('checked',true);
+				//$( "#email_hosted" ).val('$3000-$4000');
+				//alert('$3000-$4000');
+				var total_costs = '$3000-$4000';
+				modal.style.display = "block";
+				var span = document.getElementsByClassName("flat-fee-close")[0];
+				var form_edit = document.getElementsByClassName("flat-fee-edit")[0];
+				span.onclick = function() {
+					modal.style.display = "none";
+				}
+				form_edit.onclick = function() {
+					modal.style.display = "none";
+				}
+				document.getElementById('window_count').innerHTML = windows;
+				document.getElementById('edit-windows').value = windows;
+				
+				document.getElementById('apple_count').innerHTML = apple;
+				document.getElementById('edit-apple').value = apple;
+				
+				document.getElementById('smart_count').innerHTML = smart;
+				document.getElementById('edit-smart').value = smart;
+				
+				document.getElementById('server1').innerHTML = physical_server;
+				document.getElementById('edit-physical-servers').value = physical_server;				
+				
+				document.getElementById('server2').innerHTML = virtual_server;
+				document.getElementById('edit-virtual-servers').value = virtual_server;
+				
+				document.getElementById('server3').innerHTML = server_device;
+				document.getElementById('edit-private-cloud-physical-servers').value = server_device;
+				
+				document.getElementById('server4').innerHTML = private_server_device;
+				document.getElementById('edit-virtualcloud-physical-servers').value = private_server_device;
+				
+				document.getElementById('server5').innerHTML = physical_device;
+				document.getElementById('edit-public-cloud-physical-server').value = physical_device;
+				
+				document.getElementById('server6').innerHTML = virtualcloud;
+				document.getElementById('edit-azure-aws-rackspace').value = virtualcloud;
+				
+				document.getElementById('edit-tb').value = size_data;
+				//document.getElementById('tb1').innerHTML = size_data;
+				document.getElementById('edit-tb1').value = size_data2;
+				//document.getElementById('tb2').innerHTML = size_data2;
+				document.getElementById('edit-tb3').value = size_data3;
+				//document.getElementById('tb3').innerHTML = size_data3;
+				//document.getElementById('backup_size').innerHTML = total_backups;
+				
+				document.getElementById('edit-no-mailboxes').value = mailboxes;
+				document.getElementById('edit-current-app').value = current_app;
+				document.getElementById('edit-current-inhouse').value = current_inhouse;
+				document.getElementById('edit-number-of-extensions').value = telephone_system;
+				document.getElementById('edit-email-hosted').value = email_hosted;
+				document.getElementById('edit-current-tel').value = telephone_type;
+				
+				document.getElementById('edit-name').value = enter_name;
+				document.getElementById('edit-email').value = enter_email;
+				document.getElementById('edit-phone').value = enter_phone;
+				
+				document.getElementById('total_devices_count').innerHTML = total_devices;
+				document.getElementById('total_servers_count').innerHTML = total_servers;
+				document.getElementById('total_costs').innerHTML = total_costs;
+				document.getElementById('edit-appcost').value = total_costs;
+				
+				//document.getElementById('mailbox_count').innerHTML = mailboxes;
+				//document.getElementById('num_extension').innerHTML = telephone_system;
+				
+		} else if(total_devices>51 && total_devices<=75 && total_servers<=20){
+		//}else if(total_devices>50 && total_devices<=70 && total_servers<=20 && parseInt(mailboxes)<70 && parseInt(telephone_system)<70){	//alert('4');
+				//$("input[name='donation_amount']").removeAttr('checked');	
+				//$("#amount4").prop('checked',true);
+				//$( "#email_hosted" ).val('$4000-$5000');
+				//alert('$4000-$5000');
+				var total_costs = '$4000-$5000';
+				modal.style.display = "block";
+				var span = document.getElementsByClassName("flat-fee-close")[0];
+				var form_edit = document.getElementsByClassName("flat-fee-edit")[0];
+				span.onclick = function() {
+					modal.style.display = "none";
+				}
+				form_edit.onclick = function() {
+					modal.style.display = "none";
+				}
+				document.getElementById('window_count').innerHTML = windows;
+				document.getElementById('edit-windows').value = windows;
+				
+				document.getElementById('apple_count').innerHTML = apple;
+				document.getElementById('edit-apple').value = apple;
+				
+				document.getElementById('smart_count').innerHTML = smart;
+				document.getElementById('edit-smart').value = smart;
+				
+				document.getElementById('server1').innerHTML = physical_server;
+				document.getElementById('edit-physical-servers').value = physical_server;				
+				
+				document.getElementById('server2').innerHTML = virtual_server;
+				document.getElementById('edit-virtual-servers').value = virtual_server;
+				
+				document.getElementById('server3').innerHTML = server_device;
+				document.getElementById('edit-private-cloud-physical-servers').value = server_device;
+				
+				document.getElementById('server4').innerHTML = private_server_device;
+				document.getElementById('edit-virtualcloud-physical-servers').value = private_server_device;
+				
+				document.getElementById('server5').innerHTML = physical_device;
+				document.getElementById('edit-public-cloud-physical-server').value = physical_device;
+				
+				document.getElementById('server6').innerHTML = virtualcloud;
+				document.getElementById('edit-azure-aws-rackspace').value = virtualcloud;
+				
+				document.getElementById('edit-tb').value = size_data;
+				//document.getElementById('tb1').innerHTML = size_data;
+				document.getElementById('edit-tb1').value = size_data2;
+				//document.getElementById('tb2').innerHTML = size_data2;
+				document.getElementById('edit-tb3').value = size_data3;
+				//document.getElementById('tb3').innerHTML = size_data3;
+				//document.getElementById('backup_size').innerHTML = total_backups;
+				
+				document.getElementById('edit-no-mailboxes').value = mailboxes;
+				document.getElementById('edit-current-app').value = current_app;
+				document.getElementById('edit-current-inhouse').value = current_inhouse;
+				document.getElementById('edit-number-of-extensions').value = telephone_system;
+				document.getElementById('edit-email-hosted').value = email_hosted;
+				document.getElementById('edit-current-tel').value = telephone_type;
+				
+				document.getElementById('edit-name').value = enter_name;
+				document.getElementById('edit-email').value = enter_email;
+				document.getElementById('edit-phone').value = enter_phone;
+				
+				document.getElementById('total_devices_count').innerHTML = total_devices;
+				document.getElementById('total_servers_count').innerHTML = total_servers;
+				document.getElementById('total_costs').innerHTML = total_costs;
+				document.getElementById('edit-appcost').value = total_costs;
+				
+				//document.getElementById('mailbox_count').innerHTML = mailboxes;
+				//document.getElementById('num_extension').innerHTML = telephone_system;
+		
+		} else if(total_devices>75 && total_servers>20){		
+				//$("input[name='donation_amount']").removeAttr('checked');	
+				//$("#amount5").prop('checked',true);
+				//$( "#email_hosted" ).val('Based on the inputs provided, the calculations need to be reviewed. Our Infrastructure team will contact you shortly.');
+				//alert('Based on the inputs provided, the calculations need to be reviewed. Our Infrastructure team will contact you shortly.');
+				var total_costs = 'Based on the inputs provided, the calculations need to be reviewed. Our Infrastructure team will contact you shortly.';
+				modal.style.display = "block";
+				var span = document.getElementsByClassName("flat-fee-close")[0];
+				var form_edit = document.getElementsByClassName("flat-fee-edit")[0];
+				span.onclick = function() {
+					modal.style.display = "none";
+				}
+				form_edit.onclick = function() {
+					modal.style.display = "none";
+				}
+				document.getElementById('window_count').innerHTML = windows;
+				document.getElementById('edit-windows').value = windows;
+				
+				document.getElementById('apple_count').innerHTML = apple;
+				document.getElementById('edit-apple').value = apple;
+				
+				document.getElementById('smart_count').innerHTML = smart;
+				document.getElementById('edit-smart').value = smart;
+				
+				document.getElementById('server1').innerHTML = physical_server;
+				document.getElementById('edit-physical-servers').value = physical_server;				
+				
+				document.getElementById('server2').innerHTML = virtual_server;
+				document.getElementById('edit-virtual-servers').value = virtual_server;
+				
+				document.getElementById('server3').innerHTML = server_device;
+				document.getElementById('edit-private-cloud-physical-servers').value = server_device;
+				
+				document.getElementById('server4').innerHTML = private_server_device;
+				document.getElementById('edit-virtualcloud-physical-servers').value = private_server_device;
+				
+				document.getElementById('server5').innerHTML = physical_device;
+				document.getElementById('edit-public-cloud-physical-server').value = physical_device;
+				
+				document.getElementById('server6').innerHTML = virtualcloud;
+				document.getElementById('edit-azure-aws-rackspace').value = virtualcloud;
+				
+				document.getElementById('edit-tb').value = size_data;
+				//document.getElementById('tb1').innerHTML = size_data;
+				document.getElementById('edit-tb1').value = size_data2;
+				//document.getElementById('tb2').innerHTML = size_data2;
+				document.getElementById('edit-tb3').value = size_data3;
+				//document.getElementById('tb3').innerHTML = size_data3;
+				//document.getElementById('backup_size').innerHTML = total_backups;
+				
+				document.getElementById('edit-no-mailboxes').value = mailboxes;
+				document.getElementById('edit-current-app').value = current_app;
+				document.getElementById('edit-current-inhouse').value = current_inhouse;
+				document.getElementById('edit-number-of-extensions').value = telephone_system;
+				document.getElementById('edit-email-hosted').value = email_hosted;
+				document.getElementById('edit-current-tel').value = telephone_type;
+				
+				document.getElementById('edit-name').value = enter_name;
+				document.getElementById('edit-email').value = enter_email;
+				document.getElementById('edit-phone').value = enter_phone;
+				
+				document.getElementById('total_devices_count').innerHTML = total_devices;
+				document.getElementById('total_servers_count').innerHTML = total_servers;
+				document.getElementById('total_costs').innerHTML = total_costs;
+				document.getElementById('edit-appcost').value = total_costs;
+				
+				//document.getElementById('mailbox_count').innerHTML = mailboxes;
+				//document.getElementById('num_extension').innerHTML = telephone_system;
+				
+		} else {		
+				var total_costs = 'Based on the inputs provided, the calculations need to be reviewed. Our Infrastructure team will contact you shortly.';
+				modal.style.display = "block";
+				var span = document.getElementsByClassName("flat-fee-close")[0];
+				var form_edit = document.getElementsByClassName("flat-fee-edit")[0];
+				span.onclick = function() {
+					modal.style.display = "none";
+				}
+				form_edit.onclick = function() {
+					modal.style.display = "none";
+				}
+				document.getElementById('window_count').innerHTML = windows;
+				document.getElementById('edit-windows').value = windows;
+				
+				document.getElementById('apple_count').innerHTML = apple;
+				document.getElementById('edit-apple').value = apple;
+				
+				document.getElementById('smart_count').innerHTML = smart;
+				document.getElementById('edit-smart').value = smart;
+				
+				document.getElementById('server1').innerHTML = physical_server;
+				document.getElementById('edit-physical-servers').value = physical_server;				
+				
+				document.getElementById('server2').innerHTML = virtual_server;
+				document.getElementById('edit-virtual-servers').value = virtual_server;
+				
+				document.getElementById('server3').innerHTML = server_device;
+				document.getElementById('edit-private-cloud-physical-servers').value = server_device;
+				
+				document.getElementById('server4').innerHTML = private_server_device;
+				document.getElementById('edit-virtualcloud-physical-servers').value = private_server_device;
+				
+				document.getElementById('server5').innerHTML = physical_device;
+				document.getElementById('edit-public-cloud-physical-server').value = physical_device;
+				
+				document.getElementById('server6').innerHTML = virtualcloud;
+				document.getElementById('edit-azure-aws-rackspace').value = virtualcloud;
+				
+				document.getElementById('edit-tb').value = size_data;
+				//document.getElementById('tb1').innerHTML = size_data;
+				document.getElementById('edit-tb1').value = size_data2;
+				//document.getElementById('tb2').innerHTML = size_data2;
+				document.getElementById('edit-tb3').value = size_data3;
+				//document.getElementById('tb3').innerHTML = size_data3;
+				//document.getElementById('backup_size').innerHTML = total_backups;
+				
+				document.getElementById('edit-no-mailboxes').value = mailboxes;
+				document.getElementById('edit-current-app').value = current_app;
+				document.getElementById('edit-current-inhouse').value = current_inhouse;
+				document.getElementById('edit-number-of-extensions').value = telephone_system;
+				document.getElementById('edit-email-hosted').value = email_hosted;
+				document.getElementById('edit-current-tel').value = telephone_type;
+				
+				document.getElementById('edit-name').value = enter_name;
+				document.getElementById('edit-email').value = enter_email;
+				document.getElementById('edit-phone').value = enter_phone;
+				
+				document.getElementById('total_devices_count').innerHTML = total_devices;
+				document.getElementById('total_servers_count').innerHTML = total_servers;
+				document.getElementById('total_costs').innerHTML = total_costs;
+				document.getElementById('edit-appcost').value = total_costs;
+				
+				//document.getElementById('mailbox_count').innerHTML = mailboxes;
+				//document.getElementById('num_extension').innerHTML = telephone_system;
+				
+		} 
+	}
+}
+
+function backtofrom(){
+	document.getElementById('flat_free_form').style.display = 'block';
+	document.getElementById('flat_fee_results').style.display = 'none';
+	document.getElementById('mailboxes').style.border = '1px solid #ccc';	
+	document.getElementById('telephone_system').style.border = '1px solid #ccc';	
+}
+
+var $animation_elements = $('.animation-element');
+var $window = $(window);
+
+function check_if_in_view() {
+  var window_height = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + window_height);
+ 
+  $.each($animation_elements, function() {
+    var $element = $(this);
+    var element_height = $element.outerHeight();
+    var element_top_position = $element.offset().top;
+    var element_bottom_position = (element_top_position + element_height);
+ 
+    //check to see if this current container is within viewport
+    if ((element_bottom_position >= window_top_position) &&
+        (element_top_position <= window_bottom_position)) {
+      $element.addClass('in-view');
+    } else {
+      //$element.removeClass('in-view');
+    }
+  });
+}
+
+$window.on('scroll resize', check_if_in_view);
+$window.trigger('scroll');
+</script>
+  </body>
+</html>

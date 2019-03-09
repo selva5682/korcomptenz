@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains kor_cookies_consent.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function kor_cookies_consent_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the BMI Calculator module.
+    case 'help.page.kor_cookies_consent':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('A module which cookies consent') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function kor_cookies_consent_theme($existing, $type, $theme, $path) {
+  return array(
+   'ip_custom_block' => array(
+            'variables' => array('title' => NULL, 'description' => NULL, 'ip_cookiesform' => NULL,),
+            'template' => 'block--ip-custom',
+        ),
+  );
+}
+
+

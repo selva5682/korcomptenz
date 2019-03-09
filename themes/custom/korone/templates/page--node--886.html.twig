@@ -1,0 +1,535 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.featured_top: Items for the featured top region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.featured_bottom_first: Items for the first featured bottom region.
+ * - page.featured_bottom_second: Items for the second featured bottom region.
+ * - page.featured_bottom_third: Items for the third featured bottom region.
+ * - page.footer_first: Items for the first footer column.
+ * - page.footer_second: Items for the second footer column.
+ * - page.footer_third: Items for the third footer column.
+ * - page.footer_fourth: Items for the fourth footer column.
+ * - page.footer_fifth: Items for the fifth footer column.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see bartik_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+{% include '@korone/header.html.twig' %} 
+<!--Content-->
+<div class="main-content mapp">
+	
+<section class="mapp-banner">
+<img src="/themes/custom/korone/images/ios-img/ios-banner-bg.png" alt="IOS Mobile App Development - Mobile Application Development Company" class="mapp-shite-overlay" title="IOS Mobile App Development - Mobile Application Development Company">
+<div class="container">
+<div class="col-xs-12 col-md-12 mapp-sbanner-txt">
+<div class="">
+	<h3>Making Connections That Matter</h3>
+	<p>Develop custom Mobile + Web Applications that 
+make personalized and meaningful connections 
+with your customers and internal teams</p>
+	<a class="mapp-button" target="_blank" href="/android-app-development-company" title="Android Development"><img src="/themes/custom/korone/images/ios-img/android-icon-1.png" alt="Android Development - Mobile App Development Services" title="Android Development - Mobile App Development Services" style=""> Android Development
+</a><a class="mapp-button" target="_blank" href="/ios-app-development-company" title="iOS Development"><img src="/themes/custom/korone/images/ios-img/ios-icon.png" alt="Mobile App Development Services" title="Mobile App Development Services" style="">iOS Developemnt</a> 
+	</div>	
+	<img src="/themes/custom/korone/images/ios-img/mobile-app-devices.png" alt="IOS Mobile App Development - Mobile Application Development Company" class="hidden-xs animation-element slide-left" title="IOS Mobile App Development - Mobile Application Development Company" >
+</div>
+
+</div>
+<h1 class="seo-h1-hidden">Mobile App Development Service Company</h1>
+</section>
+<section class="mapp-flow">
+<div class="container text-justify">
+	<h3>How does it work ?</h3>
+	<p>If you have a great idea for a mobile and web application, but are unsure how to make your vision a reality, contact the KORCOMPTENZ pro development team, and we will walk you through our proven process.</p>
+	<div class="row">
+		<div class="col-xs-12 ">
+			<img src="/themes/custom/korone/images/ios-img/mobile-app-p-flow.png" alt="IOS Mobile App Development - Mobile App Development Services" class="animation-element slide-left" title="IOS Mobile App Development - Mobile App Development Services">
+			
+		</div>
+		
+	</div>
+	</div>
+</section>
+	<section class="mapp-service">
+	<div class="container">
+		<div class="row">
+		
+		<div class="col-xs-12 col-sm-12 col-md-8 icon-block">
+			<h3> Mobile App Development Services</h3>
+	<p>Full Service App Design, Development, and Support for Your Unique Business Needs</p>
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				<div class="col-xs-12 col-sm-4">
+			<img src="/themes/custom/korone/images/ios-img/001_customer_apps.png" alt="CONSUMER + ECOMMERCE APPS - Mobile Application Development Company" title="CONSUMER + ECOMMERCE APPS - Mobile Application Development Company"></div>
+				<div class="col-xs-12 col-sm-8">
+			<span>CONSUMER + ECOMMERCE APPS</span>
+			<p>Extend your business into the mobile world or launch a new product for consumers</p></div>
+				</div>
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				<div class="col-xs-12 col-sm-4">
+				<img src="/themes/custom/korone/images/ios-img/003_microsoft_mobility.png" alt="MOBILITY SOLUTIONS FOR MICROSOFT + SALESFORCE - Mobile App Development Services" title="MOBILITY SOLUTIONS FOR MICROSOFT + SALESFORCE - Mobile App Development Services"></div>
+				<div class="col-xs-12 col-sm-8">
+					
+				<span>MOBILITY SOLUTIONS FOR 
+MICROSOFT + SALESFORCE</span>
+					
+			<p>	Integrate with best-in-class systems like Microsoft Office 365, Dynamics and Salesforce</p></div>
+				</div>
+			
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				<div class="col-xs-12 col-sm-4">
+				<img src="/themes/custom/korone/images/ios-img/002_internalapps.png" alt="INTERNAL APPS FOR YOUR BUSINESS - Mobile Application Development Company" title="INTERNAL APPS FOR YOUR BUSINESS - Mobile Application Development Company"></div>
+			<div class="col-xs-12 col-sm-8">
+				<span>INTERNAL APPS FOR 
+YOUR BUSINESS</span>
+			<p>	Engage employees and accelerate business processes with internal apps</p></div>
+				</div>
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				<div class="col-xs-12 col-sm-4">
+					<img src="/themes/custom/korone/images/ios-img/004_support.png" alt="FULL SERVICE SUPPORT + MAINTENANCE - Mobile App Development Services" title="FULL SERVICE SUPPORT + MAINTENANCE - Mobile App Development Services"></div>
+		<div class="col-xs-12 col-sm-8">
+					<span>FULL SERVICE 
+SUPPORT + MAINTENANCE</span>
+				<p>	Manage, maintain, and launch new versions of your app, plus report on performance</p></div>
+				</div>
+			</div>
+			
+			<div class=" col-sm-12 col-md-4 text-center hidden-xs hidden-sm">
+			<img src="/themes/custom/korone/images/ios-img/mobile-app-art.png" alt="FULL SERVICE SUPPORT + MAINTENANCE - Mobile Application Development Company" class="animation-element slide-left" title="FULL SERVICE SUPPORT + MAINTENANCE - Mobile Application Development Company">
+			</div>
+		</div>
+		
+		</div>
+	
+	</section>
+<section class="wearables">
+	<div class="container">
+		<h3>Wearables + Health Kits integrations</h3>
+		<p class="text-justify">Today's mobile apps extend beyond the traditional smartphone and tablet interface with versions that run on wearable devices and integrate with leading providers. KORCOMPTENZ management and development teams are experienced at navigating the complexities of advanced integrations, and can help your app take advantage of these leading trends.</p>
+	<div class="row">
+		<div class="col-xs-12 col-md-7">
+			<div class="row wearables-box">
+				<div class="col-xs-12 text-center">
+		<h5>Health Kits</h5>
+			<div class="col-xs-4 col-sm-2  col-sm-offset-1">
+			<img src="/themes/custom/korone/images/ios-img/003_01_fitbit.png" alt="FitBit - Mobile App Development Services" title="FitBit - Mobile App Development Services">
+				<span>FitBit</span>
+			</div>
+			<div class="col-xs-4 col-sm-2">
+				<img src="/themes/custom/korone/images/ios-img/003_02_apple_fit.png" alt="Apple Healthkit - Mobile Application Development Company" title="Apple Healthkit - Mobile Application Development Company">
+				<span>Apple Healthkit</span>
+				
+			</div>
+			<div class="col-xs-4 col-sm-2">
+				<img src="/themes/custom/korone/images/ios-img/003_04_samsung_health.png" alt="Google Fit - Mobile App Development Services" title="Google Fit - Mobile App Development Services">
+				<span>Google Fit</span>
+			</div>
+			<div class="col-xs-4 col-sm-2">
+				<img src="/themes/custom/korone/images/ios-img/003_05_health_walgreen.png" alt="Google Fit - Mobile Application Development Company" title="Google Fit - Mobile Application Development Company">
+				<span>Google Fit</span>
+			</div>
+			<div class="col-xs-4 col-sm-2">
+				<img src="/themes/custom/korone/images/ios-img/003_03_google_fit.png" alt="Samsung Health - Mobile App Development Services" title="Samsung Health - Mobile App Development Services">
+				<span>Samsung Health</span>
+			</div>
+				</div>
+				<div class="col-xs-12 text-center">
+		<h5>Wearable Devices</h5>
+			<div class="col-xs-4 col-sm-2 col-sm-offset-1">
+			<img src="/themes/custom/korone/images/ios-img/4_apple_watch.png" alt="Apple Watch - Mobile Application Development Company" title="Apple Watch - Mobile Application Development Company">
+				<span>Apple Watch</span>
+			</div>
+			<div class="col-xs-4 col-sm-2">
+				<img src="/themes/custom/korone/images/ios-img/42_android_wear.png" alt="Android Wear - Mobile App Development Services" title="Android Wear - Mobile App Development Services">
+				<span>Android Wear</span>
+				
+			</div>
+			<div class="col-xs-4 col-sm-2">
+				<img src="/themes/custom/korone/images/ios-img/43_samsung_gear.png" alt="Samsung Gear - Mobile Application Development Company" title="Samsung Gear - Mobile Application Development Company">
+				<span>Samsung Gear</span>
+			</div>
+			<div class="col-xs-4 col-sm-2">
+				<img src="/themes/custom/korone/images/ios-img/44_fitbit.png" alt="FitBit - Mobile App Development Services" title="FitBit - Mobile App Development Services">
+				<span>FitBit</span>
+			</div>
+			
+				</div>
+				</div>
+		</div>
+		<div class="col-xs-12 col-md-5">
+		<img src="/themes/custom/korone/images/ios-img/wearbles-bg.png" class="animation-element slide-left" alt="FitBit - Mobile Application Development Company" title="FitBit - Mobile Application Development Company">
+		</div>
+	
+	</div></div>
+	</section>
+	<section class="mapp-geo">
+	<div class="container-fluid">
+		<div class="container">
+		<div class="row">
+			<h3>Geofencing + Beacons</h3>
+			<p class="text-justify">Next generation geofencing and beacon technology allows your app to be aware of the devices location and trigger actions based on your unique business needs including recognizing nearby facilities, generating targeted notifications, or mapping team members in the field. The possibilities are unlimited for internal and external engagement.</p>
+			<div class="col-xs-12 text-center ">
+			<div class="col-xs-6 col-sm-4 col-md-2 ">
+				<img src="/themes/custom/korone/images/ios-img/51_gimbel.png" alt="Gimbal - Mobile App Development Services" title="Gimbal - Mobile App Development Services">
+				<p>Gimbal</p>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2">
+				<img src="/themes/custom/korone/images/ios-img/52_numberoofusers.png" alt="Transistor Soft - Mobile Application Development Company" title="Transistor Soft - Mobile Application Development Company">
+					<p> Transistor Soft</p>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2">
+				<img src="/themes/custom/korone/images/ios-img/53_connectthing.png" alt="Connect Things - Mobile App Development Services" title="Connect Things - Mobile App Development Services">
+					<p> Connect Things</p>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2">
+				<img src="/themes/custom/korone/images/ios-img/54_beacon_weather.png" alt="Beacon Watcher - Mobile Application Development Company" title="Beacon Watcher - Mobile Application Development Company">
+					<p> Beacon Watcher</p>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2">
+				<img src="/themes/custom/korone/images/ios-img/55_plot.png" alt="Plot Projects - Mobile App Development Services" title="Plot Projects - Mobile App Development Services">
+					<p>Plot Projects</p>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2">
+				<img src="/themes/custom/korone/images/ios-img/56_eddystone.png" alt="Eddy Stone - Mobile Application Development Company" title="Eddy Stone - Mobile Application Development Company">
+					<p> Eddy Stone</p>
+				</div>
+			</div>
+			
+			
+			</div>
+		</div>
+		</div>
+	</section>
+<section class="notification">
+	<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-7 ">
+		<h3>Push Notifications + Messaging</h3>
+		<p class="text-justify">Mobile apps can also be used to engage customers and associates with targeted, customized messaging that provides relevant information and prompts important actions.</p>
+			<div class="row notification-icon ">
+			<div class="col-xs-12 text-center">
+			<div class="col-xs-4">
+				<img src="/themes/custom/korone/images/ios-img/61_firebase.png" alt="Firebase - Mobile App Development Services" title="Firebase - Mobile App Development Services">
+			<p>Firebase</p>
+			</div>
+			<div class="col-xs-4">
+			<img src="/themes/custom/korone/images/ios-img/62_salesforce.png" alt="Salesforce Marketing Cloud - Mobile Application Development Company" title="Salesforce Marketing Cloud - Mobile Application Development Company">
+				<p>Salesforce Marketing Cloud</p>
+			</div>
+			<div class="col-xs-4">
+				<img src="/themes/custom/korone/images/ios-img/63_clever_tap.png" alt="CleverTap  - Mobile App Development Services" title="CleverTap  - Mobile App Development Services">
+				<p>CleverTap</p>
+			</div>
+				</div>
+			<div class="col-xs-12 text-center">
+			<div class="col-xs-4">
+				<img src="/themes/custom/korone/images/ios-img/64_kumulos.png" alt="Kumulos - Mobile Application Development Company" title="Kumulos - Mobile Application Development Company">
+				<p>Kumulos</p>
+			</div>
+			<div class="col-xs-4">
+				<img src="/themes/custom/korone/images/ios-img/65_ometouch.png" alt="One Signal - Mobile App Development Services" title="One Signal - Mobile App Development Services">
+				<p>One Signal</p>
+			</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="col-xs-12 col-md-5">
+		<img src="/themes/custom/korone/images/ios-img/notification.png" class="animation-element slide-left" alt="One Signal - Mobile Application Development Company" title="One Signal - Mobile Application Development Company">
+		</div>
+		</div>
+	</div>
+	
+	
+	</section>
+	<section class="iot">
+	
+		<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-md-5">
+		<img src="/themes/custom/korone/images/ios-img/iot-bg.png" alt="Internet of Things - Mobile App Development Services" class="animation-element slide-left" title="Internet of Things - Mobile App Development Services">
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-7 ">
+		<h3>Internet of Things</h3>
+		<p class="text-justify">The internet is becoming another key element in our lives, as pervasive and necessary as the air we breathe at times. The next evolution in internet technology is complete connectivity with the products we use in our day-to-day lives.
+			</p><p class="text-justify">
+A microwave, a fridge, a pillow, a door lock—almost anything can be connected with a mobile app. A recent report predicts that the world will have around 50 billion connected devices in 2-3 years. The evolution of communication between wireless objects and mobile phones creates a space for endless machine-to-machine (M2M) connectivity options, leading to a new Internet of Things (IoT).	</p>
+			
+			
+		
+		
+		</div>
+	</div>
+	</div>
+	
+	</section>
+	
+	
+	<section class="technology">
+	<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-sm-12 col-md-7 ">
+		<h3>App Development Technologies</h3>
+		<p class="text-justify">KORCOMPTENZ proven teams develop and support apps on a wide variety of technologies including hybrid, native and web application options depending on your unique needs and target audiences.</p>
+			<div class="row technology-icon">
+			<div class="col-xs-12 text-center">
+			<div class="col-xs-6 col-sm-4">
+				<img src="/themes/custom/korone/images/ios-img/02001_iOS_app.png" alt="iOS / Xcode - Mobile Application Development Company" title="iOS / Xcode - Mobile Application Development Company">
+			<p>iOS / XCode</p>
+			</div>
+			<div class="col-xs-6 col-sm-4">
+			<img src="/themes/custom/korone/images/ios-img/02002_android_deve.png" alt="Android / Android Studio  - Mobile App Development Services" title="Android / Android Studio  - Mobile App Development Services">
+				<p>Android / Android Studio</p>
+			</div>
+			<div class="col-xs-12 col-sm-4">
+				<img src="/themes/custom/korone/images/ios-img/02003_phonegap.png" alt="Phonegap / Cordova
+ - Mobile Application Development Company" title="Phonegap / Cordova
+ - Mobile Application Development Company">
+				<p>Phonegap / Cordova</p>
+			</div>
+				</div>
+			<div class="col-xs-12 text-center">
+			<div class="col-xs-6">
+				<img src="/themes/custom/korone/images/ios-img/02004_xamarin.png" alt="Xamarin - Mobile App Development Services" title="Xamarin - Mobile App Development Services">
+				<p>Xamarin</p>
+			</div>
+			<div class="col-xs-6">
+				<img src="/themes/custom/korone/images/ios-img/02005_reactnative.png" alt="React Native - Mobile Application Development Company" title="React Native - Mobile Application Development Company">
+				<p>React Native</p>
+			</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="col-xs-12 col-md-5">
+		<img src="/themes/custom/korone/images/ios-img/app-screenshot.png" class="animation-element slide-left" alt="React Native - Mobile App Development Services" title="React Native - Mobile App Development Services">
+		</div>
+		</div>
+	</div>
+	
+	
+	</section>
+	
+	<section class="mapp-strategy">
+		<div class="container">
+		<div class="row">
+			
+			<div class="col-xs-12 mapp-strategy-icons ">
+				<h3>Why You Need To Have a Mobile App Strategy</h3>
+			<p class="text-justify">In January 2017, 71% of people's digital time in the United States was spent on a mobile device. There are more mobile users than traditional users worldwide, and spending on mobile ads now exceeds desktops and tablets. Salesforce also reports that 71% of marketers feel mobile is important to their business and 58% have a dedicated mobile team.
+
+</p>
+			<div class="col-xs-6 col-sm-4 col-md-2 col-md-offset-1 ">
+				<img src="/themes/custom/korone/images/ios-img/mapp-mob-icon2.png" alt="IOS Mobile App - Mobile Application Development Company" title="IOS Mobile App - Mobile Application Development Company">
+				<p>A third of mobile users read email exclusively on their devices</p>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2">
+				<img src="/themes/custom/korone/images/ios-img/mapp-mob-icon1.png" alt="IOS Mobile App - Mobile App Development Services" title="IOS Mobile App - Mobile App Development Services">
+					<p> More than three quarters of internet users have a smartphone</p>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2">
+				<img src="/themes/custom/korone/images/ios-img/mapp-mob-icon5.png" alt="IOS Mobile App - Mobile Application Development Company" title="IOS Mobile App - Mobile Application Development Company">
+					<p> Almost half of mobile users start researching on a search engine</p>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2">
+				<img src="/themes/custom/korone/images/ios-img/mapp-mob-icon3.png" alt="IOS Mobile App - Mobile App Development Services" title="IOS Mobile App - Mobile App Development Services">
+					<p> Apps account for almost 90% of media viewing time</p>
+				</div>
+				<div class="col-xs-6 col-sm-4 col-md-2">
+				<img src="/themes/custom/korone/images/ios-img/mapp-mob-icon4.png" alt="IOS Mobile App - Mobile Application Development Company" title="IOS Mobile App - Mobile Application Development Company">
+					<p>More than half of users check their phone immediately upon waking up</p>
+				</div>
+				
+			</div>
+			
+			
+			</div>
+		</div>
+	</section>
+    <section class="ken-guide-1">
+    <div class="container">
+      <div class="col-sm-3"> <img class="animation-element" src="/themes/custom/korone/images/kentio-new/ken-contact.jpg"> </div>
+      <div class="col-sm-9">
+        <h3> Mobile App Whitepaper DOWNLOAD </h3>
+        <p>Do you need a mobile office or a mobile app? This whitepaper explores the different ways your organization can go mobile.</p>
+        <div class="mb30 animation-element">
+          {{ page.footer_simple_news_letter }}
+        </div>
+		
+        <p>Don't need the guide? You can still <a href="/request-consultation" title="request a consultation">request a consultation</a> and receive a no-cost estimate.</p>
+      </div>
+    </div>
+  </section>
+  
+	<section class="why-korcomp">
+	<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-md-5">
+		<img src="/themes/custom/korone/images/ios-img/why-korcomp-bg.png" alt="IOS Mobile App - Mobile App Development Services" class="animation-element slide-left" title="IOS Mobile App - Mobile App Development Services">
+		</div>
+		<div class="col-xs-12 col-sm-12 col-md-7 ">
+		<h3>Why Korcomptenz?</h3>
+		<p class="text-justify">KORCOMPTENZ full-service, fully custom, and cost-effective mobile + web application development and support services for iOS, Android, hybrid, web platforms (PHP, Wordpress, Magento, Yii2, MySQL, JQuery, CSS, HTML, JSON, XML etc.) allow our customers to benefit from a unique combination of skills, experience, and value. Extensive expertise with third-party integrations, custom application development, geofencing, healthkits, and wearable technologies offers a unique opportunity to develop innovative, powerful mobile + web applications for your unique business needs.</p>
+			
+			<div class="row why-korcomp-icon">
+				
+			<div class="col-xs-12 text-center">
+				<h4>Recent Work</h4>
+			<div class="col-xs-6 col-sm-4 re-box">
+			<a href="/healthcare-app" title="Healthcare App" target="_blank">
+				<img src="/themes/custom/korone/images/ios-img/mapp-06.png" alt="Healthcare App - Mobile Application Development Company" title="Healthcare App - Mobile Application Development Company">
+			<p>Healthcare App</p>
+			</a>
+			</div>
+			<div class="col-xs-6 col-sm-4 re-box">
+			<a href="/social-networking-app" title="Social Networking App" target="_blank">
+			<img src="/themes/custom/korone/images/ios-img/mapp-05.png" alt="Social Networking App - Mobile App Development Services" title="Social Networking App - Mobile App Development Services">
+				<p>Social Networking App</p>
+				</a>
+			</div> 
+			<div class="col-xs-6 col-sm-4 re-box">
+			<a href="/maintenance-app" title="Maintenance App" target="_blank">
+				<img src="/themes/custom/korone/images/ios-img/mapp-04.png" alt="Maintenance App - Mobile Application Development Company" title="Maintenance App - Mobile Application Development Company">
+				<p>Maintenance App </p>
+				</a>
+			</div>
+				
+			<div class="col-xs-6 col-sm-4 re-box">
+			<a href="/deals-app" title="Deals App" target="_blank">
+				<img src="/themes/custom/korone/images/ios-img/mapp-03.png" alt="Deals App - Mobile App Development Services" title="Deals App - Mobile App Development Services">
+				<p>Deals App</p>
+			</a> 		
+			</div>
+			<div class="col-xs-6 col-sm-4 re-box">
+			<a href="/rna-registered-nurse-alert-app" title="Registered Nurse Alert App" target="_blank">
+				<img src="/themes/custom/korone/images/ios-img/mapp-02.png" alt="Registered Nurse Alert App - Mobile Application Development Company" title="Registered Nurse Alert App - Mobile Application Development Company">
+				<p>Registered Nurse Alert App</p>
+				</a>
+			</div>
+				<div class="col-xs-6 col-sm-4 re-box">
+				<a href="/roadside-assistance-app" title="Roadside Assistance App" target="_blank">
+				<img src="/themes/custom/korone/images/ios-img/mapp-01.png" alt="Roadside Assistance App - Mobile App Development Services" title="Roadside Assistance App - Mobile App Development Services">
+				<p>Roadside Assistance App</p>
+				</a>
+			</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		</div>
+	</div>
+	
+	
+	</section>
+	<section class="ios-android-nav">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2 col-sm-offset-0 col-sm-6 col-md-4 mobile-show">
+				<img src="/themes/custom/korone/images/ios-img/android-iphone.png" alt="Mobile App Development - Mobile Application Development Company" title="Mobile App Development - Mobile Application Development Company">
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 android-btn ">
+				<div class="text-center">
+				<img src="/themes/custom/korone/images/ios-img/android-icon-1.png" alt="Android Development - Mobile App Development Services" title="Android Development - Mobile App Development Services">
+					<a href="/android-app-development-company" target="_blank" title="Andriod Development">Android Development</a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 hidden-xs hidden-sm androi-ios-disp">
+				<img src="/themes/custom/korone/images/ios-img/android-iphone.png" alt="iOS Development - Mobile Application Development Company" class="animation-element slide-left" title="iOS Development - Mobile Application Development Company">
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-4 ios-btn">
+				<div class="text-center">
+					<img src="/themes/custom/korone/images/ios-img/ios-icon.png" alt="Mobile App Development Services" title="Mobile App Development Services">
+						<a href="/ios-app-development-company" target="_blank" title="IOS Development">iOS Development</a>
+				</div>
+			</div>
+		</div>
+		</div>
+	
+	</section>
+	
+</div>
+
+  <!-- thank ydou Modal -->
+  {% if page.footer_features %}
+  <section class="responsiveBottomOut">
+    <div class="container">
+      <div class="responsiveBottom">
+        {{ page.footer_features }}
+      </div>
+    </div>
+    
+  </section>
+  {% endif %}
+  {% if page.footer_video %}
+ <section class="responsiveContent ">    
+    <div class="videoPresentation">
+	 {{ page.footer_video }}      
+    </div>
+  </section> 
+  {% endif %}
+ 
+ {% if page.footer_services %}
+ <section class="ProductBottom ServicesTxt">
+	 {{ page.footer_services }}
+</section> 	 
+  {% endif %}
+  
+  {% if page.footer_first %}
+  <section class="blueband">
+  <div class="fullwidth ">
+  {{ page.footer_first }}
+  </div>
+  </section>
+  {% endif %}
+  {% if page.footer_second %}
+  <section class="greybandOut">
+    <div class="container">
+	{{ page.footer_second }}      
+    </div>
+  </section>
+  {% endif %}
+</div>
+<!--Content End-->
+
+{% include '@korone/footer.html.twig' %}

@@ -1,0 +1,388 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.featured_top: Items for the featured top region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.featured_bottom_first: Items for the first featured bottom region.
+ * - page.featured_bottom_second: Items for the second featured bottom region.
+ * - page.featured_bottom_third: Items for the third featured bottom region.
+ * - page.footer_first: Items for the first footer column.
+ * - page.footer_second: Items for the second footer column.
+ * - page.footer_third: Items for the third footer column.
+ * - page.footer_fourth: Items for the fourth footer column.
+ * - page.footer_fifth: Items for the fifth footer column.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see bartik_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+
+{% include '@korone/header.html.twig' %} 
+
+<!--Content-->
+<div class="main-container kentico"> 
+  <!--Inner Banner-->
+ {{ page.content }}
+  <!-- thank ydou Modal -->
+  {% if page.footer_features %}
+  <section class="responsiveBottomOut">
+    <div class="container">
+      <div class="responsiveBottom">
+        {{ page.footer_features }}
+      </div>
+    </div>
+    
+  </section>
+  {% endif %}
+  
+   <section class="responsiveBottomOut">
+    <div class="container">
+    <h2>Interactive Quiz</h2>
+      <div class="responsiveBottom">
+	  <script>
+	var x = document.getElementById("mauticform_wrapper_interactivequiz");
+	x.getElementsByClassName("mauticform-post-success")0].innerHTML = "Redirecting"; 
+
+  //document.getElementsByClassName("mauticform-message").innerHTML = " Redirecting...";
+  </script>
+  <script type="text/javascript">
+    /** This section is only needed once per page if manually copying **/
+    if (typeof MauticSDKLoaded == 'undefined') {
+        var MauticSDKLoaded = true;
+        var head            = document.getElementsByTagName('head')[0];
+        var script          = document.createElement('script');
+        script.type         = 'text/javascript';
+        script.src          = 'https://korcomptenz.mautic.net/mautic/media/js/mautic-form.js';
+        script.onload       = function() {
+            MauticSDK.onLoad();
+        };
+        head.appendChild(script);
+        var MauticDomain = 'https://korcomptenz.mautic.net';
+        var MauticLang   = {
+            'submittingMessage': "Please wait..."
+        }
+    }
+</script>
+
+<style type="text/css" scoped>
+    .mauticform_wrapper { max-width: 600px; margin: 10px auto; }
+    .mauticform-innerform {}
+    .mauticform-post-success {}
+    .mauticform-name { font-weight: bold; font-size: 1.5em; margin-bottom: 3px; }
+    .mauticform-description { margin-top: 2px; margin-bottom: 10px; }
+    .mauticform-error { margin-bottom: 10px; color: red; }
+    .mauticform-message { margin-bottom: 10px;color: green; }
+    .mauticform-row { display: block; margin-bottom: 20px; }
+    .mauticform-label { font-size: 1.1em; display: block; font-weight: bold; margin-bottom: 5px; }
+    .mauticform-row.mauticform-required .mauticform-label:after { color: #e32; content: " *"; display: inline; }
+    .mauticform-helpmessage { display: block; font-size: 0.9em; margin-bottom: 3px; }
+    .mauticform-errormsg { display: block; color: red; margin-top: 2px; }
+    .mauticform-selectbox, .mauticform-input, .mauticform-textarea { width: 100%; padding: 0.5em 0.5em; border: 1px solid #CCC; background: #fff; box-shadow: 0px 0px 0px #fff inset; border-radius: 4px; box-sizing: border-box; }
+    .mauticform-checkboxgrp-row {}
+    .mauticform-checkboxgrp-label { font-weight: normal; }
+    .mauticform-checkboxgrp-checkbox {}
+    .mauticform-radiogrp-row {}
+    .mauticform-radiogrp-label { font-weight: normal; }
+    .mauticform-radiogrp-radio {}
+    .mauticform-button-wrapper .mauticform-button.btn-default, .mauticform-pagebreak-wrapper .mauticform-pagebreak.btn-default { color: #5d6c7c;background-color: #ffffff;border-color: #dddddd;}
+    .mauticform-button-wrapper .mauticform-button, .mauticform-pagebreak-wrapper .mauticform-pagebreak { display: inline-block;margin-bottom: 0;font-weight: 600;text-align: center;vertical-align: middle;cursor: pointer;background-image: none;border: 1px solid transparent;white-space: nowrap;padding: 6px 12px;font-size: 13px;line-height: 1.3856;border-radius: 3px;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+    .mauticform-button-wrapper .mauticform-button.btn-default[disabled], .mauticform-pagebreak-wrapper .mauticform-pagebreak.btn-default[disabled] { background-color: #ffffff; border-color: #dddddd; opacity: 0.75; cursor: not-allowed; }
+    .mauticform-pagebreak-wrapper .mauticform-button-wrapper {  display: inline; }
+</style>
+<div id="mauticform_wrapper_interactivequiz" class="mauticform_wrapper">
+    <form autocomplete="false" role="form" method="post" action="https://korcomptenz.mautic.net/form/submit?formId=4" id="mauticform_interactivequiz"  data-mautic-form="interactivequiz" enctype="multipart/form-data">
+        <div class="mauticform-error" id="mauticform_interactivequiz_error"></div>
+        <div class="mauticform-message" id="mauticform_interactivequiz_message"></div>
+		<div class="mauticform-message-1"> Please Wait Redirecting... </div>
+        <div class="mauticform-innerform">           
+          <div class="mauticform-page-wrapper mauticform-page-1" data-mautic-form-page="1">
+
+            <div id="mauticform_interactivequiz_question_1"  class="mauticform-row mauticform-freehtml mauticform-field-1">
+                <div id="mauticform_input_interactivequiz_question_1" name="mauticform[question_1]" value="" class="mauticform-freehtml">
+                    <div class="webform-progress-bar__page webform-progress-bar__page--done">
+<b>Question 1</b>
+</div>
+                </div>
+            </div>
+
+            <div id="mauticform_interactivequiz_what_are_you_hoping_to_ac"  data-validate="what_are_you_hoping_to_ac" data-validation-type="radiogrp" class="mauticform-row mauticform-radiogrp mauticform-field-2 mauticform-required">
+                <label  class="mauticform-label" for="mauticform_radiogrp_radio_what_are_you_hoping_to_ac_BetterExperience1">What are you hoping to achieve with your next generation website?</label>
+                <div class="mauticform-radiogrp-row">
+                    <label id="mauticform_radiogrp_label_what_are_you_hoping_to_ac_BetterExperience0" for="mauticform_radiogrp_radio_what_are_you_hoping_to_ac_BetterExperience0"  class="mauticform-radiogrp-label">
+                        <input  name="mauticform[what_are_you_hoping_to_ac]" class="mauticform-radiogrp-radio" name="mauticform[what_are_you_hoping_to_ac]" id="mauticform_radiogrp_radio_what_are_you_hoping_to_ac_BetterExperience0" type="radio" value="Better Experience" />
+                        Better Experience
+                    </label>
+                </div>
+                <div class="mauticform-radiogrp-row">
+                    <label id="mauticform_radiogrp_label_what_are_you_hoping_to_ac_MoreTraffic1" for="mauticform_radiogrp_radio_what_are_you_hoping_to_ac_MoreTraffic1"  class="mauticform-radiogrp-label">
+                        <input  name="mauticform[what_are_you_hoping_to_ac]" class="mauticform-radiogrp-radio" name="mauticform[what_are_you_hoping_to_ac]" id="mauticform_radiogrp_radio_what_are_you_hoping_to_ac_MoreTraffic1" type="radio" value="More Traffic" />
+                        More Traffic
+                    </label>
+                </div>
+                <div class="mauticform-radiogrp-row">
+                    <label id="mauticform_radiogrp_label_what_are_you_hoping_to_ac_IncreasedConversions2" for="mauticform_radiogrp_radio_what_are_you_hoping_to_ac_IncreasedConversions2"  class="mauticform-radiogrp-label">
+                        <input  name="mauticform[what_are_you_hoping_to_ac]" class="mauticform-radiogrp-radio" name="mauticform[what_are_you_hoping_to_ac]" id="mauticform_radiogrp_radio_what_are_you_hoping_to_ac_IncreasedConversions2" type="radio" value="Increased Conversions" />
+                        Increased Conversions
+                    </label>
+                </div>
+                <div class="mauticform-radiogrp-row">
+                    <label id="mauticform_radiogrp_label_what_are_you_hoping_to_ac_AlloftheAbove3" for="mauticform_radiogrp_radio_what_are_you_hoping_to_ac_AlloftheAbove3"  class="mauticform-radiogrp-label">
+                        <input  name="mauticform[what_are_you_hoping_to_ac]" class="mauticform-radiogrp-radio" name="mauticform[what_are_you_hoping_to_ac]" id="mauticform_radiogrp_radio_what_are_you_hoping_to_ac_AlloftheAbove3" type="radio" value="All of the Above" />
+                        All of the Above
+                    </label>
+                </div>
+                <span class="mauticform-errormsg" style="display: none;">Please select a field</span>
+            </div>
+
+            </div>
+
+            <div id="mauticform_interactivequiz_next"  class="mauticform-row mauticform-pagebreak-wrapper mauticform-field-3" data-mautic-form-pagebreak="1" style="display: none;">
+                <button type="button" id="mauticform_input_interactivequiz_next" name="mauticform[next]" value="" class="btn btn-default mautic-pagebreak-back mauticform-pagebreak" style="display: none;" data-mautic-form-pagebreak-button="prev"></button>
+                <button type="button" id="mauticform_input_interactivequiz_next" name="mauticform[next]" value="" class="btn btn-default mautic-pagebreak-next mauticform-pagebreak" data-mautic-form-pagebreak-button="next">Next</button>
+            </div>
+
+          <div class="mauticform-page-wrapper mauticform-page-2" data-mautic-form-page="2">
+
+            <div id="mauticform_interactivequiz_question_2"  class="mauticform-row mauticform-freehtml mauticform-field-4">
+                <div id="mauticform_input_interactivequiz_question_2" name="mauticform[question_2]" value="" class="mauticform-freehtml">
+                    <div class="webform-progress-bar__page webform-progress-bar__page--done">
+<b>Question 2</b>
+</div>
+                </div>
+            </div>
+
+            <div id="mauticform_interactivequiz_how_familiar_are_you_with"  data-validate="how_familiar_are_you_with" data-validation-type="radiogrp" class="mauticform-row mauticform-radiogrp mauticform-field-5 mauticform-required">
+                <label  class="mauticform-label" for="mauticform_radiogrp_radio_how_familiar_are_you_with_VeryFamiliar1">How familiar are you with Customer Journeys and Marketing Automation?</label>
+                <div class="mauticform-radiogrp-row">
+                    <label id="mauticform_radiogrp_label_how_familiar_are_you_with_VeryFamiliar0" for="mauticform_radiogrp_radio_how_familiar_are_you_with_VeryFamiliar0"  class="mauticform-radiogrp-label">
+                        <input  name="mauticform[how_familiar_are_you_with]" class="mauticform-radiogrp-radio" name="mauticform[how_familiar_are_you_with]" id="mauticform_radiogrp_radio_how_familiar_are_you_with_VeryFamiliar0" type="radio" value="Very Familiar" />
+                        Very Familiar
+                    </label>
+                </div>
+                <div class="mauticform-radiogrp-row">
+                    <label id="mauticform_radiogrp_label_how_familiar_are_you_with_SomewhatFamiliar1" for="mauticform_radiogrp_radio_how_familiar_are_you_with_SomewhatFamiliar1"  class="mauticform-radiogrp-label">
+                        <input  name="mauticform[how_familiar_are_you_with]" class="mauticform-radiogrp-radio" name="mauticform[how_familiar_are_you_with]" id="mauticform_radiogrp_radio_how_familiar_are_you_with_SomewhatFamiliar1" type="radio" value="Somewhat Familiar" />
+                        Somewhat Familiar
+                    </label>
+                </div>
+                <div class="mauticform-radiogrp-row">
+                    <label id="mauticform_radiogrp_label_how_familiar_are_you_with_BarelyFamiliar2" for="mauticform_radiogrp_radio_how_familiar_are_you_with_BarelyFamiliar2"  class="mauticform-radiogrp-label">
+                        <input  name="mauticform[how_familiar_are_you_with]" class="mauticform-radiogrp-radio" name="mauticform[how_familiar_are_you_with]" id="mauticform_radiogrp_radio_how_familiar_are_you_with_BarelyFamiliar2" type="radio" value="Barely Familiar" />
+                        Barely Familiar
+                    </label>
+                </div>
+                <div class="mauticform-radiogrp-row">
+                    <label id="mauticform_radiogrp_label_how_familiar_are_you_with_NotallFamiliar3" for="mauticform_radiogrp_radio_how_familiar_are_you_with_NotallFamiliar3"  class="mauticform-radiogrp-label">
+                        <input  name="mauticform[how_familiar_are_you_with]" class="mauticform-radiogrp-radio" name="mauticform[how_familiar_are_you_with]" id="mauticform_radiogrp_radio_how_familiar_are_you_with_NotallFamiliar3" type="radio" value="Not all Familiar" />
+                        Not all Familiar
+                    </label>
+                </div>
+                <span class="mauticform-errormsg" style="display: none;">Please select a field</span>
+            </div>
+
+            </div>
+
+            <div id="mauticform_interactivequiz_next1"  class="mauticform-row mauticform-pagebreak-wrapper mauticform-field-6" data-mautic-form-pagebreak="2" style="display: none;">
+                <button type="button" id="mauticform_input_interactivequiz_next1" name="mauticform[next1]" value="" class="btn btn-default mautic-pagebreak-back mauticform-pagebreak" data-mautic-form-pagebreak-button="prev">Previous</button>
+                <button type="button" id="mauticform_input_interactivequiz_next1" name="mauticform[next1]" value="" class="btn btn-default mautic-pagebreak-next mauticform-pagebreak" data-mautic-form-pagebreak-button="next">Next</button>
+            </div>
+
+          <div class="mauticform-page-wrapper mauticform-page-3" data-mautic-form-page="3">
+
+            <div id="mauticform_interactivequiz_question_3"  class="mauticform-row mauticform-freehtml mauticform-field-7">
+                <div id="mauticform_input_interactivequiz_question_3" name="mauticform[question_3]" value="" class="mauticform-freehtml">
+                    <div class="webform-progress-bar__page webform-progress-bar__page--done">
+<b>Question 3</b>
+</div>
+                </div>
+            </div>
+
+            <div id="mauticform_interactivequiz_how_long_has_it_been_sinc"  data-validate="how_long_has_it_been_sinc" data-validation-type="radiogrp" class="mauticform-row mauticform-radiogrp mauticform-field-8 mauticform-required">
+                <label  class="mauticform-label" for="mauticform_radiogrp_radio_how_long_has_it_been_sinc_LessThan2Years1">How long has it been since your last website redesign?</label>
+                <div class="mauticform-radiogrp-row">
+                    <label id="mauticform_radiogrp_label_how_long_has_it_been_sinc_LessThan2Years0" for="mauticform_radiogrp_radio_how_long_has_it_been_sinc_LessThan2Years0"  class="mauticform-radiogrp-label">
+                        <input  name="mauticform[how_long_has_it_been_sinc]" class="mauticform-radiogrp-radio" name="mauticform[how_long_has_it_been_sinc]" id="mauticform_radiogrp_radio_how_long_has_it_been_sinc_LessThan2Years0" type="radio" value="Less Than 2 Years" />
+                        Less Than 2 Years
+                    </label>
+                </div>
+                <div class="mauticform-radiogrp-row">
+                    <label id="mauticform_radiogrp_label_how_long_has_it_been_sinc_Between2and3Years1" for="mauticform_radiogrp_radio_how_long_has_it_been_sinc_Between2and3Years1"  class="mauticform-radiogrp-label">
+                        <input  name="mauticform[how_long_has_it_been_sinc]" class="mauticform-radiogrp-radio" name="mauticform[how_long_has_it_been_sinc]" id="mauticform_radiogrp_radio_how_long_has_it_been_sinc_Between2and3Years1" type="radio" value="Between 2 and 3 Years" />
+                        Between 2 and 3 Years
+                    </label>
+                </div>
+                <div class="mauticform-radiogrp-row">
+                    <label id="mauticform_radiogrp_label_how_long_has_it_been_sinc_Between3and4Years2" for="mauticform_radiogrp_radio_how_long_has_it_been_sinc_Between3and4Years2"  class="mauticform-radiogrp-label">
+                        <input  name="mauticform[how_long_has_it_been_sinc]" class="mauticform-radiogrp-radio" name="mauticform[how_long_has_it_been_sinc]" id="mauticform_radiogrp_radio_how_long_has_it_been_sinc_Between3and4Years2" type="radio" value="Between 3 and 4 Years" />
+                        Between 3 and 4 Years
+                    </label>
+                </div>
+                <div class="mauticform-radiogrp-row">
+                    <label id="mauticform_radiogrp_label_how_long_has_it_been_sinc_OverFourYears3" for="mauticform_radiogrp_radio_how_long_has_it_been_sinc_OverFourYears3"  class="mauticform-radiogrp-label">
+                        <input  name="mauticform[how_long_has_it_been_sinc]" class="mauticform-radiogrp-radio" name="mauticform[how_long_has_it_been_sinc]" id="mauticform_radiogrp_radio_how_long_has_it_been_sinc_OverFourYears3" type="radio" value="Over Four Years" />
+                        Over Four Years
+                    </label>
+                </div>
+                <span class="mauticform-errormsg" style="display: none;">Please select a field</span>
+            </div>
+
+            </div>
+
+            <div id="mauticform_interactivequiz_next2"  class="mauticform-row mauticform-pagebreak-wrapper mauticform-field-9" data-mautic-form-pagebreak="3" style="display: none;">
+                <button type="button" id="mauticform_input_interactivequiz_next2" name="mauticform[next2]" value="" class="btn btn-default mautic-pagebreak-back mauticform-pagebreak" data-mautic-form-pagebreak-button="prev">Previous</button>
+                <button type="button" id="mauticform_input_interactivequiz_next2" name="mauticform[next2]" value="" class="btn btn-default mautic-pagebreak-next mauticform-pagebreak" data-mautic-form-pagebreak-button="next">Next</button>
+            </div>
+
+          <div class="mauticform-page-wrapper mauticform-page-4" data-mautic-form-page="4">
+
+            <div id="mauticform_interactivequiz_question_4"  class="mauticform-row mauticform-freehtml mauticform-field-10">
+                <div id="mauticform_input_interactivequiz_question_4" name="mauticform[question_4]" value="" class="mauticform-freehtml">
+                    <div class="webform-progress-bar__page webform-progress-bar__page--done">
+<b>Question 4</b>
+</div>
+                </div>
+            </div>
+
+            <div id="mauticform_interactivequiz_have_you_already_chosen_k"  data-validate="have_you_already_chosen_k" data-validation-type="radiogrp" class="mauticform-row mauticform-radiogrp mauticform-field-11 mauticform-required">
+                <label  class="mauticform-label" for="mauticform_radiogrp_radio_have_you_already_chosen_k_IveChosenKentico1">Have you already chosen Kentico CMS or are you evaluating other platforms?</label>
+                <div class="mauticform-radiogrp-row">
+                    <label id="mauticform_radiogrp_label_have_you_already_chosen_k_Kentico0" for="mauticform_radiogrp_radio_have_you_already_chosen_k_Kentico0"  class="mauticform-radiogrp-label">
+                        <input  name="mauticform[have_you_already_chosen_k]" class="mauticform-radiogrp-radio" name="mauticform[have_you_already_chosen_k]" id="mauticform_radiogrp_radio_have_you_already_chosen_k_Kentico0" type="radio" value="Kentico" />
+                        I've Chosen Kentico
+                    </label>
+                </div>
+                <div class="mauticform-radiogrp-row">
+                    <label id="mauticform_radiogrp_label_have_you_already_chosen_k_OtherPlatforms1" for="mauticform_radiogrp_radio_have_you_already_chosen_k_OtherPlatforms1"  class="mauticform-radiogrp-label">
+                        <input  name="mauticform[have_you_already_chosen_k]" class="mauticform-radiogrp-radio" name="mauticform[have_you_already_chosen_k]" id="mauticform_radiogrp_radio_have_you_already_chosen_k_OtherPlatforms1" type="radio" value="Other Platforms" />
+                        I'm Evaluating Other Platforms
+                    </label>
+                </div>
+                <span class="mauticform-errormsg" style="display: none;">Please select a field</span>
+            </div>
+
+            </div>
+
+            <div id="mauticform_interactivequiz_next3"  class="mauticform-row mauticform-pagebreak-wrapper mauticform-field-12" data-mautic-form-pagebreak="4" style="display: none;">
+                <button type="button" id="mauticform_input_interactivequiz_next3" name="mauticform[next3]" value="" class="btn btn-default mautic-pagebreak-back mauticform-pagebreak" data-mautic-form-pagebreak-button="prev">Previous</button>
+                <button type="button" id="mauticform_input_interactivequiz_next3" name="mauticform[next3]" value="" class="btn btn-default mautic-pagebreak-next mauticform-pagebreak" data-mautic-form-pagebreak-button="next">Next</button>
+            </div>
+
+          <div class="mauticform-page-wrapper mauticform-page-5" data-mautic-form-page="5">
+
+            <div id="mauticform_interactivequiz_question_5"  class="mauticform-row mauticform-freehtml mauticform-field-13">
+                <div id="mauticform_input_interactivequiz_question_5" name="mauticform[question_5]" value="" class="mauticform-freehtml">
+                    <div class="webform-progress-bar__page webform-progress-bar__page--done">
+<b>Almost Finished!  Enter Your Details Below:</b>
+</div>
+                </div>
+            </div>
+
+            <div id="mauticform_interactivequiz_f_name" class="mauticform-row mauticform-text mauticform-field-14 mauticform-required col-md-6" data-validate="f_name" data-validation-type="text">
+                <label id="mauticform_label_interactivequiz_f_name" for="mauticform_input_interactivequiz_f_name" class="mauticform-label">Name</label>
+                <input id="mauticform_input_interactivequiz_f_name" name="mauticform[f_name]" value="" class="mauticform-input form-text" type="text" />
+                <span class="mauticform-errormsg" style="display: none;">Please enter your name</span>
+            </div>
+
+            <div id="mauticform_interactivequiz_email" class="mauticform-row mauticform-email mauticform-field-15 mauticform-required col-md-6" data-validate="email" data-validation-type="email">
+                <label id="mauticform_label_interactivequiz_email" for="mauticform_input_interactivequiz_email" class="mauticform-label">Email</label>
+                <input id="mauticform_input_interactivequiz_email" name="mauticform[email]" value="" class="mauticform-input form-text" type="email" />
+                <span class="mauticform-errormsg" style="display: none;">Please enter your email</span>
+            </div>
+
+                <input id="mauticform_input_interactivequiz_nav" name="mauticform[nav]" value="No" class="mauticform-hidden" type="hidden" />
+            <div id="mauticform_interactivequiz_submit"  class="mauticform-row mauticform-button-wrapper mauticform-field-17">
+                <button type="submit" name="mauticform[submit]" id="mauticform_input_interactivequiz_submit" name="mauticform[submit]" value="" class="mauticform-button btn btn-default" value="1">Submit</button>
+            </div>
+            </div>
+        </div>
+
+        <input type="hidden" name="mauticform[formId]" id="mauticform_interactivequiz_id" value="4"/>
+        <input type="hidden" name="mauticform[return]" id="mauticform_interactivequiz_return" value=""/>
+        <input type="hidden" name="mauticform[formName]" id="mauticform_interactivequiz_name" value="interactivequiz"/>
+		
+        </form>
+</div>
+
+      </div>
+    </div>
+    
+  </section>
+  
+  
+  {% if page.footer_video %}
+ <section class="responsiveContent ">    
+    <div class="videoPresentation">
+	 {{ page.footer_video }}      
+    </div>
+  </section> 
+  {% endif %}
+ 
+ {% if page.footer_services %}
+ <section class="ProductBottom ServicesTxt">
+	 {{ page.footer_services }}
+</section> 	 
+  {% endif %}
+  
+  {% if page.footer_first %}
+  <section class="blueband">
+  <div class="fullwidth ">
+  {{ page.footer_first }}
+  </div>
+  </section>
+  {% endif %}
+  {% if page.footer_second %}
+  <section class="greybandOut">
+    <div class="container">
+	{{ page.footer_second }}      
+    </div>
+  </section>
+  {% endif %}
+</div>
+
+<!--Content End-->
+{% include '@korone/footer.html.twig' %}
+
+
+<style type="text/css">.cust-demands-pnts li { color:#fff; text-align:left;}
+.PatientJourneyBannerRight .kentico h3 { font-weight:normal !important;}.mb40 { margin-bottom: 40px !important;} </style>
+ 

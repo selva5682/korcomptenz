@@ -1,0 +1,127 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.featured_top: Items for the featured top region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.featured_bottom_first: Items for the first featured bottom region.
+ * - page.featured_bottom_second: Items for the second featured bottom region.
+ * - page.featured_bottom_third: Items for the third featured bottom region.
+ * - page.footer_first: Items for the first footer column.
+ * - page.footer_second: Items for the second footer column.
+ * - page.footer_third: Items for the third footer column.
+ * - page.footer_fourth: Items for the fourth footer column.
+ * - page.footer_fifth: Items for the fifth footer column.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see bartik_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+{% include '@korone/header.html.twig' %} 
+
+<div class="main-container innerpage">
+  <!--Inner Banner-->
+  <section class="image-bg page-title-2 innerBanner">
+    <div class="background-image-holder"><img alt="Background Image" class="background-image" src="/themes/custom/korone/images/inner-banner.png" /></div>
+    <div class="container">
+      <h2>Thank You</h2>
+      
+    </div>
+  </section>
+  <!--Inner Banner End-->
+  <section class="responsiveContent responsiveTopOut thankYouPageout">
+    <div class="container">
+      <div class="responsiveTop thankYouPage row">
+		<a name="thankyoumsg">
+        <p>You're off to a great start. A modern website is a great opportunity to achieve your goals. We can help you realize the following key benefits.</p>
+  <div class="wmt-icons">
+<div class="col-lg-4 col-lg-2 col-md-offset-1"><img alt="Cost of Ownership - Web Application Development Company" src="/themes/custom/korone/images/mobile-app/wmt-1.png" title="Cost of Ownership - Web Application Development Company"><div class="col-xs-10 col-xs-offset-1">reduction in total cost of ownership</div>
+</div>
+
+<div class="col-lg-4 col-lg-2"><img alt="Sell Revenue - Web Application Development Company" src="/themes/custom/korone/images/mobile-app/wmt-2.png" title="Sell Revenue - Web Application Development Company"><div class="col-xs-10 col-xs-offset-1">more cross-sell and up-sell revenue</div>
+</div>
+
+<div class="col-lg-4 col-lg-2"><img alt="ROI - Web Application Development Services" src="/themes/custom/korone/images/mobile-app/wmt-3.png" title="ROI - Web Application Development Services "><div class="col-xs-10 col-xs-offset-1">greater return on marketing investment</div>
+</div>
+
+<div class="col-lg-4 col-lg-2"><img alt="Conversion Rates - Web Application Development" src="/themes/custom/korone/images/mobile-app/wmt-4.png" title="Conversion Rates - Web Application Development"><div class="col-xs-10 col-xs-offset-1">higher conversion rates for website visitors</div>
+</div>
+
+<div class="col-lg-4 col-lg-2"><img alt="Reduction in Time  - Web Application Development" src="/themes/custom/korone/images/mobile-app/wmt-5.png" title="Reduction in Time  - Web Application Development"><div class="col-xs-10 col-xs-offset-1">reduction in time to market</div>
+</div>
+</div>
+<div class="col-12 mt40">
+  <p>Marketing automation is an integral part of our offerings.  Some of our recent campaigns have had conversion rates over 25%!  We're looking forward to learning more about your needs.</p>
+ </div>
+
+<div class="col-12">
+	<div class="kentico_thank" id="kentico_thank" >
+		  <p><strong>Since you have already selected Kentico, we recommend our exclusive Quick Start guide to help make sure your project is started right.</strong></p>
+		 <a href="https://stage.korcomptenz.com/sites/default/files/2018-02/Kentico%20CMS%20Quickstart_0.pdf" class="btn center-block" title="" style="target="_blank"> DOWNLOAD THE GUIDE</a>
+  	</div>
+	<div class="platform_thank" id="platform_thank" >
+		  <p><strong> Since you are evaluating other platforms, we recommend our exclusive Choosing the Ideal CMS whitepaper. It's packed with information to help you make the right decision for your organization.</strong></p>
+		 <a href="https://stage.korcomptenz.com/sites/default/files/2018-02/Ideal%20CMS%20Whitepaper.pdf" class="btn center-block" title="" style="target="_blank"> DOWNLOAD THE GUIDE</a>  
+ 	</div>	
+</div>
+
+        <div class="col-12">
+       <div class="thankYouPageIn">  
+<div class="thankImg">
+ <img src="/themes/custom/korone/images/vivek.png" >
+<h3>Jay Presand</h3>
+<p><a href="callto:973-601-8776">+1 973 601-8776</a><br>
+<a href="mailto:sales@korcomptenz.com">sales@korcomptenz.com</a></p>
+</div>
+</div>
+
+</div>
+      </div>
+    </div>
+  </section>
+</div>
+<!--Content End-->
+<style type="text/css">
+#kentico_thank { display: none;}
+#platform_thank { display: none;}
+</style>
+{% include '@korone/footer.html.twig' %}

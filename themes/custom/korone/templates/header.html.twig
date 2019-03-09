@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Korone's theme implementation to display a single page.
+ *
+ * Header file
+ */
+#}
+<!--Home Section-->
+  {# Header #}
+<div id="cookies_content_overlay"></div>
+<header>
+	<div class="row d-sm-none d-md-block d-none sub-nav">
+		<div class="col-12"> 
+				{% if page.header_top_highlighted_first %}						
+					{{ page.header_top_highlighted_first }}
+				{% endif %}		
+			<div class="float-right d-none d-lg-block">
+				{% if page.header_top_highlighted_second %}						
+					{{ page.header_top_highlighted_second }}
+				{% endif %}		
+			</div>
+		</div>
+	</div>                  
+    {% include '@korone/header-primary-menu.html.twig' %}	
+	

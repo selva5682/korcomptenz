@@ -1,0 +1,327 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.featured_top: Items for the featured top region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.featured_bottom_first: Items for the first featured bottom region.
+ * - page.featured_bottom_second: Items for the second featured bottom region.
+ * - page.featured_bottom_third: Items for the third featured bottom region.
+ * - page.footer_first: Items for the first footer column.
+ * - page.footer_second: Items for the second footer column.
+ * - page.footer_third: Items for the third footer column.
+ * - page.footer_fourth: Items for the fourth footer column.
+ * - page.footer_fifth: Items for the fifth footer column.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see bartik_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+{% include '@korone/header.html.twig' %} 
+<!--Content-->
+<div class="main-container innerpage "> 
+<section>
+<div class="container">
+<div class="row">
+<div class="col-sm-10 col-sm-offset-1 mb40">
+<p>
+Please answer the below questions to get an approximate flat fee pricing. Upon completion, our Infrastructure team will contact you. Leave the questions blank if you are unsure of answers
+</p>
+</div>
+</div>
+</div><!--container-->
+
+<div class="container-fluid">
+<div class="container">
+<div class="row">
+<h3 class="text-center dns1">1.Devices<span id="total_devices" class="totvl">0</span></h3>
+<div class="col-sm-4 slodr">
+<img class="center-block" src="/themes/custom/korone/images/calc-design1.png" alt="" />
+<p class="text-center">Count for Windows Desktops + Laptops </p>
+<div class="clearfix"></div>
+<center><span id="ex6CurrentSliderValLabel" class="totvl"> <span id="ex6SliderVal" class="smlr">0</span> </span>
+<input class="slir" id="ex6" type="text" data-slider-min="0" data-slider-max="200" data-slider-step="1" data-slider-value="0"/>
+</center>
+</div>
+
+
+<div class="col-sm-4 slodr">
+<img class="center-block" src="/themes/custom/korone/images/calc-design02.png" alt="" />
+<p class="text-center">Count for Apple Desktops + Laptops </p>
+<div class="clearfix"></div>
+<center><span id="ex7CurrentSliderValLabel" class="totvl"> <span id="ex7SliderVal" class="smlr">0</span> </span>
+<input class="slir" id="ex7" type="text" data-slider-min="0" data-slider-max="200" data-slider-step="1" data-slider-value="0"/>
+</center>
+</div>
+
+<div class="col-sm-4 slodr">
+<img class="center-block" src="/themes/custom/korone/images/calc-design03.png" alt="" />
+<p class="text-center">Count of Smart Phones + Tablets </p>
+<div class="clearfix"></div>
+<center><span id="ex8CurrentSliderValLabel" class="totvl"> <span id="ex8SliderVal" class="smlr">0</span> </span>
+<input class="slir" id="ex8" type="text" data-slider-min="0" data-slider-max="200" data-slider-step="1" data-slider-value="0"/>
+</center>
+</div>
+</div>
+</div><!--container-->
+
+<div class="row gyrcl">
+<div class="container">
+
+<div class="col-sm-12">
+<div class="row devs">
+<h3 class="text-center dns1">2.Servers<span id="total_servers" class="totvl">0</span></h3>
+
+<div class="col-sm-4 slodr">
+<img class="center-block" src="/themes/custom/korone/images/calc-design04.png" alt="" />
+<p class="text-center">Count for On-premises Physical Servers</p>
+<div class="clearfix"></div>
+<center><span id="ex9CurrentSliderValLabel" class="totvl"> <span id="ex9SliderVal" class="smlr">0</span> </span>
+<input class="slir" id="ex9" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+</center>
+</div>
+
+<div class="col-sm-4 slodr">
+<img class="center-block" src="/themes/custom/korone/images/calc-design05.png" alt="" />
+<p class="text-center">Count for On-premises Virtual Servers</p>
+<div class="clearfix"></div>
+<center><span id="ex10CurrentSliderValLabel" class="totvl"> <span id="ex10SliderVal" class="smlr">0</span> </span>
+<input class="slir" id="ex10" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+</center>
+</div>
+
+<div class="col-sm-4 slodr">
+<img class="center-block" src="/themes/custom/korone/images/calc-design06.png" alt="" />
+<p class="text-center">Total Backup data size in TB</p>
+<div class="clearfix"></div>
+<center><span id="ex11CurrentSliderValLabel" class="totvl"> <span id="ex11SliderVal" class="smlr">0</span> </span>
+<input class="slir" id="ex11" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+</center>
+</div>
+
+<div class="col-sm-4 slodr">
+<img class="center-block" src="/themes/custom/korone/images/calc-design07.png" alt="" />
+<p class="text-center">Count for Data Center/Private Cloud Physical Servers</p>
+<div class="clearfix"></div>
+<center><span id="ex12CurrentSliderValLabel" class="totvl"> <span id="ex12SliderVal" class="smlr">0</span> </span>
+<input class="slir" id="ex12" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+</center>
+</div>
+
+<div class="col-sm-4 slodr">
+<img class="center-block" src="/themes/custom/korone/images/calc-design08.png" alt="" />
+<p class="text-center">Count for Data Center/VirtualCloud Physical Servers</p>
+<div class="clearfix"></div>
+<center><span id="ex13CurrentSliderValLabel" class="totvl"> <span id="ex13SliderVal" class="smlr">0</span> </span>
+<input class="slir" id="ex13" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+</center>
+</div>
+
+<div class="col-sm-4 slodr">
+<img class="center-block" src="/themes/custom/korone/images/calc-design09.png" alt="" />
+<p class="text-center">Total Backup data size in TB</p>
+<div class="clearfix"></div>
+<center><span id="ex14CurrentSliderValLabel" class="totvl"> <span id="ex14SliderVal" class="smlr">0</span> </span>
+<input class="slir" id="ex14" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+</center>
+</div>
+
+<div class="col-sm-4 slodr">
+<img class="center-block" src="/themes/custom/korone/images/calc-design10.png" alt="" />
+<p class="text-center">Servers in Cloud (Azure, AWS, Rackspace etc)</p>
+<div class="clearfix"></div>
+<center><span id="ex15CurrentSliderValLabel" class="totvl"> <span id="ex15SliderVal" class="smlr">0</span> </span>
+<input class="slir" id="ex15" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+</center>
+</div>
+
+<div class="col-sm-4 slodr">
+<img class="center-block" src="/themes/custom/korone/images/calc-design11.png" alt="" />
+<p class="text-center">Total Backup data size in TB</p>
+<div class="clearfix"></div>
+<center><span id="ex16CurrentSliderValLabel" class="totvl"> <span id="ex16SliderVal" class="smlr">0</span> </span>
+<input class="slir" id="ex16" type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="0"/>
+</center>
+</div>
+
+</div><!--row-->
+</div>
+</div><!--container-->
+</div><!-- row -->
+
+<div class="container">
+<div class="row mb40 mt40">
+<div class="col-sm-10 col-sm-offset-1">
+<p class="mb40 wbotx"><span class="whise">3</span> Where is your email hosted? &nbsp;&nbsp;&nbsp;
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> On-premises
+</label>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 3rd Party Hosting Provider
+</label>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Office 365
+</label>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option4"> Google Suite
+</label>
+</p>
+
+<div class="form-inline mb40">
+ <div class="form-group">
+    <span class="whise">4</span> <label for="exampleInputName2">Number of Mailboxes (User + Group)</label>
+    <input type="text" class="form-control" id="edit-mailboxes" value="0">
+  </div>
+</div>
+<div class="form-group mb40">
+      <label for="exampleInputEmail1" class="mb10"> <span class="whise">5</span> Describe in few words about your current applications and software that run on Servers (like Finance Applications) and Desktops (Like MS Office, Adobe Creative Suite)</label>
+    <textarea class="form-control" rows="2" id="edit-current-app1"></textarea>
+  </div>
+
+<div class="form-group mb40">
+ <label for="exampleInputEmail1" class="mb10"><span class="whise">6</span> Describe in few words about your current in-house IT Team or IT Support Vendor</label>
+<textarea class="form-control" rows="2" id="edit-current-inhouse1"></textarea>
+  </div> 
+<div class="clearfix"></div>
+
+<p class="mb40 wbotx"><span class="whise">7</span> Current Telephone System type &nbsp;&nbsp;&nbsp;
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">  Telephone System </label>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> VOIP On Premises/Hosted</label>
+<label class="radio-inline">
+  <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Digital
+</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Number of extensions  <input type="text" class="form-control" id="edit-extensions" value="0">
+</p>
+
+<p class="aproc">To know approximate costing based on your infrastructure requirements <input type="button" href="" id="click-here" value="Click Here"/></p>
+
+<div class="amount-buttons mt40">
+<div class="row donation-amount-row">
+<div class="col-sm-12 col-sm-offset-0 corz0">
+<div class="col-sm-3"><input class="amount-radio" name="donation_amount" value="1" id="amount1" type="radio"><label for="amount1" class="amount-button large-label-size"><span>$1000-$2000</span></label></div>
+
+<div class="col-sm-3"><input class="amount-radio" name="donation_amount" value="2" id="amount2" type="radio"><label for="amount2" class="amount-button large-label-size"><span>$2000-$3000</span></label></div>
+
+<div class="col-sm-3"><input class="amount-radio" name="donation_amount" value="3" id="amount3" type="radio"><label for="amount3" class="amount-button large-label-size"><span>$3000-$4000</span></label></div>
+
+<div class="col-sm-3"><input class="amount-radio" name="donation_amount" value="4" id="amount4" type="radio"><label for="amount4" class="amount-button large-label-size"><span>$4000-$5000</span></label></div>
+<div class="col-sm-3"><input class="amount-radio" name="donation_amount" value="5" id="amount5" type="radio"><label for="amount5" class="amount-button large-label-size"><span>Contact us</span></label></div>
+
+</div>
+</div>
+</div>
+  
+<center>
+<div class="form-inline mt40 mb40">
+  <div class="form-group mr15">
+    <label for="Name"><span class="mondry">*</span>Name:</label>
+    <input type="text" class="form-control" id="Name2">
+  </div>
+  <div class="form-group mr15">
+    <label for="exampleInputEmail2"><span class="mondry">*</span>Email:</label>
+    <input type="email" class="form-control" id="exampleInputEmail2">
+  </div>
+    <div class="form-group mr15">
+    <label for="exampleInputName2">Phone:</label>
+    <input type="text" class="form-control" id="exampleInputName2">
+  </div>
+ 
+</div>
+
+</center> 
+  
+</div>
+
+</div>
+</div>
+
+<div class="clearfix"></div>
+
+</div><!-- container-fluid -->
+
+</section>
+
+</div>
+  <!-- thank ydou Modal -->
+  {% if page.footer_features %}
+  <section class="responsiveBottomOut">
+    <div class="container">
+      <div class="responsiveBottom">
+        {{ page.footer_features }}
+      </div>
+    </div>
+    
+  </section>
+  {% endif %}
+  {% if page.footer_video %}
+ <section class="responsiveContent ">    
+    <div class="videoPresentation">
+	 {{ page.footer_video }}      
+    </div>
+  </section> 
+  {% endif %}
+ 
+ {% if page.footer_services %}
+ <section class="ProductBottom ServicesTxt">
+	 {{ page.footer_services }}
+</section> 	 
+  {% endif %}
+  
+  {% if page.footer_first %}
+  <section class="blueband">
+  <div class="fullwidth ">
+  {{ page.footer_first }}
+  </div>
+  </section>
+  {% endif %}
+  {% if page.footer_second %}
+  <section class="greybandOut">
+    <div class="container">
+	{{ page.footer_second }}      
+    </div>
+  </section>
+  {% endif %}
+</div>
+<!--Content End-->
+
+{% include '@korone/footer.html.twig' %}

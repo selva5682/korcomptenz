@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Module implementing field collection field type.
+ */
+/*
+function custommodule_preprocess_page(array &$variables) {
+	$block = \Drupal\block\Entity\Block::load('simplenewssubscription');
+	$variables['block_output'] = \Drupal::entityTypeManager()->getViewBuilder('block')->view($block);
+}
+/*
+function custommodule_preprocess_page(array &$variables) {
+  $schedule_block = \Drupal::entityManager()->getStorage('block')->load('scheduleyourconsultation');
+    if (!empty($schedule_block)){
+      $schedule_block_content = \Drupal::entityManager()
+        ->getViewBuilder('block')
+        ->view($schedule_block);
+      if ($schedule_block_content) {
+        // Add block content to build array
+        $variables['content']['schedule_block_output'] = $schedule_block_content;
+      }
+    }
+}
+*/
+use Drupal\Core\Form\FormStateInterface;
+ 
+//hook_form_alter
+/*
+function custommodule_form_alter(&$form, $form_state, $form_id) {	
+  if($form_id == 'comment_default_comments_form'){	
+    $form['actions']['submit']['#submit'][] = 'callback_submit';
+  }
+}
+
+
+
+function callback_submit($form, FormStateInterface $form_state) {
+	$url = \Drupal\Core\Url::fromUserInput('/blog/industry-standard2');
+$form_state->setRedirect($url);
+}
+*/

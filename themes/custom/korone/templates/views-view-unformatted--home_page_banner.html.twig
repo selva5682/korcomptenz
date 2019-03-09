@@ -1,0 +1,126 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+  {% if header %}
+    <div class="view-header">
+      {{ header }}
+    </div>
+  {% endif %}
+  {% if exposed %}
+		{{ exposed }}
+  {% endif %}
+  {% if attachment_before %}
+    <div class="attachment attachment-before">
+      {{ attachment_before }}
+    </div>
+  {% endif %}
+
+<div class="carousel-inner" data-interval="7000">
+{% for row in rows %}	
+	{% set banner = file_url(row['content']['#row']._entity.field_banner_image.entity.fileuri) %} 
+	{% set banner_second = file_url(row['content']['#row']._entity.field_second_banner_image.entity.fileuri) %} 
+	{% set banner_second_alt = row.content['#row']._entity.field_second_banner_image[0].alt %}
+	{% set banner_second_title = row.content['#row']._entity.field_second_banner_image[0].title %}
+	{% set video_url = row['content']['#row']._entity.field_video_url.value|raw %}
+	{% if loop.index == '1' %}
+		{% set is_active = 'active' %}
+	{% else %}
+		{% set is_active = '' %}
+	{% endif %}	
+	<div class="carousel-item {{ is_active }}" style="background-image: url({{ banner }})">
+		<div class="dotted-overlay"></div>
+		<div class="row">
+			<div class="col-12 col-lg-7">
+				<div class="carousel-caption "> 
+					{{ row['content']['#row']._entity.body.value|raw }}
+				</div>
+			</div>
+			{% if banner_second %}
+				<div class="col-12 col-lg-5 text-center">
+					<img src="{{ banner_second }}" alt="{{ banner_second_alt }}" title="{{ banner_second_title }}" class="slide-img">
+				</div>	
+			{% endif %}		
+		</div>
+	</div>
+{% endfor %}
+ </div> 
+ <div class="blue-overlay"><a href="#partners"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+	  Transformational Technology Solutions
+	  </div>
+ 
+  {% if pager|render|trim %}
+    <div class="clearfix resource-pager">
+      <div class="container">
+        <div class="detailed-pager detailed-pager--bottom clearfix" style="margin-top: -62px;">
+          <div class="row">
+            <div class="col-sm-12">
+              {{ pager }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if attachment_after %}
+    <div class="attachment attachment-after">
+      {{ attachment_after }}
+    </div>
+  {% endif %}
+  {% if more %}
+    {{ more }}
+  {% endif %}
+  {% if footer %}
+    <div class="view-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+  {% if feed_icons %}
+    <div class="feed-icons">
+      {{ feed_icons }}
+    </div>
+  {% endif %}
+</div>

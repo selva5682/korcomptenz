@@ -1,0 +1,248 @@
+<!--Header-->
+  {% include '@korone/header-front.html.twig' %}
+<!--Header End--> 
+	{# Banners #}
+		{% if page.banner %}
+			<div id="home-slider-banner" class="carousel slide home-slider" data-ride="carousel">
+				{{ page.banner }}
+				<a class="carousel-control-prev" href="#home-slider-banner" data-slide="prev"> 
+					<span class="carousel-control-prev-icon"></span> 
+				</a> 
+				<a class="carousel-control-next" href="#home-slider-banner" data-slide="next"> 
+					<span class="carousel-control-next-icon"></span> 
+				</a> 
+			</div>
+		{% endif %}
+	{# Banners #}
+</header>
+{# Header #}
+<!--Home Section End-->
+{# Inner Page Banners #}
+	{% if page.inner_page_banner %}
+		<section class="static-banner">
+			{{ page.inner_page_banner }}
+		</section>
+	{% endif %}	
+{# Inner Page Banners #}
+
+{# Content Top #}
+	{% if page.content_top %}
+		<section id="partners" class="partner carousel slide " data-ride="carousel">
+			{{ page.content_top }}
+		</section>
+	{% endif %}	
+{# Content Top #}
+
+{# Content Top Highlighted #}
+	{% if page.content_top_highlighted %}
+		<section id="partners" class="partner carousel slide " data-ride="carousel">
+			{{ page.content_top_highlighted }}
+		</section>
+	{% endif %}
+{# Content Top Highlighted #}
+
+{# Media background first #}
+	{% if page.media_background_first %}
+		<section id="partners" class="partner carousel slide " data-ride="carousel">
+			{{ page.media_background_first }}
+		</section>
+	{% endif %}
+{# Media background first #}
+
+{# Media background Second #}
+	{% if page.media_background_second %}
+		<section id="partners" class="partner carousel slide " data-ride="carousel">
+			<div class="container py-5">
+				<div class="row py-5">
+					<div class="col-12 carousel-inner">
+						{{ page.media_background_second }}
+					</div>
+				</div>
+			</div>
+			<img src="{{ base_path ~ directory }}/images/white-overlay.png" width="100%" alt=""> 
+		</section>
+	{% endif %}
+{# Media background Second #}
+{# Content Bottom First #}
+	{% if page.content_bottom_first %}
+		<section class="consultation bg-white">
+		  <div class="container py-5">
+			  {{ page.content_bottom_first }}	
+		  </div>
+		</section>
+	{% endif %}
+{# Content Bottom First #}
+
+{# Main Content and Sidebar #}
+	{%
+		set content_classes = [
+		  page.sidebar_first and page.sidebar_second ? 'content col-12 col-lg-6',
+		  page.sidebar_first and page.sidebar_second is empty ? 'content col-12 col-lg-8',
+		  page.sidebar_second and page.sidebar_first is empty ? 'content col-12 col-lg-8',
+		  page.sidebar_first is empty and page.sidebar_second is empty ? 'content col-12 col-lg-12'
+		]
+	%} 
+	<div class="container mt-5">
+		<div class="row">
+			{% if page.content %}
+				<div {{ content_attributes.addClass(content_classes) }}>
+					<section class="row">
+						<div class="col-12">
+							{{ page.content }}
+						</div>
+					</section>
+				</div>
+			{% endif %}
+			{% if page.sidebar_first %}
+				<div class="col-12 col-xl-4 sidebar ">
+					{{ page.sidebar_first }}
+				</div>
+			{% endif %}	
+			{% if page.sidebar_second %}
+				<div class="col-12 col-xl-4 sidebar ">
+					<div class="col-12 bg-light">
+						{{ page.sidebar_second }}
+					</div>
+				</div>
+			{% endif %}	
+		</div>
+	</div>
+{# Main Content and Sidebar #}
+
+{% if page.case_studies_first or page.case_studies_second or page.case_studies_third or page.case_studies_fourth or page.case_studies_full %}
+	<section class="tech-solutions">
+		<div class="rocket"> <img src="{{ base_path ~ directory }}/images/jet.png"> </div>
+		<div class="container py-5">
+			<div class="row pb-5">
+				<div class="col-8"> <span class="light-blue" >KORCOMPTENZ</span>
+					<h3 class="text-white"><span class="light">Case Studies</span></h3>
+				</div>
+			</div>
+			<div class="row">				
+				{% if page.case_studies_first %}
+					<div class="col-12 col-md-6 col-lg-3 tech-section mr-md-0 mr-lg-5">
+						{{ page.case_studies_first }}
+					</div>
+				{% endif %}
+				
+				{% if page.case_studies_second %}
+					<div class="col-12 col-md-6 col-lg-3 tech-section mr-md-0 mr-lg-5">
+						{{ page.case_studies_second }}
+					</div>	
+				{% endif %}
+				
+				{% if page.case_studies_third %}
+					<div class="col-12 col-md-6 col-lg-3 tech-section mr-md-0 mr-lg-5">
+						{{ page.case_studies_third }}
+					</div>
+				{% endif %}
+				
+				{% if page.case_studies_fourth %}
+					<div class="col-12 col-md-6 col-lg-3 tech-section mr-md-0 mr-lg-5">
+						{{ page.case_studies_fourth }}
+					</div>
+				{% endif %}		
+			</div>	
+			{% if page.case_studies_full %}
+				{{ page.case_studies_full }}
+			{% endif %}			
+			<div class="row py-3">
+				<div class="col-12">
+					<a href="/resources?types=All&category=66" class="btn btn-primary  w-25">More Case Studies</a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endif %}
+
+{% if page.business_solutions or page.business_solutions_img %}
+	<section class="industries py-5">
+		<div class="container py-4">
+			<div class="row">
+				<div class="col-12 col-lg-7"> <span class="blue">KORCOMPTENZ</span>
+					<h3><span class="light">Business </span> <strong>Solutions</strong> </h3>
+				</div>
+				{% if page.business_solutions %}
+					<div class="col-12 col-lg-7 text-center mt-5">
+						<div class="row ">
+							{{ page.business_solutions }}
+						</div>
+					</div>
+				{% endif %}
+				{% if page.business_solutions_img %}
+					<div class="col-12 col-lg-5 text-center mt-5">
+						{{ page.business_solutions_img }}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</section>
+{% endif %}	
+
+{# Testimonials #}
+	{% if page.testimonials %}
+	<section class="testimonials">
+		<div class="container py-5">
+			<div class="row py-4">			
+				{{ page.testimonials }}
+			</div>
+		</div>
+	</section>
+{% endif %}	
+{# Testimonials #}
+
+{# Inner Page Testimonials #}
+	{% if page.inner_page_testimonials %}
+		<section class="testimonials-footer mt-5">
+			{{ page.inner_page_testimonials }}
+		</section>
+	{% endif %}	
+{# Inner Page Testimonials #}
+
+{% if page.total_transformation_blog or page.news_events %}
+<section class="blogs py-5">
+	<div class="container py-4">
+		<div class="row">
+			{% if page.total_transformation_blog %}
+				<div class="col-12 col-lg-7">
+					<span class="blue">KORCOMPTENZ</span>
+					<h3><span class="light">Thought Leadership</h3>
+					<div class="mt-5">
+						{{ page.total_transformation_blog }}
+					</div>
+				</div>
+			{% endif %}
+			{% if page.news_events %}
+				<div class="col-12 col-lg-4 offset-lg-1 mt-5 mt-lg-0 ">
+					<span class="blue">KORCOMPTENZ</span>
+					<h3><span class="light">News & Events</h3>
+					{{ page.news_events }}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</section>
+{% endif %}	
+
+{% if page.microsoft_partner_logo %}
+	<section class="ms-footer p-4">
+		<div class="row">
+			{{ page.microsoft_partner_logo }}
+		</div>
+	</section>
+{% endif %}
+
+{% if page.footer_top_content %}
+	<section class="ms-footer p-4">
+		<div class="row">
+			{{ page.footer_top_content }}
+		</div>
+	</section>
+{% endif %}
+<!--Content-->
+{{ page.content }}
+<!--footer Section-->
+{% include '@korone/footer-front.html.twig' %}
+<!--footer Section end-->
+
+

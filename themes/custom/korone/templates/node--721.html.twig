@@ -1,0 +1,406 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+{{ attach_library('classy/node') }}
+
+
+<section>
+<div class="container-fluid mtsstop">
+	<div class="container">
+		<h2 style="line-height:25px;">Wordpress Development Service Company</h2>
+		<h2>Enterprise WordPress Services for Your Industry</h2>
+		<p><strong class="stocbl"><strong>KORCOMPTENZ</strong> Proven Processes + Extensive Experience Provides Superior Results</strong> <br><br>
+		A solution as popular and rich as <a href="/wordpress" title="WordPress">WordPress</a> demands the right partner, one who has built and managed big sites with tens of thousands of pages and users.  That's why <a href="/" title="KORCOMPTENZ"> KORCOMPTENZ</a>  specializes in enterprise-class projects leveraging best-practices architecture for both security, scalability, and performance.
+		</p>
+
+		<div class="responsiveBottom Functionalityicon minHeightIn">
+			<div class="container-fluid rmco2">
+				<div class="row">
+					<div class="col-lg-6 col-md-6">
+					<h3>Introducing WordPress</h3>
+
+					<p><strong>WordPress</strong> is open source software that supports beautiful web experiences, blogs, and apps. It features beautiful custom and third-party designs, powerful features, and the freedom to build whatever your organization needs. As <strong>WordPress.org</strong> describes the platform, it is both "free and priceless at the same time."</p>
+					</div>
+
+					<div class="col-lg-6 col-md-6">
+					<h3>Who Uses WordPress?</h3>
+
+					<p>The short answer is everyone: Approximately 28% of the web is running on <strong>WordPress</strong>, supporting everything from hobbyists to the largest, most sophisticated sites online.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div><!-- container-fluid -->
+</div>
+</section>
+
+<h4 class="text-center mt30" style="font-weight:700">Notable Brands Using Wordpress</h4>
+<img class="img-responsive center-block mb30" src="/themes/custom/korone/images/wordpress-migrate/top_brands_01.jpg" alt="Notable Brands Using Wordpress - Wordpress Development Services" title="Notable Brands Using Wordpress - Wordpress Development Services" />
+
+<div class="clearfix"></div>
+
+<div class="container-fluid rmcol">
+	<div class="container">
+		<h2 class="text-center w3cwt">Korcomptenz WordPress Services</h2>
+		<div class="row">
+			<div class="wordpress_fivebox">
+				<div class="wordpress_innerbox">
+				<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/wicon01.png" alt="WordPress Web Development" title="WordPress Web Development" />
+				<p class="text-center">WordPress Web <br /> Development </p>
+				</div>
+			</div>
+
+			<div class="wordpress_fivebox">
+				<div class="wordpress_innerbox">
+				<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/wicon02.png" alt="Custom Themes + Plugins - Korcomptenz WordPress Development Services" title="Custom Themes + Plugins - Korcomptenz WordPress Development Services" />
+				<p class="text-center">Custom Themes + Plugins</p>
+				</div>
+			</div>
+
+			<div class="wordpress_fivebox">
+				<div class="wordpress_innerbox">
+				<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/wicon03.png" alt="Upgrades + Migrations - Korcomptenz WordPress Development Services" title="Upgrades + Migrations - Korcomptenz WordPress Development Services" />
+				<p class="text-center">Upgrades + <br /> Migrations</p>
+				</div>
+			</div>
+
+			<div class="wordpress_fivebox">
+				<div class="wordpress_innerbox">
+				<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/wicon04.png" alt="Third-Party System Integration - Korcomptenz WordPress Development Services" title="Third-Party System Integration - Korcomptenz WordPress Development Services" />
+				<p class="text-center">Third-Party System Integration</p>
+				</div>
+			</div>
+
+			<div class="wordpress_fivebox">
+				<div class="wordpress_innerbox">
+				<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/wicon05.png" alt="Support + Maintenance - Korcomptenz WordPress Development Services" title="Support + Maintenance - Korcomptenz WordPress Development Services" />
+				<p class="text-center">Support + <br /> Maintenance</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!--container-fluid-->
+
+<div class="container-fluid rmco2">
+<div class="container">
+<div class="row">
+<div class="col-sm-12 korper">
+<h2 class="text-center">Korcomptenz Proven Experience + Results</h2>
+<div class="col-sm-2 mt15 mt100">
+<p class="kor15y text-center"><span>15</span> years of <br />technology <br />experience</p>
+</div>
+
+<div class="col-sm-3 mt15 mt100">
+<p class="kor15y text-center"><span>1,000's</span> of <br />completed <br />projects</p>
+</div>
+
+<div class="col-sm-3 mt15 mt100">
+<p class="kor15y text-center"><span>200+</span> Global team <br /> members</p>
+</div>
+
+<div class="col-sm-4 mt15 mt100">
+<p class="kor15y text-center"><span>35.1% to 65%</span> <br />total cost of <br /> ownership</p>
+</div>
+
+</div>
+
+<div class="col-sm-12 mb30 signfrebl mt40">
+<button class="btn center-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+SIGN UP FOR A FREE SECURITY + PERFORMANCE ASSESSMENT
+</button>
+</div>
+
+<div class="col-sm-12">
+<div class="collapse" id="collapseExample">
+<div class="clearfix"></div>
+<div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+						{{ content }}
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- container-fluid -->
+<div class="container-fluid rmcol mt30">
+
+<div class="container">
+<h2 class="col-sm-12 w3cwt">WordPress Advantages + Benefits</h2>
+<div class="row">
+<div class="wordpress_fivebox">
+<div class="wordpress_innerbox">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/adv_01.png" alt="Open Source - WordPress Development Services Benefits" title="Open Source - WordPress Development Services Benefits" />
+<p class="text-center">Open Source</p>
+</div>
+</div>
+
+<div class="wordpress_fivebox">
+<div class="wordpress_innerbox">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/adv_02.png" alt="Infinitely flexible - WordPress Development Services Benefits" title="Infinitely flexible - WordPress Development Services Benefits" />
+<p class="text-center">Infinitely flexible</p>
+</div>
+</div>
+
+<div class="wordpress_fivebox">
+<div class="wordpress_innerbox">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/adv_03.png" alt="Rich + Powerful - WordPress Development Services Benefits" title="Rich + Powerful - WordPress Development Services Benefits" />
+<p class="text-center">Rich + Powerful</p>
+</div>
+</div>
+
+<div class="wordpress_fivebox">
+<div class="wordpress_innerbox">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/adv_04.png" alt="Easy to use - WordPress Development Services Benefits" title="Easy to use - WordPress Development Services Benefits" />
+<p class="text-center">Easy to use</p>
+</div>
+</div>
+
+<div class="wordpress_fivebox">
+<div class="wordpress_innerbox">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/adv_05.png" alt="Trusted by millions - WordPress Development Services Benefits" title="Trusted by millions - WordPress Development Services Benefits" />
+<p class="text-center">Trusted by millions</p>
+</div>
+</div>
+</div>
+</div>
+</div><!--container-fluid-->
+
+<div class="container-fluid mt40 rmco3">
+<div class="container">
+<div class="row">
+
+<div class="col-sm-12">
+<h2 class="blh3w">Securing Your WordPress Sites</h2>
+<p>As the world's most popular and extensible <a href="/cms" title="CMS">Content Management System</a>, <strong>WordPress</strong> represents an attractive target for hackers.  <strong>KORCOMPTENZ</strong> has developed a unified approach to <strong>WordPress</strong> security that addresses the following key items.  This approach has been honed across hundreds of successful projects, and decades of developer experience.  Can you trust your installation with anything less?</p>
+</div>
+<div class="col-sm-4 grdnbo1">
+<h3>Configuration <br /> &nbsp;</h3>
+<p>The security of a <strong>WordPress</strong> installation begins with how it is configured and administrated.  <strong>KORCOMPTENZ</strong> proven process addresses key aspects of the installation including unique administrator accounts, robust passwords, limited logins, least-privilege principles, hidden configuration files, and restrictive server permissions.</p>
+</div>
+<div class="col-sm-4 grdnbo2">
+<h3>Security Plugins <br /> &nbsp;</h3>
+<p><strong>KORCOMPTENZ</strong> provides additional security to your <strong>WordPress</strong> installation with a combination of third-party and proprietary plugins.  These extensions to the WordPress core protect critical aspects of the platform including regular malware scanning and additional protection for your databases.</p>
+</div>
+<div class="col-sm-4 grdnbo3">
+<h3>3rd-Party Plug-in <br />
+Validation & Vetting
+</h3>
+<p><strong>WordPress</strong> can be compromised by vulnerabilities in third-party plugins that are either poorly coded or not properly maintained.  <strong>KORCOMPTENZ</strong> experienced developers thoroughly research and review all plugins prior to integration according to our proprietary best-practice criteria to provide additional peace of mind.</p>
+</div>
+<div class="col-sm-12 grdnbo4 mb40">
+<h3>On-going Maintenance</h3>
+<p>Hackers move fast, and your WordPress installation can't afford to be left behind with a lingering vulnerability.  Making sure the <strong>WordPress</strong> core and all of your plugins are kept up-to-date with the latest patches is critical to protecting your site.  All <strong>KORCOMPTENZ</strong> <strong>WordPress</strong> management and maintenance agreements contain ongoing services to protect your installation.</p>
+</div>
+
+<div class="col-sm-12">
+<p>Larger installations can also take advantage of our experience with third-party content delivery networks such as CloudFlare that protect your site from Denial of Service Attacks and improve performance.  Vulnerability scanning and other services can be included as well.</p>
+</div>
+
+<div class="col-sm-12 mb15">
+<h2 class="blh3w">Meeting Your Unique Functionality Needs</h2>
+<p>Third-party plugins are one of the reasons WordPress is so popular.  Chances are there's a plugin available that will meet even your most unique needs, but how to choose and who to trust out of the approximately 46,000 on the market can be challenging. </p>
+
+<p>Reviewing, vetting, and selecting the best plugins on the market, and developing your own when nothing quite fits is one of Korcomptenz's key enterprise services.  In order to ensure your success, we consider a multitude of factors based on our experience before making a recommendation.</p>
+</div>
+<h2 class="blh3w mb30 text-center pl-3">FACTORS TO CONSIDER EVERYTIME WE CHOOSE A PLUG-IN</h2>
+<div class="container">
+<div class="row m-0">
+
+<div class="col-sm-4 mb15">
+<div class="axb3o">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/001_timeonmarket.png" alt="Time on the market - Wordpress Development Services Company" title="Time on the market - Wordpress Development Services Company" />
+<p class="text-center mt15">Time on the market</p>
+</div>
+</div>
+
+<div class="col-sm-4 mb15">
+<div class="axb3o">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/002_numberofusers.png" alt="Number of users - Wordpress Development Services Company" title="Number of users - Wordpress Development Services Company" />
+<p class="text-center mt15">Number of users</p>
+</div>
+</div>
+
+<div class="col-sm-4 mb15">
+<div class="axb3o">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/003_frequencyofupdates.png" alt="Frequency of updates - Wordpress Development Services Company" title="Frequency of updates - Wordpress Development Services Company" />
+<p class="text-center mt15">Frequency of updates</p>
+</div>
+</div>
+
+<div class="col-sm-4 mb15">
+<div class="axb3o">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/004_validated_reviews.png" alt="Validated reviews - Wordpress Development Services Company" title="Validated reviews - Wordpress Development Services Company" />
+<p class="text-center mt15">Validated reviews <br /> &nbsp;</p>
+</div>
+</div>
+
+<div class="col-sm-4 mb15">
+<div class="axb3o">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/005_features_documentation.png" alt="Features and documentation - Wordpress Development Services Company" title="Features and documentation - Wordpress Development Services Company" />
+<p class="text-center mt15">Features and documentation</p>
+</div>
+</div>
+
+<div class="col-sm-4 mb15">
+<div class="axb3o">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/006_searches.png" alt="Deep web searches - Wordpress Development Services Company" title="Deep web searches - Wordpress Development Services Company" />
+<p class="text-center mt15">Deep web searches for security issues</p>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div><!--container-fluid-->
+
+<div class="container-fluid coldblcof rmco3">
+<div class="container">
+<div class="row form2 mt20">
+<h2 class="text-center w3cwt mb-4 pl-4">WordPress Migration Steps</h2>
+<div class="row">
+<div class="col-sm-4">
+<div class="anro10">
+<img class="img-responsive" src="/themes/custom/korone/images/wordpress-migrate/wordpress301.jpg" alt="WordPress Migration"  title="WordPress Migration"/>
+<ul class="wmisul">
+<li>Standard WordPress Features</li>
+<li>Third Party Plug-ins</li>
+<li>Custom Code</li>
+<li>Third Party Integrations</li>
+</ul>
+</div>
+</div>
+
+<div class="col-sm-4">
+<div class="anro10">
+<img class="img-responsive" src="/themes/custom/korone/images/wordpress-migrate/wordpress302.jpg" alt="WordPress Migration" title="WordPress Migration" />
+<ul class="wmisul">
+<li>Upgrade In place or side-by-side migration-based on destination +  Target version</li>
+<li>Review + Upgrade 3rd Party Plug-ins</li>
+<li>Adjust Custom Code + Modules Where Needed</li>
+<li>Confirm All Third Party Integrations.</li>
+</ul>
+</div>
+</div>
+
+<div class="col-sm-4">
+<div class="anro10">
+<img class="img-responsive" src="/themes/custom/korone/images/wordpress-migrate/wordpress303.jpg" alt="WordPress Migration" title="WordPress Migration" />
+<ul class="wmisul">
+<li>Review all Content + Design Templates</li>
+<li>Validate all WordPress Features + Plug-ins</li>
+<li>Confirm all Custom Modules &  Codes</li>
+<li>Provide Completed Testing Scripts for Final Approval</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div><!--container-fluid-->
+
+<div class="container-fluid mt40 rmco3">
+	<div class="container">
+		<h2 class="blh3w pl5">The Next Generation Website Opportunity</h2>
+		<p class="pl5">Redesigning your website with WordPress and KORCOMPTENZ can provide measurable benefits to your organization.</p>
+		<div class="row m-0">
+			<div class="wordpress_fivebox">
+				<div class="wordpress_innerboxsecond">
+				<p class="text-center">Up to <strong>65%</strong> reduction in total cost of ownership</p>
+				</div>
+			</div>
+			<div class="wordpress_fivebox">
+				<div class="wordpress_innerboxsecond">
+				<p class="text-center">Up to <strong>56%</strong> more cross-sell and up-sell revenue</p>
+				</div>
+			</div>
+			<div class="wordpress_fivebox">
+				<div class="wordpress_innerboxsecond">
+				<p class="text-center">Up to <strong>54%</strong> greater return on marketing investment</p>
+				</div>
+			</div>
+			<div class="wordpress_fivebox">
+				<div class="wordpress_innerboxsecond">
+				<p class="text-center">Up to <strong>50%</strong> higher conversion rates for website visitors</p>
+				</div>
+			</div>
+			<div class="wordpress_fivebox">
+				<div class="wordpress_innerboxsecond">
+				<p class="text-center">Up to <strong>40%</strong> reduction in time to market <br /> &nbsp;</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div><!--container-fluid-->

@@ -1,0 +1,816 @@
+{#
+/**
+ * @file
+ * Default view template to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+
+<style>
+.greybandOut { display:none;}
+.pager__item.pager__item--first {
+
+    display: none;
+
+}
+.pager__item.pager__item--last {
+
+    display: none; 
+
+}
+.pager__items.js-pager__items {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+    float: left;
+	width: 100%;
+}
+.js-pager__items li {
+	display:inline;
+	padding: 0px;
+	list-style: none;
+	border: none;
+	width: auto;
+}
+.pager li > a, .pager li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+	border-radius: 0px;
+}
+.pager li > a:hover, .pager li > a:focus, .pager li > a:is-active {
+    text-decoration: none;
+    background-color: #000;
+}
+.block-views { display:none;}
+#cat_name {display:none;}
+.block-simplenews{display:none;}
+#edit-actions input.button { 
+	background: #17c3ff;
+	padding: 0;
+	border-radius: 4px;
+	border: 1px solid #17c3ff;
+	color: #fff;
+	width: 95%;
+	height: 35px;
+	margin-top: 15px;
+	font-weight: bold;
+	margin-bottom: 24px;
+}
+#edit-actions {
+    text-align: center;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1111; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background: #FFF; 
+    margin: auto;
+    padding: 0px;
+    border: none;
+    width: 30%;
+	border-radius: 0px;
+}
+
+/* The Close Button */
+.close {
+    color: #FFF;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 0px;
+    border: 3px solid #FFF;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 21px;
+    margin-right: -10px;
+    background: #000;
+    opacity: 1;
+}
+
+.close:hover,
+.close:focus {
+    color: #FFF;
+}
+.blog-newsletter-click {
+    background-color: #17c3ff;
+    padding: 7px 30px;
+    border-radius: 0px;
+    border: 1px solid #17c3ff;
+    color: #fff;
+	cursor: pointer;
+}
+.messages__wrapper {
+    display: block;
+    position: fixed;
+    z-index: 1111;
+    padding-top: 150px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    padding-left: 35%;
+}
+.messages--status {
+	color: #325e1c;
+	background: #FFF;
+	background-image: none;
+	border: none;
+	width: 50%;
+	box-shadow: none;
+	height: 250px;
+}	
+.messages--error {
+	color: #325e1c;
+	background: #FFF;
+	background-image: none;
+	border: none;
+	width: 50%;
+	box-shadow: none;
+	height: auto;
+}
+.ff-thankyou {
+    color: #4B4B4B;
+	padding-top: 40px;
+	margin: 15px;
+}
+.ff-thankyou .jumbotron {
+    margin-top: 0px;
+    background-color: #23c1cb;
+    color: #343233;
+	border-radius: 12px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.ff-thankyou .icon-contt span {
+    display: block;
+    background-color: #333;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    margin-top: 0px;
+    border-radius: 100%;
+    margin-top: -95px;
+	margin-bottom: 10px;
+}
+.jumbotron {
+    padding-top: 48px;
+    padding-bottom: 35px;
+}
+@media only screen and (max-width: 990px){
+    .modal-content{ width: 90%; }
+	.messages--status { width:90%;}
+	.messages--error { width:90%;}
+	#edit-actions input.button { width:90% !important; }
+} 
+@media only screen and (max-width: 359px){
+    .modal-content{ width: 90%; }
+	.messages--status { width:90%;}
+	.messages--error { width:90%;}
+	#edit-actions input.button { width:90% !important; }
+}
+#archive_list {
+    height: 310px;
+    overflow-y: scroll;
+}
+#archive_listd {
+    height: 310px;
+    overflow-y: scroll;
+	display:none;
+} 
+.wordpress ul.resp-tabs-list, p {
+    margin-bottom: 0px !important;
+} 
+.thank_closed {
+	color: #FFF;
+	float: right;
+	font-size: 25px;
+	font-weight: bold;
+	border: 3px solid #FFF;
+	border-radius: 100%;
+	width: 32px;
+	height: 32px;
+	text-align: center;
+	line-height: 26px;
+	margin-right: -30px;
+	background: #000;
+	opacity: 1;
+	margin-top: -25px;
+	cursor: pointer;
+}
+.error_thank_closed {
+    color: #FFF;
+    float: right;
+    font-size: 25px;
+    font-weight: bold;
+    border: 3px solid #FFF;
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 26px;
+    margin-right: -30px;
+    background: #000;
+    opacity: 1;
+    margin-top: -40px;
+    cursor: pointer;
+}
+.thank_closed:hover,
+.thank_closed:focus {
+    color: #FFF;
+}
+.blog-newsletter input[type="email"], .blog-newsletter input[type="text"] {
+    width: 60%;
+    height: 35px;
+    padding: 10px;
+    font-size: 14px;
+}
+.form-item-field-select-industry-0-value { display:none;}
+#cat_name span {
+    color: #FFF;
+    font-size: 16px;
+}
+#edit-message {display:none;}
+#blog_newletters .content {
+    margin-top: 10px;
+}
+#blog_newletters_pop .content {
+    margin-top: 10px;
+}
+.blog-newsletter-inr label {
+    font-size: 14px;
+}
+.blog-categories span {
+    background-color: #03a498;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+	float: none !important; 
+}
+</style>
+<script>	
+	var segment_str = window.location.pathname; // return segment1/segment2/segment3/segment4
+	var segment_array = segment_str.split( '/' );
+	var last_segment = segment_array[segment_array.length - 1];
+	//alert(last_segment); // alerts segment4
+	
+	var requestemail = new XMLHttpRequest();
+    requestemail.open("POST", "/blog/archive/"+last_segment, true);
+    requestemail.responseType = "document";
+    requestemail.send();
+	requestemail.onreadystatechange = function() {
+		if (requestemail.readyState == 4) {				 
+			 var docs = requestemail.response;			 
+			 var session_elem = docs.getElementById("block-views-block-blog-category-main-lists-block-1");
+			 var session_top = docs.getElementById("block-views-block-top-article-posts-block-1");
+			 var session_newsle = docs.getElementById("block-simplenewssubscription");
+			 var get_session_de = [session_elem.innerHTML];
+			 var get_toppost = [session_top.innerHTML];
+			 var get_blognew = [session_newsle.innerHTML];
+			 //document.getElementById('category_list').innerHTML = get_session_de;
+			 document.getElementById('top_article_views').innerHTML = get_toppost;
+			 //document.getElementById('top_article_viewstwo').innerHTML = get_toppost;
+			 //document.getElementById('blog_newletters').innerHTML = get_blognew;
+			 //document.getElementById('blog_newletters_pop').innerHTML = get_blognew; 
+			 
+		}
+	}
+/*function blog_newletters_button(){
+	var modal = document.getElementById('myModal'); 
+	modal.style.display = "block";
+}*/	
+//function close_popup(){
+//	var modal = document.getElementById('myModal');
+//	modal.style.display = "none";
+//}
+function thankclose_popup(){
+	var modals = document.getElementsByClassName('messages__wrapper')[0];
+	modals.style.display = "none";
+}
+
+function select_industry(thisval){
+	//alert(thisval);
+	document.getElementById('edit-field-industry-0-value').value = thisval;
+}
+
+</script>	
+<div{{ attributes.addClass(classes) }}>
+	<section class="image-bg   page-title-2  innerBanner parallax Resourcebanner">
+		<div class="background-image-holder banner_top_innerpage">
+			<img alt="Background Image" class="background-image" src="/sites/default/files/blog-Banner-img.jpg" />
+		</div>
+		<div class="container">
+			<h2>Total Transformation Blog</h2>
+			<p><a href="/">Korcomptenz</a></p>	 
+		</div>
+	</section>
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+  
+ 
+<div class="main-content blog-landing">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 col-md-9 mt-4 mb-4">
+				<section class="blog-heading">
+					<h2>Archives Posts</h2>				
+				</section>
+				<div class="blog-categories" id="cat_name"></div>
+				{% if rows %}
+					<section class="blog-post-container row">
+						{{ rows }}
+					</section>
+					{% if pager|render|trim %}
+						<section class="row col-xs-12">
+							{{ pager }}
+						</section>
+					{% endif %}
+				{% elseif empty %}
+					<div class="view-empty">
+						{{ empty }}
+						</div>
+				{% endif %}
+			</div>
+			<div class="col-sm-12 col-md-3 mt-4 mb-4"> 
+				<div class="blog-categories-sec">	
+				
+					<div id="exTab2" class="exTab col-xs-12">	
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a href="#1" data-toggle="tab" aria-expanded="true">Categories</a>
+							</li>
+							<li class="">
+								<a href="#2" data-toggle="tab" aria-expanded="false">Archives</a>
+							</li>
+						</ul>
+						<div class="tab-content ">
+							<div class="tab-pane active" id="1">
+								<div class="content">
+									<div>    
+										<div class="b-recent-box views-row">
+											<div class="b-recent-box">
+												<div class="arrow-right"></div>
+												<div class="b-title-text">
+												<a href="/blog/category/36">Microsoft Dynamics Business Solutions</a>
+												</div>
+											</div>
+										</div>
+										
+										<div class="b-recent-box views-row">
+											<div class="b-recent-box">
+												<div class="arrow-right"></div>
+												<div class="b-title-text">
+												<a href="/blog/category/6">Infrastructure + Cloud Management</a>
+												</div>
+											</div>
+										</div>
+										
+										<div class="b-recent-box views-row">
+											<div class="b-recent-box">
+												<div class="arrow-right"></div>
+												<div class="b-title-text">
+												<a href="/blog/category/11">Mobile Apps + Custom Dev</a>
+												</div>
+											</div>
+										</div>
+										
+										<div class="b-recent-box views-row">
+											<div class="b-recent-box">
+												<div class="arrow-right"></div>
+												<div class="b-title-text">
+												<a href="/blog/category/31">Web + Marketing Technology</a>
+												</div>
+											</div>
+										</div>
+										
+										<div class="b-recent-box views-row">
+											<div class="b-recent-box">
+												<div class="arrow-right"></div>
+												<div class="b-title-text">
+												<a href="/blog/category/16">Platforms + Specialized Services</a>
+												</div>
+											</div>
+										</div>
+										
+										<div class="b-recent-box views-row">
+											<div class="b-recent-box">
+												<div class="arrow-right"></div>
+												<div class="b-title-text">
+												<a href="/blog/category/26">Technology Trends</a>
+												</div>
+											</div>
+										</div>
+									
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" id="2">
+								<div id="archive_listd"></div>
+								<div id="archive_list">
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201902">February 2019</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201901">January 2019</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201812">December 2018</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201811">November 2018</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201810">October 2018</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201809">September 2018</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201808">August 2018</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201807">July 2018</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201806">June 2018</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201805">May 2018</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201804">April 2018</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201803">March 2018</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201802">February 2018</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201801">January 2018</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201712">December 2017</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201711">November 2017</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201709">October 2017</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201708">September 2017</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201707">July 2017</a></div>
+									</div>
+									<div class="b-recent-box">
+									<div class="arrow-right"></div><div class="b-title-text"><a href="/blog/archive/201706">June 2017</a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
+					
+					<div class="blog-newsletter col-xs-12">
+						<div class="blog-newsletter-inr">
+							<div class="newsletterbg"></div>
+							<div>
+							<div class="js-form-item form-item js-form-type-item form-item-message js-form-item-message form-no-label">
+							<p><b>Subscribe by email</b> </p>
+							<p>Get industry insights, product updates, event invitations, articles and case studies in your inbox.</p>
+							</div>
+							<form action="" method="post" id="simplenews-subscriptions-block-7ad0d429-5827-4c2a-b415-e53ca8e3fbc0" accept-charset="UTF-8">
+						<div class="field--type-simplenews-subscription field--name-subscriptions field--widget-simplenews-subscription-select js-form-wrapper form-wrapper" data-drupal-selector="edit-subscriptions-wrapper" id="edit-subscriptions-wrapper"></div>
+						<div id="edit-message" class="js-form-item form-item js-form-type-item form-item-message js-form-item-message form-no-label">
+						Subscribe by email
+						</div>
+						<input data-drupal-selector="form-zwjiskh4rok7wxwlpygwrot-im7nsojkr7aotgjgrz0" name="form_build_id" value="form-ZwjiSKH4Rok7WxwLPYgwRoT-im7NSOjKr7AOTGjgrZ0" type="hidden">
+						<input data-drupal-selector="edit-simplenews-subscriptions-block-7ad0d429-5827-4c2a-b415-e53ca8e3fbc0" name="form_id" value="simplenews_subscriptions_block_7ad0d429-5827-4c2a-b415-e53ca8e3fbc0" type="hidden">
+						
+						<div class="field--type-string field--name-field-newsletter-name field--widget-string-textfield js-form-wrapper form-wrapper" data-drupal-selector="edit-field-newsletter-name-wrapper" id="edit-field-newsletter-name-wrapper">      
+						<div class="js-form-item form-item js-form-type-textfield form-item-field-newsletter-name-0-value js-form-item-field-newsletter-name-0-value" style="margin: 0px 10px 0px 10px;text-align: left;">
+						<label for="edit-field-newsletter-name-0-value" class="js-form-required form-required">Name*</label>
+						<input class="js-text-full text-full form-text required" data-drupal-selector="edit-field-newsletter-name-0-value" id="edit-field-newsletter-name-0-value" name="field_newsletter_name[0][value]" value="" size="60" maxlength="255" placeholder="Please enter your name" required="required" aria-required="true" type="text" style="width:100%;">
+						
+						</div>
+						
+						</div>
+						<div class="field--type-email field--name-mail field--widget-email-default js-form-wrapper form-wrapper" data-drupal-selector="edit-mail-wrapper" id="edit-mail-wrapper">      
+						<div class="js-form-item form-item js-form-type-email form-item-mail-0-value js-form-item-mail-0-value" style="margin: 0px 10px 0px 10px;text-align: left;">
+						<label for="edit-mail-0-value" class="js-form-required form-required">Business Email*</label>
+						<input data-drupal-selector="edit-mail-0-value" aria-describedby="edit-mail-0-value--description" id="edit-mail-0-value" name="mail[0][value]" value="" size="60" maxlength="254" placeholder="Please enter your email address!" class="form-email required" required="required" aria-required="true" type="email"  style="width:100%;">					
+						<div id="edit-mail-0-value--description" class="description">The subscriber's email address.</div>					
+						</div>					
+						</div>
+						
+						<div class="field--type-string field--name-field-industry field--widget-string-textfield js-form-wrapper form-wrapper" data-drupal-selector="edit-field-industry-wrapper" id="edit-field-industry-wrapper" style="margin: 0px 10px 0px 10px; text-align: left;"> 
+							<label for="edit-mail-0-value" class="js-form-required form-required">Your Industry*</label>
+							<select required="required" class="form-controlr form-select" onchange="select_industry(this.value);" style="width:100%; background: #FFF; border: solid 1px #777; height: 35px; padding:0px;">
+								<option value="" selected="selected">- Select -</option>
+								<option value="Accounting/Finance">Accounting/Finance</option>
+								<option value="Advertising/Public Relations">Advertising/Public Relations</option>
+								<option value="Aerospace/Aviation">Aerospace/Aviation</option>
+								<option value="Arts/Entertainment/Publishing">Arts/Entertainment/Publishing</option>
+								<option value="Automotive">Automotive</option>
+								<option value="Banking/Mortgage">Banking/Mortgage</option>
+								<option value="Business Development">Business Development</option>
+								<option value="Business Opportunity">Business Opportunity</option>
+								<option value="Clerical/Administrative">Clerical/Administrative</option>
+								<option value="Construction/Facilities">Construction/Facilities</option>
+								<option value="Consumer Goods">Consumer Goods</option>
+								<option value="Customer Service">Customer Service</option>
+								<option value="Education/Training">Education/Training</option>
+								<option value="Energy/Utilities">Energy/Utilities</option>
+								<option value="Engineering">Engineering</option>
+								<option value="Government/Military">Government/Military</option>
+								<option value="Healthcare">Healthcare</option>
+								<option value="Hospitality/Travel">Hospitality/Travel</option>
+								<option value="Human Resources">Human Resources</option>
+								<option value="Installation/Maintenance">Installation/Maintenance</option>
+								<option value="Insurance">Insurance</option>
+								<option value="Internet">Internet</option>
+								<option value="Law Enforcement/Security">Law Enforcement/Security</option>
+								<option value="Legal">Legal</option>
+								<option value="Management/Executive">Management/Executive</option>
+								<option value="Manufacturing/Operations">Manufacturing/Operations</option>
+								<option value="Marketing">Marketing</option>
+								<option value="Non-Profit/Volunteer">Non-Profit/Volunteer</option>
+								<option value="Pharmaceutical/Biotech">Pharmaceutical/Biotech</option>
+								<option value="Professional Services">Professional Services</option>
+								<option value="Real Estate">Real Estate</option>
+								<option value="Restaurant/Food Service">Restaurant/Food Service</option>
+								<option value="Retail">Retail</option>
+								<option value="Sales">Sales</option>
+								<option value="Science/Research">Science/Research</option>
+								<option value="Skilled Labor">Skilled Labor</option>
+								<option value="Technology">Technology</option>
+								<option value="Telecommunications">Telecommunications</option>
+								<option value="Transportation/Logistics">Transportation/Logistics</option>
+								<option value="Others">Others</option>
+							</select>
+						</div>
+						
+						<div class="field--type-string field--name-field-industry field--widget-string-textfield js-form-wrapper form-wrapper" data-drupal-selector="edit-field-industry-wrapper" id="edit-field-industry-wrapper">      
+						<div class="js-form-item form-item js-form-type-textfield form-item-field-industry-0-value js-form-item-field-industry-0-value">
+						<input class="js-text-full text-full form-text" data-drupal-selector="edit-field-industry-0-value" id="edit-field-industry-0-value" name="field_industry[0][value]" value="" size="60" maxlength="255" placeholder="" type="hidden">					
+							</div>					
+						</div>
+						
+						
+						<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+						<input data-drupal-selector="edit-subscribe" id="edit-subscribe" name="op" value="Sign Up" class="button js-form-submit form-submit" type="submit">
+						</div>
+						
+						</form>
+							</div>
+							<div class="newsletterbg"></div>
+						</div>
+					</div>	
+					
+					<div id="exTab3" class="exTab col-xs-12 ">	
+						<ul class="nav nav-tabs">
+							<li class="">
+								<a href="#3" data-toggle="tab" aria-expanded="false">Trending</a>
+							</li>
+							<li class="active">
+								<a href="#4" data-toggle="tab" aria-expanded="true">Top posts</a>
+							</li>
+						</ul>
+						<div class="tab-content ">
+							<div class="tab-pane" id="3">
+								<div class="b-recent-box">
+									<img src="/sites/default/files/styles/thumbnail/public/Five-Leading-Business-Intelligence-Platforms-1.png" alt=" Five Leading Business Intelligence Platforms" typeof="Image" width="100" height="79">
+									<span><a href="/five-leading-business-intelligence-platforms" hreflang="en">Five Leading Business Intelligence Platforms
+									</a></span>
+								</div>							
+								<div class="b-recent-box">
+									<img src="/sites/default/files/styles/thumbnail/public/rfid-2.jpg" alt="RFID - The Waves of the Modern Life" typeof="Image" width="100" height="79">
+									<span><a href="/rfid-the-waves-of-the-modern-life" hreflang="en">RFID - The Waves of the Modern Life</a></span>
+								</div>
+								<div class="b-recent-box">
+									<img src="/sites/default/files/styles/thumbnail/public/blog-listing-img-1.jpg" alt="banner" typeof="Image" width="100" height="79">
+									<span><a href="/do-you-want-to-reduce-your-total-cost-of-ownership-for-microsoft-dynamics-by-up-to-40" hreflang="en">Do you want to reduce your total cost of ownership for Microsoft Dynamics by up to 40%?</a></span>
+								</div>
+								<div class="b-recent-box">
+									<img src="/sites/default/files/styles/thumbnail/public/digimacron-blog-1.jpg" alt="DigiMarCon East" typeof="Image" width="100" height="79">
+									<span><a href="/visualizing-your-data" hreflang="en">DigiMarCon East: Recapping a Great Conference</a></span>
+								</div>
+								<div class="b-recent-box">
+									<img src="/sites/default/files/styles/thumbnail/public/blog-listing-img-2.jpg" alt="Business" typeof="Image" width="100" height="79">
+									<span>
+									<a href="/can-your-business-benefit-from-a-37-increase-in-revenue" hreflang="en">Can your business benefit from a 37% increase in revenue?</a>
+									</span>
+								</div>
+								
+							</div>
+							<div class="tab-pane active" id="4">
+								<div id="top_article_views"><div>
+							</div>
+						</div>		
+					</div> 
+				</div>	
+			</div>	
+		</div>
+	</div>
+</div>	 
+<!-- The Modal -->
+<!--<div id="myModal" class="modal">	
+	  <div class="modal-content">
+	  <script>
+		function select_industry_pop(thisvals){
+			//alert(thisval);
+			document.getElementById('edit-field-industry-0-value').value = thisvals;
+		}
+		</script>
+		<span onclick="close_popup()" class="close">&times;</span>
+		<div class="blog-newsletter col-xs-12" style="margin-top: 0px;">
+			<div class="blog-newsletter-inr">
+				<div class="newsletterbg"></div>
+				<div>
+				<div class="js-form-item form-item js-form-type-item form-item-message js-form-item-message form-no-label">
+				<p><b>Subscribe by email</b> </p>
+				<p>Get industry insights, product updates, event invitations, articles and case studies in your inbox.</p>
+				</div>
+					<form action="" method="post" id="simplenews-subscriptions-block-7ad0d429-5827-4c2a-b415-e53ca8e3fbc0" accept-charset="UTF-8">
+					<div class="field--type-simplenews-subscription field--name-subscriptions field--widget-simplenews-subscription-select js-form-wrapper form-wrapper" data-drupal-selector="edit-subscriptions-wrapper" id="edit-subscriptions-wrapper"></div>
+					<div id="edit-message" class="js-form-item form-item js-form-type-item form-item-message js-form-item-message form-no-label">
+					Subscribe by email
+					</div>
+					<input data-drupal-selector="form-zwjiskh4rok7wxwlpygwrot-im7nsojkr7aotgjgrz0" name="form_build_id" value="form-ZwjiSKH4Rok7WxwLPYgwRoT-im7NSOjKr7AOTGjgrZ0" type="hidden">
+					<input data-drupal-selector="edit-simplenews-subscriptions-block-7ad0d429-5827-4c2a-b415-e53ca8e3fbc0" name="form_id" value="simplenews_subscriptions_block_7ad0d429-5827-4c2a-b415-e53ca8e3fbc0" type="hidden">
+					
+					<div class="field--type-string field--name-field-newsletter-name field--widget-string-textfield js-form-wrapper form-wrapper" data-drupal-selector="edit-field-newsletter-name-wrapper" id="edit-field-newsletter-name-wrapper">      
+					<div class="js-form-item form-item js-form-type-textfield form-item-field-newsletter-name-0-value js-form-item-field-newsletter-name-0-value" style="margin: 0px 10px 0px 10px;text-align: left;">
+					<label for="edit-field-newsletter-name-0-value" class="js-form-required form-required">Name*</label>
+					<input class="js-text-full text-full form-text required" data-drupal-selector="edit-field-newsletter-name-0-value" id="edit-field-newsletter-name-0-value" name="field_newsletter_name[0][value]" value="" size="60" maxlength="255" placeholder="Please enter your name" required="required" aria-required="true" type="text" style="width:100%;">
+					
+					</div>
+					
+					</div>
+					<div class="field--type-email field--name-mail field--widget-email-default js-form-wrapper form-wrapper" data-drupal-selector="edit-mail-wrapper" id="edit-mail-wrapper">      
+					<div class="js-form-item form-item js-form-type-email form-item-mail-0-value js-form-item-mail-0-value" style="margin: 0px 10px 0px 10px;text-align: left;">
+					<label for="edit-mail-0-value" class="js-form-required form-required">Business Email*</label>
+					<input data-drupal-selector="edit-mail-0-value" aria-describedby="edit-mail-0-value--description" id="edit-mail-0-value" name="mail[0][value]" value="" size="60" maxlength="254" placeholder="Please enter your email address!" class="form-email required" required="required" aria-required="true" type="email"  style="width:100%;">					
+					<div id="edit-mail-0-value--description" class="description">The subscriber's email address.</div>					
+					</div>					
+					</div>
+					
+					<div class="field--type-string field--name-field-industry field--widget-string-textfield js-form-wrapper form-wrapper" data-drupal-selector="edit-field-industry-wrapper" id="edit-field-industry-wrapper" style="margin: 0px 10px 0px 10px; text-align: left;"> 
+						<label for="edit-mail-0-value" class="js-form-required form-required">Your Industry*</label>
+						<select required="required" class="form-controlr form-select" onchange="select_industry_pop(this.value);" style="width:100%; background: #FFF; border: solid 1px #777;  height: 35px; padding:0px;">
+							<option value="" selected="selected">- Select -</option>
+							<option value="Accounting/Finance">Accounting/Finance</option>
+							<option value="Advertising/Public Relations">Advertising/Public Relations</option>
+							<option value="Aerospace/Aviation">Aerospace/Aviation</option>
+							<option value="Arts/Entertainment/Publishing">Arts/Entertainment/Publishing</option>
+							<option value="Automotive">Automotive</option>
+							<option value="Banking/Mortgage">Banking/Mortgage</option>
+							<option value="Business Development">Business Development</option>
+							<option value="Business Opportunity">Business Opportunity</option>
+							<option value="Clerical/Administrative">Clerical/Administrative</option>
+							<option value="Construction/Facilities">Construction/Facilities</option>
+							<option value="Consumer Goods">Consumer Goods</option>
+							<option value="Customer Service">Customer Service</option>
+							<option value="Education/Training">Education/Training</option>
+							<option value="Energy/Utilities">Energy/Utilities</option>
+							<option value="Engineering">Engineering</option>
+							<option value="Government/Military">Government/Military</option>
+							<option value="Healthcare">Healthcare</option>
+							<option value="Hospitality/Travel">Hospitality/Travel</option>
+							<option value="Human Resources">Human Resources</option>
+							<option value="Installation/Maintenance">Installation/Maintenance</option>
+							<option value="Insurance">Insurance</option>
+							<option value="Internet">Internet</option>
+							<option value="Law Enforcement/Security">Law Enforcement/Security</option>
+							<option value="Legal">Legal</option>
+							<option value="Management/Executive">Management/Executive</option>
+							<option value="Manufacturing/Operations">Manufacturing/Operations</option>
+							<option value="Marketing">Marketing</option>
+							<option value="Non-Profit/Volunteer">Non-Profit/Volunteer</option>
+							<option value="Pharmaceutical/Biotech">Pharmaceutical/Biotech</option>
+							<option value="Professional Services">Professional Services</option>
+							<option value="Real Estate">Real Estate</option>
+							<option value="Restaurant/Food Service">Restaurant/Food Service</option>
+							<option value="Retail">Retail</option>
+							<option value="Sales">Sales</option>
+							<option value="Science/Research">Science/Research</option>
+							<option value="Skilled Labor">Skilled Labor</option>
+							<option value="Technology">Technology</option>
+							<option value="Telecommunications">Telecommunications</option>
+							<option value="Transportation/Logistics">Transportation/Logistics</option>
+							<option value="Others">Others</option>
+						</select>
+					</div>
+					
+					<div class="field--type-string field--name-field-industry field--widget-string-textfield js-form-wrapper form-wrapper" data-drupal-selector="edit-field-industry-wrapper" id="edit-field-industry-wrapper">      
+					<div class="js-form-item form-item js-form-type-textfield form-item-field-industry-0-value js-form-item-field-industry-0-value">
+        			<input class="js-text-full text-full form-text" data-drupal-selector="edit-field-industry-0-value" id="edit-field-industry-0-value" name="field_industry[0][value]" value="" size="60" maxlength="255" placeholder="" type="hidden">					
+						</div>					
+					</div>
+					
+					
+					<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">
+					<input data-drupal-selector="edit-subscribe" id="edit-subscribe" name="op" value="Sign Up" class="button js-form-submit form-submit" type="submit">
+					</div>
+					
+					</form>
+				</div>
+				<div class="newsletterbg"></div>
+			</div>
+		</div>		
+	  </div>
+</div>
+<div id="myModal" class="modal">
+	<div class="modal-content">
+		{% include 'status-messages.html.twig' %}
+	</div>
+</div>-->
+<!-- The Modal -->
+  {% if attachment_after %}
+    <div class="attachment attachment-after">
+      {{ attachment_after }}
+    </div>
+  {% endif %}
+  {% if more %}
+    {{ more }}
+  {% endif %}
+  {% if footer %}
+    <div class="view-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+  {% if feed_icons %}
+    <div class="feed-icons">
+      {{ feed_icons }}
+    </div>
+  {% endif %}
+</div>

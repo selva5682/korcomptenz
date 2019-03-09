@@ -1,0 +1,467 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.Sign up for
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.featured_top: Items for the featured top region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.featured_bottom_first: Items for the first featured bottom region.
+ * - page.featured_bottom_second: Items for the second featured bottom region.
+ * - page.featured_bottom_third: Items for the third featured bottom region.
+ * - page.footer_first: Items for the first footer column.
+ * - page.footer_second: Items for the second footer column.
+ * - page.footer_third: Items for the third footer column.
+ * - page.footer_fourth: Items for the fourth footer column.
+ * - page.footer_fifth: Items for the fifth footer column.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see bartik_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+{% include '@korone/header-cmshome.html.twig' %}  
+<!--Content-->
+<div class="main-container innerpage"> 
+  <!--Inner Banner-->
+  <section class="image-bg md-bg-banner PatientJourneyBannerNew">
+	<div class="PatientJourneyBannerNewIn">
+       <div class="PatientJourneyBannerRight">
+		   <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <div class="carousel-caption"> 
+			<h2>Save 50% cost on your <span title="Microsoft Dynamics">Dynamics Implementation</span> with Korcomptenz </h2>
+		 <h3>Achieve the ROI faster than ever.</h3>
+		  </div>
+      </div>
+
+      <div class="item">
+       <div class="carousel-caption"> 
+			<h2>With Korcomptenz, <span title="Dynamics 365">Dynamics 365</span> can do more than you think</h2>
+		 <h3>Experience tailor made add-ons with Korcomptenz ranging from IoT to Artificial Intelligence.</h3>
+		  </div>
+      </div>
+		<div class="item">
+       <div class="carousel-caption">
+			<h2>With Korcomptenz, deliver a modern user experience including a <span>role-based homepage</span> </h2>
+		 <h3>Exclusive Web-portal with default API's for easy integration with your existing Dynamics</h3>
+		  </div>
+      </div>
+    </div>
+  </div>
+         
+		 <h1>Microsoft Dynamics Partners</h1>
+	   </div>
+		
+	  <div class="bi-banner-form">
+     <h2>Sign up for a Free Consultation and Demo</h2>
+<div class="col-md-12">
+  <div>
+    <div id="block-webform-4" data-block-plugin-id="webform_block" class="block block-webform block-webform-block">
+      <div class="content">
+      {{ page.kentico_supercharged }}
+    </div>
+  </div>
+
+  </div>
+
+</div>
+     </div>
+		
+		</div>
+	<div class="white-overlay"><img alt="" src="/themes/custom/korone/images/Microsoft-Dynamics-Images/wrapper-bg.png"></div>
+</section>
+	<section class="ban-img ">
+		<div class="container animation-element slide-left">
+		<div class="row">
+			
+			<div class="col-xs-12 col-md-6 ms-partner">
+				<p>Microsoft Dynamics Specialist Consultants</p>
+			<div class="logoStyle">
+            <a href="/microsoft-dynamics365">
+            <img alt="Microsoft Dayamics AX" src="/themes/custom/korone/images/Microsoft-Dynamics-Images/ms-365.png" title="Microsoft Dayamics AX" />
+			</a> 
+			<a href="/microsoft-dynamics-ax">
+			<img alt="Microsoft Dyamics Nav Partner" src="/themes/custom/korone/images/Microsoft-Dynamics-Images/ms-ax.png" title="Microsoft Dyamics Nav Partner" />
+            </a> 
+			<a href="/microsoft-dynamics-business-solutions">
+            <img alt="Microsoft Dynamics CRM" src="/themes/custom/korone/images/Microsoft-Dynamics-Images/ms-businesscentral.png" title="Microsoft Dynamics CRM" />
+            </a> 
+			<a href="/microsoft-dynamics-nav">
+            <img alt="Microsoft Dynamics GP" src="/themes/custom/korone/images/Microsoft-Dynamics-Images/ms-nav.png" title="Microsoft Dynamics GP" />
+            </a>
+			</div>
+            </div>
+			<div class="col-xs-12 col-md-6 tabview">
+			<img src="/themes/custom/korone/images/Microsoft-Dynamics-Images/tabview.png" alt="">
+			</div>
+			
+			</div>
+		</div>
+		
+		</section>
+  <!--Inner Banner End-->
+ 
+  <section class="responsiveContent responsiveTopOut MicrosoftDynamicsIntro">
+     <div class="container">
+     <div class="col-md-8" style="padding-right: 100px;">
+     <div class="MicrosoftDynamicsIntroTop">
+     <h2 class="csc-firstHeader">Microsoft Dynamics 365 Enterprise - Manufacturing</h2>
+     <p>Today's top challenges faced by Manufacturing segments are Top Skilled Labour, Strict Project Management timelines, Machine Learning capabilities and Customer Self Service applications. Microsoft Dynamics for manufacturing boosts efficiency to effectively manage production, including production orders, bills of materials, supply planning, and capacity requirements planning. Respond quickly to last-minute customer requests and changes, and take advantage of new business opportunities to stay ahead of your competition. Be it marketing, customer service or project service automation Microsoft Dynamics 365 can be the answer to some of your greatest concerns. As an end-to-end corporate solution, it offers you many tools designed specifically for businesses with production and supply chain management.</p>
+     <h2 class="csc-firstHeader">Microsoft Dynamics 365 Enterprise – Retail</h2>
+     <p>Customers are expecting capabilities from enterprise that will woo them with more. There are technologies that helps you to map every part of the customer experience pushing Retailers to be responsive to enhance the customer journey and offer more than expectations.</p>
+
+<p>The Retail applications of Microsoft Dynamics 365 with the combined power of ERP and CRM , offers just the key tools to cater to the ever-changing digitized market
+</p>
+ <a href="/sites/default/files/Retailing-done-Right-Whitepaper.pdf" target="_blank" title="Download White Paper on Retailing" class="DownloadWhiteBtn">Download White Paper on Retailing</a></div>
+	 
+       <div class="MicrosoftDynamicsIntroBottom">
+     <div class="col-md-6  AXServices">
+     <h2 class="csc-firstHeader">Our Microsoft Dynamics AX Services include:</h2>
+     <div class="clearfix">
+            <ul>
+            <li>Consulting </li>
+            <li>Implementation</li>
+            <li>Upgrade</li>
+            <li>Support and Maintenance</li>
+            <li>Cloud solutions</li>
+            
+            
+            </ul>
+            <ul>
+            <li>On premises support </li>
+            <li>Performance Tuning</li>
+            <li>Global Delivery </li>
+            <li>Licensing</li>
+            <li>Cost Estimation </li>
+            </ul>
+</div>
+<a href="/request-consultation" target="_blank" class="RequestConsultationBtn">Request Consultation</a>
+     </div>
+     
+     </div>
+     <div class="mt40">
+     <h2 class="csc-firstHeader">Microsoft Dynamics 365 Business Central</h2>
+     <p style="text-align:justify">Dynamics 365 Business Central is designed for businesses looking for an all-in-one business management solution that's easy to use and adapt. Connect your finances, sales, service, and operations to streamline business processes, improve customer interactions, and enable growth. Microsoft Dynamics Business Central uniquely delivers a comprehensive, end-to-end approach to business applications helping you unify data and relationships, build intelligence into your decision making, and accelerate business transformation. Microsoft Dynamics 365 Business Central brings the full power of Dynamics NAV to the cloud. The functionality of Dynamics 365 for Financials, Business Edition is now loaded with proven capacity of a ERP solution. Now its available at two price points, Business Central Essentials and Business Central Premium.</p>
+     
+     <a class="Ms-ppc" href="/request-consultation" target="_blank"> > Request a Demo for MS Dyanmics 365 Business Central </a>
+     </div>
+     </div>
+     
+     <div class="col-md-4">
+     <h2 class="csc-firstHeader">Important topics of interest </h2>
+     
+	 <div class="blog-sidear">
+     <div class="blog-title-sidebar">
+     <a href="/performance-tuning-for-dynamics-ax" title="Is your Dynamics AX environment running optimally?">Is your Dynamics AX environment running optimally?</a>
+     </div>
+     <div class="blogd-dec-sidebar">
+     Microsoft Dynamics AX ERP is a critical application to successfully manage your business.
+     </div>
+     <div class="blog-date-sidebar">
+        July 19, 2018
+     </div>
+     </div>
+	 
+	 <div class="blog-sidear">
+     <div class="blog-title-sidebar">
+     <a href="/top-5-challenges-in-manufacturing-and-retail-industry" title="Top 5 challenges in Manufacturing and Retail industry">Top 5 challenges in Manufacturing and Retail industry</a>
+     </div>
+     <div class="blogd-dec-sidebar">
+     The manufacturing industry is steadily growing, thanks to new technology and lean manufacturing processes...
+     </div>
+     <div class="blog-date-sidebar">
+        July 19, 2018
+     </div>
+     </div>
+	 
+     <div class="blog-sidear">
+     <div class="blog-title-sidebar">
+     <a href="/microsoft-dynamics-365-pricing" title="Microsoft Dynamics 365">Microsoft Dynamics 365 is a full life cycle ERP. Can a SMB afford it?</a>
+     </div>
+     <div class="blogd-dec-sidebar">
+     The Simple answer is YES. Dynamics 365 suite of products is Microsoft's answer to SMBs…
+     </div>
+     <div class="blog-date-sidebar">
+      June 05, 2018
+     </div>
+     </div>
+     
+     <div class="blog-sidear">
+     <div class="blog-title-sidebar">
+     <a href="/microsoft-dynamics-365-enterprise-licensing" title="Microsoft Dynamics 365">Microsoft Dynamics 365 Enterprise Modules and Licensing Blog</a>
+     </div>
+     <div class="blogd-dec-sidebar">
+     Microsoft Dynamics 365 is the next generation of intelligent business applications in the…
+     </div>
+     <div class="blog-date-sidebar">
+      June 05, 2018
+     </div>
+     </div>
+	 
+	 <div class="blog-sidear">
+     <div class="blog-title-sidebar">
+     <a href="/microsoft-dynamics-365-business-central" title="Microsoft Dynamics 365">Microsoft Dynamics 365 Business Central</a>
+     </div>
+     <div class="blogd-dec-sidebar">
+     Microsoft Dynamics 365 Business Central, previously called 'Tenerife' and is the new…
+     </div>
+     <div class="blog-date-sidebar">
+      May 23, 2018
+     </div>
+     </div>
+     
+     <div class="blog-sidear">
+     <div class="blog-title-sidebar">
+     <a href="/dynamics-365-business-central-licensing" title="Microsoft Dynamics 365">Dynamics 365 Business Central Modules and Licensing Blog</a>
+     </div>
+     <div class="blogd-dec-sidebar">
+     Microsoft Dynamics 365 Business Central is a business management solution that is…
+     </div>
+     <div class="blog-date-sidebar">
+      June 05, 2018
+     </div>
+     </div>
+	 
+ 
+	 <div class="blog-sidear">
+     <div class="blog-title-sidebar">
+     <a href="/benefits-of-microsoft-dynamics-365" title="Microsoft Dynamics 365">Microsoft Dynamics 365 and its Benefits</a>
+     </div>
+     <div class="blogd-dec-sidebar">
+     Microsoft Dynamics 365, a cloud-based application experience based on a common data model…
+     </div>
+     <div class="blog-date-sidebar">
+       May 18, 2018
+     </div>
+     </div>
+	 
+	 
+	 
+     
+     <div class="ebookTh pa-eb">
+      <h3 class="csc-firstHeader">Download our eBook</h3> 
+	  <h4>Small and Medium Business Info eBook on benefits of ERP </h4>  
+      <div class="formIn">
+        {{ page.content }}
+       </div>
+       </div>
+       </div>
+     </div>
+  </section>
+  
+
+<section class="responsiveContent responsiveTopOut  CaseStudiesOut">
+     
+      <div class="container">
+      <h2 class="csc-firstHeader">Microsoft Dynamics Case Study</h2>
+      
+      <div class="col-md-4">
+     
+      <img alt="Microsoft Dynamic" src="/themes/custom/korone/images/Microsoft-Dynamics-Images/Leading-Manufacturing-Company-img.jpg" width="406" height="230" alt="Microsoft Dynamics Manufacturing">
+	   <h3 class="csc-firstHeader">Microsoft Dynamics Manufacturing </h3>
+<div class="colmdIn">
+  <p>Capture new opportunities across your business when you bring people, data, and processes together with Microsoft Dynamics 365, an intelligent cloud based application that unify CRM and ERP capabilities to help you run your business end to end.</p></div>
+      <a href="/leading-manufacturing-company">Read more</a>
+      </div>
+      
+      <div class="col-md-4">
+  
+       
+    <img src="/themes/custom/korone/images/Microsoft-Dynamics-Images/Branch-Medical-Group-img.jpg" width="406" height="230" alt="Branch Medical Group">
+	<h3 class="csc-firstHeader">Branch Medical Group</h3>
+      <div class="colmdIn">
+      <p>Branch Medical Group is a world-class contract manufacturer of medical implants that believes in delivering on time because it makes a difference, both to your bottom-line and someone's lifeline. That's why Branch Medical make commitments, not just promises.</p>
+     </div>
+      <a href="/branch-medical-group">Read more</a>
+      </div>
+      
+      <div class="col-md-4">
+     
+      
+ <img src="/themes/custom/korone/images/Microsoft-Dynamics-Images/Retail-and-Fashion-img.jpg" width="406" height="230" alt="Retail and Fashion">
+ <h3 class="csc-firstHeader">Retail and Fashion</h3>
+      <div class="colmdIn">
+      <p>FAF combine innovative design and merchandising expertise, unsurpassed customer service with decades of execution experience. They have a reputation for collaboration, transparency and ethical conduct that has made us the go-to supplier for the world's best-known retailers. </p>
+     </div>
+      <a href="/microsoft-dynamics-ax-support">Read more</a>
+      </div>
+      
+      </div>
+      </section>
+    
+</div>
+  <!-- thank ydou Modal -->
+  
+  {% if page.footer_features %}
+  <section class="responsiveBottomOut">
+    <div class="container">
+      <div class="responsiveBottom">
+        {{ page.footer_features }}
+      </div>
+    </div>
+    
+  </section>
+  {% endif %}
+  {% if page.footer_video %}
+ <section class="responsiveContent ">    
+    <div class="videoPresentation">
+	 {{ page.footer_video }}      
+    </div>
+  </section> 
+  {% endif %}
+ 
+ {% if page.footer_services %}
+ <section class="ProductBottom ServicesTxt">
+	 {{ page.footer_services }}
+</section> 	 
+  {% endif %}
+  
+  {% if page.footer_first %}
+  <section class="blueband">
+  <div class="fullwidth ">
+  {{ page.footer_first }}
+  </div>
+  </section>
+  {% endif %}
+  {% if page.footer_second %}
+  <section class="greybandOut">
+    <div class="container">
+	{{ page.footer_second }}      
+    </div>
+  </section>
+  {% endif %}
+</div>
+<!--Content End-->
+
+{% include '@korone/footer.html.twig' %}
+
+<style>
+.MicrosoftDynamicsIntroBottom .col-md-6.AXServices {
+	background:url(../images/AXServices-bg.jpg) repeat !important;
+    padding: 3.5%!important;
+    width: 100%!important;
+    margin: 0 2% 0 0!important;
+	    max-width: 100%;
+}
+.CaseStudiesOut
+{
+	background:#f5f5f5 !important;
+}
+.CaseStudiesOut .container .col-md-4 p
+{
+	color:#717171 !important;
+	font-size:16px;
+	padding:0;
+	margin:0;
+	text-align:justify;
+}
+.CaseStudiesOut .container .col-md-4 a
+{
+	color:#0cbec5 !important;
+}
+</style>
+<style>.PatientJourneyBannerNewIn{margin-top:75px;}
+.PatientJourneyBannerRight .carousel-caption{left:0 !important;top:0 !important;right:auto !important;    position: relative !important;}
+.PatientJourneyBannerRight .item{background:none !important}
+.md-bg-banner {
+   height:700px !important; background: url(/themes/custom/korone/images/Microsoft-Dynamics-Images/baner.jpg) no-repeat !important;background-attachment: fixed !important;
+}
+ .image-bg span {
+    color: #6ebfff;
+}
+.PatientJourneyBannerRight .carousel-indicators {
+    bottom: -25px;left:5%;
+}
+.md-bg-banner h3{text-align: left;}
+.bi-banner-form h2{color:#fff !important;text-align:center !important}.animation-element.slide-left {
+	opacity: 0;
+	-moz-transition: all 750ms linear;
+	-webkit-transition: all 750ms linear;
+	-o-transition: all 750ms linear;
+	transition: all 750ms linear;
+	-moz-transform: translate3d(0px, 100px, 0px);
+	-webkit-transform: translate3d(0px, 100px, 0px);
+	-o-transform: translate(0px, 100px);
+	-ms-transform: translate(0px, 100px);
+	transform: translate3d(0px, 100px, 0px);
+}
+.animation-element.slide-left.in-view {
+	opacity: 1;
+	-moz-transform: translate3d(0px, 0px, 0px);
+	-webkit-transform: translate3d(0px, 0px, 0px);
+	-o-transform: translate(0px, 0px);
+	-ms-transform: translate(0px, 0px);
+	transform: translate3d(0px, 0px, 0px);
+}
+.ban-img{width:100%;background-color: #e4e4e4; }
+.bi-banner-form{z-index:1}
+.ms-partner{margin-top:30px}
+.hideonclick{display:none}
+.ms-partner{text-align:right}
+.ms-partner img{width:100%;}
+.tabview{margin-top:-200px}
+.tabview img{width:100%}
+.white-overlay{position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0px;
+    width: 100%;}
+.white-overlay img{width:100%}
+@media (max-width:992px){
+.tabview {
+     margin-top: 0px;
+}
+	}
+	.container.animation-element.slide-left.in-view {
+    padding: 0;
+}
+.form-group.col-md-6 {
+    padding-left: 0;
+}
+.logoStyle a img { width:23.5% !important}
+	</style>

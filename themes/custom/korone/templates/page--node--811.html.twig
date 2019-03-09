@@ -1,0 +1,418 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.featured_top: Items for the featured top region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.featured_bottom_first: Items for the first featured bottom region.
+ * - page.featured_bottom_second: Items for the second featured bottom region.
+ * - page.featured_bottom_third: Items for the third featured bottom region.
+ * - page.footer_first: Items for the first footer column.
+ * - page.footer_second: Items for the second footer column.
+ * - page.footer_third: Items for the third footer column.
+ * - page.footer_fourth: Items for the fourth footer column.
+ * - page.footer_fifth: Items for the fifth footer column.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see bartik_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+{% include '@korone/header.html.twig' %} 
+<!--Content-->
+
+<section class="responsiveContent responsiveTopOut wordpress">
+<div class="cms-pdf">
+ {{ page.content }}
+<div class="container-fluid rmco2">
+<div class="container">
+<div class="row">
+<div class="col-sm-12 korper">
+<h2 class="text-center">Korcomptenz Proven Experience + Results</h2>
+<div class="col-sm-2 mt15 mt100">
+<p class="kor15y text-center"><span>15</span> years of <br />technology <br />experience</p>
+</div>
+
+<div class="col-sm-3 mt15 mt100">
+<p class="kor15y text-center"><span>1,000's</span> of <br />completed <br />projects</p>
+</div>
+
+<div class="col-sm-3 mt15 mt100">
+<p class="kor15y text-center"><span>200+</span> global team <br /> members</p>
+</div>
+
+<div class="col-sm-4 mt15 mt100">
+<p class="kor15y text-center"><span>35.1% to 65%</span> <br />total cost of <br /> ownership</p>
+</div>
+
+</div>
+
+<div class="col-sm-12 mb30 signfrebl mt40">
+<button class="btn center-block" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">CLICK HERE TO COMPLIMENTARY MAGENTO ERP INTERGRAATION </button>
+</div>
+
+<div class="col-sm-12">
+<div class="collapse" id="collapseExample">
+<div class="clearfix"></div>
+<div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+							{{ page.kentico_supercharged }}
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</div><!-- container-fluid -->
+
+<div class="container-fluid rmcol11 mt30">
+
+<div class="container">
+<div class="row">
+<h2 class="col-sm-12 w3cwt3">Magento Advantages + Benefits</h2>
+<div class="col-20pr">
+<div class="inaio-mo">
+<img class="center-block" src="/themes/custom/korone/images/magento/Open-Source.png" alt="Open Source" />
+<p class="text-center">Open Source</p>
+</div>
+</div>
+
+<div class="col-20pr">
+<div class="inaio-mo">
+<img class="center-block" src="/themes/custom/korone/images/magento/Infinitely-flexible.png" alt="Infinitely flexible" />
+<p class="text-center">Infinitely flexible</p>
+</div>
+</div>
+
+<div class="col-20pr">
+<div class="inaio-mo">
+<img class="center-block" src="/themes/custom/korone/images/magento/Rich-Powerful.png" alt="Rich" />
+<p class="text-center">Rich + Powerful</p>
+</div>
+</div>
+
+<div class="col-20pr">
+<div class="inaio-mo">
+<img class="center-block" src="/themes/custom/korone/images/magento/Easy-to-use.png" alt="Easy to use" />
+<p class="text-center">Easy to use</p>
+</div>
+</div>
+
+<div class="col-20pr">
+<div class="inaio-mo">
+<img class="center-block" src="/themes/custom/korone/images/magento/Trusted-by-millions.png" alt="Trusted by millions" />
+<p class="text-center">Trusted by millions</p>
+</div>
+</div>
+</div>
+</div>
+</div><!--container-fluid-->
+
+<div class="container-fluid mt40 rmco3">
+<div class="container">
+<div class="row">
+
+<div class="col-sm-12">
+<h2>Korcomptenz + Magento Managed Service Offerings </h2>
+<h2 class="blh3w">ERP, Accounting Systems, and Other Integrations</h2>
+<p>Your online storefront is the indispensable gateway to your customers, but making sure the data flows to your ERP, accounting, and other systems can be equally important to ensuring a smooth operation.  KORCOMPTENZ's end-to-end, full-ecosystem support services enable the tight, bi-directional integration that can save you time and money, and help keep your customers happy with accurate information.</p>
+</div>
+<div class="col-sm-12 mt20 mb20">
+<table class="table table-bordered">
+  <tr bgcolor="#f96620">
+    <td colspan="3" class="table-text  white-text">Seamless, Bi-Directional Synchronization</td>
+    </tr>
+  <tr class="table-text">
+    <td width="34%">Products + Inventory</td>
+    <td width="33%">Customers</td>
+    <td width="33%">Orders</td>
+  </tr>
+  <tr>
+    <td colspan="3">Why stop with the basics?  KORCOMPTENZ can help you synchronize discounts, group pricing, and other essential elements of your retailing strategy with Magento.</td>
+    </tr>
+</table>
+</div>
+
+<div class="col-sm-12">
+<h2 class="blh3w">Business Intelligence + Data Analytics</h2>
+<p>In the world of ecommerce, transactions generate data, and a lot of it.  From the details of a specific customer's purchase, to the journey the customer took to find your online storefront, to their propensity to return for a repeat order or exit to a competitor, everything leaves a digital footprint.</p>
+
+</div>
+<div class="col-sm-12  mt20 mb20">
+<table class="table table-bordered">
+  <tr bgcolor="#f96620">
+    <td colspan="3" class="table-text white-text">Big Data Services Powered by Machine Learning</td>
+    </tr>
+  <tr class="table-text">
+    <td width="34%">Customer Lifetime Value</td>
+    <td width="33%">SEM Analysis + ROI Calculations</td>
+    <td width="33%">Clickstream Behavior + Interaction Segmentation</td>
+  </tr>
+  <tr class="table-text white-text" bgcolor="#f96620">
+    <td width="34%">Customer Journey</td>
+    <td width="33%">Product Cradle to Grave</td>
+    <td width="33%">Pricing Optimization + Forecast Modeling</td>
+  </tr>
+  
+  <tr class="table-text">
+    <td width="34%">Promotion Effectiveness</td>
+    <td width="33%">Channel Spend Optimization</td>
+    <td width="33%">Brand Triage</td>
+  </tr>
+</table>
+</div>
+
+<div class="col-sm-12">
+<h2 class="blh3w">Improving Your Customer Journey</h2>
+
+<p>Customers need to find your store and find reasons to keep coming back; sometimes this process requires a gentle nudge for an abandoned shopping cart or visitors who are just browsing.  Understanding and improving your customers' journey with data-driven insights and targeted messaging are critical to increase sales volume and driving repeat business.</p>
+
+<p>KORCOMPTENZ unique combination of data expertise, business strategy, and technology experience allow us to deploy sophisticated, targeted journeys that produce real world results. </p>
+
+</div>
+
+<div class="col-sm-12 mb15">
+<h2 class="blh3w">Meeting Your Unique Functionality Needs</h2>
+<p>Third-party plugins are one of the reasons Magento is so popular.  These plugins can be used to improve customer support, expand the type of payments you accept help with your marketing, shipping, fulfillment and more.  KORCOMPTENZ has demonstrated proven success validating third-party plugins and building our own. We consider a multitude of factors based on our experience before making a recommendation.</p>
+
+<p>Reviewing, vetting, and selecting the best plugins on the market, and developing your own when nothing quite fits is one of Korcomptenz's key enterprise services.  In order to ensure your success, we consider a multitude of factors based on our experience before making a recommendation.</p>
+</div>
+
+<h2 class="blh3w text-center">FACTORS TO CONSIDER EVERYTIME WE CHOOSE A PLUG-IN</h2>
+<div class="col-sm-10 col-sm-offset-1">
+<div class="col-sm-4 mb15">
+<div class="axb3o">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/001_timeonmarket.png" alt="Time on the market" />
+<p class="text-center mt15">Time on the market</p>
+</div>
+</div>
+<div class="col-sm-4 mb15">
+<div class="axb3o">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/002_numberofusers.png" alt="Number of users" />
+<p class="text-center mt15">Number of users</p>
+</div>
+</div>
+<div class="col-sm-4 mb15">
+<div class="axb3o">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/003_frequencyofupdates.png" alt="Frequency of updates" />
+<p class="text-center mt15">Frequency of updates</p>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="col-sm-4 mb15">
+<div class="axb3o">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/004_validated_reviews.png" alt="Validated reviews" />
+<p class="text-center mt15">Validated reviews <br /> &nbsp;</p>
+</div>
+</div>
+<div class="col-sm-4 mb15">
+<div class="axb3o">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/005_features_documentation.png" alt="Features and documentation" />
+<p class="text-center mt15">Features and documentation</p>
+</div>
+</div>
+<div class="col-sm-4 mb15">
+<div class="axb3o">
+<img class="center-block" src="/themes/custom/korone/images/wordpress-migrate/006_searches.png" alt="Deep web searches" />
+<p class="text-center mt15">Deep web searches for security issues</p>
+</div>
+</div>
+</div>
+
+<div class="col-sm-12 mt40">
+<h2 class="blh3w">Securing Your Installation + Improving Your Performance</h2>
+<p>As the world's most popular and extensible ecommerce system, Magento represents an attractive target for hackers.  KORCOMPTENZ has developed a unified approach to Magento security that addresses the following key items.  This approach has been honed across hundreds of successful projects, and decades of developer experience.  Can you trust your installation with anything less?</p>
+
+<p>Larger installations can also take advantage of our experience with third-party content delivery networks such as CloudFlare that protect your site from Denial of Service Attacks and improve performance.  Vulnerability scanning, and other services can be included as well.</p>
+
+</div>
+</div>
+</div>
+</div><!--container-fluid-->
+
+<div class="container-fluid coldblmag rmco3">
+<div class="container">
+<div class="row form2 mt20">
+<h2 class="text-center w3cwt">Magento Migration Steps</h2>
+<div class="col-sm-12">
+<div class="col-sm-4">
+<div class="anro10">
+<img class="img-responsive" src="/themes/custom/korone/images/magento/analyse.png" alt="analyse" />
+<ul class="wmisul">
+<li>Standard Magento Features</li>
+<li>Third Party Plug-ins</li>
+<li>Custom Code</li>
+<li>Third Party Integrations</li>
+</ul>
+</div>
+</div>
+
+<div class="col-sm-4">
+<div class="anro10">
+<img class="img-responsive" src="/themes/custom/korone/images/magento/execute.png" alt="execute" />
+<ul class="wmisul">
+<li>Upgrade In place or side-by-side migration-based on destination +  Target version</li>
+<li>Review + Upgrade 3rd Party Plug-ins</li>
+<li>Adjust Custom Code + Modules Where Needed</li>
+<li>Confirm All Third Party Integrations.</li>
+</ul>
+</div>
+</div>
+
+<div class="col-sm-4">
+<div class="anro10">
+<img class="img-responsive" src="/themes/custom/korone/images/magento/test.png" alt="test" />
+<ul class="wmisul">
+<li>Review all Content + Design Templates</li>
+<li>Validate all WordPress Features + Plug-ins</li>
+<li>Confirm all Custom Modules &  Codes</li>
+<li>Provide Completed Testing Scripts for Final Approval</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div><!--container-fluid-->
+
+<div class="container-fluid mt40 rmco3">
+<div class="container">
+<div class="row form2">
+<div class="col-sm-12">
+<h2 class="blh3w pl5">The Next Generation Website Opportunity</h2>
+<p class="pl5">Redesigning your website with Magento and KORCOMPTENZ can provide measurable benefits to your organization.</p>
+<div class="col-20pr">
+<div class="tnet1">
+<p class="text-center">Up to <strong>65%</strong> reduction in total cost of ownership</p>
+</div>
+</div>
+<div class="col-20pr">
+<div class="tnet1">
+<p class="text-center">Up to <strong>56%</strong> more cross-sell and up-sell revenue</p>
+</div>
+</div>
+<div class="col-20pr">
+<div class="tnet1">
+<p class="text-center">Up to <strong>54%</strong> greater return on marketing investment</p>
+</div>
+</div>
+<div class="col-20pr">
+<div class="tnet1">
+<p class="text-center">Up to <strong>50%</strong> higher conversion rates for website visitors</p>
+</div>
+</div>
+<div class="col-20pr">
+<div class="tnet1">
+<p class="text-center">Up to <strong>40%</strong> reduction in time to market <br /> &nbsp;</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!--container-fluid-->
+
+ {% if page.footer_total_transformation_blog %}
+  <div class="container-fluid coldbl6 mt40">
+	<div class="container">
+		<div class="row form2">
+		<div class="col-sm-12"><h3 class="text-center">SUGGESTED READS</h3></div>
+		<div class="clearfix"></div>
+			<div class="col-md-1"></div>
+			<div class="suggsld col-md-10">
+       			 {{ page.footer_total_transformation_blog }}
+			</div>
+			<div class="col-md-1"></div>
+    </div>    
+  </div>
+  {% endif %}
+ 
+</section>
+<div class="container-fluid mt40">
+	<div class="container"> 
+<h2 class="blh3w"> KORCOMPTENZ + Magento CMS</h2>
+<h3>A Powerful Combination for your Enterprise Website Needs</h3>
+<p>KORCOMPTENZ is a trusted technology transformation provider and an enterprise-class Magento provider with rich experience across web and marketing technology, and a commitment to maximizing your return on investment. Together, KORCOMPTENZ and Magento are the perfect combination for your enterprise website needs.  Request a consultation today for a no-cost estimate.</p>
+ </div>
+ </div>
+
+  <!-- thank ydou Modal -->
+  {% if page.footer_features %}
+  <section class="responsiveBottomOut">
+    <div class="container">
+      <div class="responsiveBottom">
+        {{ page.footer_features }}
+      </div>
+    </div>
+    
+  </section>
+  {% endif %}
+  {% if page.footer_video %}
+ <section class="responsiveContent ">    
+    <div class="videoPresentation">
+	 {{ page.footer_video }}      
+    </div>
+  </section> 
+  {% endif %}
+ 
+ {% if page.footer_services %}
+ <section class="ProductBottom ServicesTxt">
+	 {{ page.footer_services }}
+</section> 	 
+  {% endif %}
+  
+  {% if page.footer_first %}
+  <section class="blueband">
+  <div class="fullwidth ">
+  {{ page.footer_first }}
+  </div>
+  </section>
+  {% endif %}
+  {% if page.footer_second %}
+  <section class="greybandOut">
+    <div class="container">
+	{{ page.footer_second }}      
+    </div>
+  </section>
+  {% endif %}
+</div>
+<!--Content End-->
+
+{% include '@korone/footer.html.twig' %}

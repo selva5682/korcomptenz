@@ -1,0 +1,96 @@
+{#
+/**
+ * @file
+ * Korone's theme implementation to display a single page.
+ *
+ * Footer file
+ */
+#}
+ <footer>
+	{% if page.footer_top_first or page.footer_top_second %}
+	<div class="container-fluid">
+		<div class="row d-flex align-items-center">
+			<div class="col-12 social pt-4 pb-1"> 
+				<div class="row">
+				
+					<div class="col-12 col-md-6">
+						{% if page.footer_top_first %}
+							{{ page.footer_top_first }}
+						{% endif %}
+					</div>
+					
+					<div class="col-12 col-md-6">	
+						{% if page.footer_top_second %}
+							{{ page.footer_top_second }}
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endif %}	
+	{% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth or page.footer_fifth or page.footer_sixth %}
+	<div class=" container-fluid pt-5 ">
+		<div class="row ">
+		{% if page.footer_eight %}
+				<div class="col-sm-4 col-md-4 col-lg-2 mb-4 pl-lg-5">	
+					{{ page.footer_eight }}
+				</div>
+			{% endif %} 
+			
+			{% if page.footer_third %}
+				<div class="col-sm-4 col-md-4 col-lg-2 mb-4 pl-lg-5">	
+					{{ page.footer_third }}
+				</div>
+			{% endif %}	
+						
+			{% if page.footer_fourth %}
+				<div class="col-sm-4 col-md-4 col-lg-2 mb-4 pl-lg-5">	
+					{{ page.footer_fourth }}
+				</div>
+			{% endif %}	
+
+			{% if page.footer_fifth %}
+				<div class="col-sm-4 col-md-4 col-lg-2 mb-4">	
+					{{ page.footer_fifth }}
+				</div>
+			{% endif %}
+
+			{% if page.footer_sixth %}
+				<div class="col-sm-4 col-md-4 col-lg-2 mb-4">
+					{{ page.footer_sixth }}
+				</div>
+			{% endif %}
+			
+			{% if page.footer_seventh %}
+				<div class="col-sm-12 col-md-8 col-lg-4 mb-4">	
+					{{ page.footer_seventh }}
+				</div>
+			{% endif %}
+			
+			 
+			 
+		</div>
+		<div class="row py-2 bg-white">
+			<div class="col-12">
+				{% if page.sub_footer_first %}
+					{{ page.sub_footer_first }}					
+				{% endif %}
+				{% if page.sub_footer_second %}
+					{{ page.sub_footer_second }}					
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	{% endif %}	
+</footer>
+{% if page.cookies_consent_footer %}
+<div class=" container-fluid">
+	<div class="row">
+		{% if page.cookies_consent_footer %}
+			{{ page.cookies_consent_footer }}
+		{% endif %}	
+	</div>	
+</div>
+{% endif %}
+<a id="buttontop"></a>

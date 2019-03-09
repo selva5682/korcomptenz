@@ -1,0 +1,36 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+     css/bootstrap.css: {}
+     css/flexslider.css: {}
+     css/Mega-Menu.css: {}
+     css/style.css: {}
+     css/easy-responsive-tabs.css: {}
+     css/check-box.css: {}
+     css/font-awesome.css: {}
+     css/bootstrap-slider.min.css: {}
+  js:
+     js/jquery-1.11.1.js: {}    
+     js/bootstrap.js: {}
+     js/megamenu.js: {}     
+     js/smooth-scroll.min.js: {}
+     js/parallax.js: {}
+     js/scripts.js: {}
+     js/easyResponsiveTabs.js: {}
+     js/jquery.placeholder.js: {}
+     js/bootstrap-slider.min.js: {}
+easyresponsivetabs:
+  version: 1.x
+  css:
+    theme:
+      css/easy-responsive-tabs.css: {}
+      css/Mega-Menu.css: {}
+  js:
+    js/easyResponsiveTabs.js: {}
+    js/easyresponsivetabs_script.js: {}
+maintenance_page:
+  version: VERSION
+  css:
+    theme:
+      css/maintenance-page.css: {}

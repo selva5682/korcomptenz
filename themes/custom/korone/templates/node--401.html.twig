@@ -1,0 +1,163 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'clearfix',
+  ]
+%}
+{{ attach_library('classy/node') }}
+
+  <div class="ThinkingErpLandingPageIn">
+    <div class="container">
+	<div class="clearfix">
+     <div class="col-md-8" >
+	 <h2>Are your current legacy systems and applications failing to keep pace with your business growth?</h2>	 
+<ul class="listitem" >
+<li>Is your organization pulling reports from Excel sheets?</li>
+
+<li>Are you current applications not scaling with your growth?</li>
+
+<li>Do you get real time data on customer insights, inventory , finance and operation from your current applications?</li>
+
+<li>When do you know your enterprise is an ERP ready?</li>
+
+<li>Are you thinking of implementing ERP, but don’t know which suits you the best?</li>
+
+<li>What should you know about implementation as a CFO/CEO or Entrepreneur?</li>
+
+<li>What is the ideal deployment strategy for an ERP?</li>
+
+<li>Is the cost of an implementation confusing?</li>
+
+<li>Are you outgrowing your current application and systems?</li>
+</ul>
+<h2>Do the above questions resonate with your own thoughts? Download our eBook</h2><br/>
+<h2>Who can benefit from this eBook?</h2>
+<p>The eBook is written for business owners and entrepreneurs considering implementing an ERP.</p>
+<ul class="listitem" >
+<li>An ERP can be implemented for businesses ranging from 10 employees to 10,000; implementing earlier can have significant benefits as you scale up</li>
+<li>ERP’s are available for a wide variety of budgets and industry domains; they can provide a a unified platform to operate locally, and support multiple locations and currencies for global businesses</li>
+</ul>
+<h2>Download the Thinking ERP eBook to learn more</h2>
+</div>
+     <div class="col-md-4">
+      <img src="themes/custom/korone/images/download-e-book-btn.jpg" >
+      
+	<div class="downloadEbookIn">
+	<h3>Get Your Tip Sheet Now</h3>
+    {{ content }}
+      </div>
+      </div>
+      </div>
+      
+      <div class="testimonialOut">
+   
+        <div class="container">
+          <div class="rowIn">
+            <div class="col-md-12" data-wow-delay="0.2s">
+              <div class="carousel slide" data-ride="carousel" id="quote-carousel"> 
+                 
+                
+                <!-- Carousel Slides / Quotes -->
+                <div class="carousel-inner text-center"> 
+                  
+                  <!-- Quote 1 -->
+                  <div class="item active">
+                      <div class="rowI">
+                        <div class="col-sm-12 ">
+                          <p>"Korcomptenz has done an excellent job supporting our Microsoft Dynamics AX and related development needs for high priority projects. Their consultants provided effective support and demonstrated a strong commitment and thoroughness. Their strong knowledge, attention to detail and high quality of work has played an important role in enabling us to successfully meet critical timelines. We are very appreciative of their responsiveness to our needs, and look forward to continuing and growing our relationship with Korcomptenz in the future".</p>
+                          <h3>Celina Marino, <span>AAIPharma Services</span></h3> </div>
+                      </div>
+                  </div>
+                  <!-- Quote 2 -->
+                  <div class="item">
+                      <div class="row">
+                        <div class="col-sm-12 ">
+                          <p>"We worked with Korcomptenz on our Microsoft Dynamics NAV project and are very impressed with the level of Maintenance and Support they consistently deliver. Their onsite and offshore team is very well managed. They bring creative solutions to the table in a timely manner, at very reasonable cost. Finally it was a pleasure working with Korcomptenz and I would always consider them as one of my first choices when staffing a project in the NAV context.”</p>
+                          <h3>Charles Rodrigues, <span>Steinway</span></h3> </div>
+                      </div>
+                  </div> 
+                  <!-- Quote 3 -->
+                  <div class="item">
+                      <div class="row">
+                        <div class="col-sm-12 ">
+                          <p>"We work with Korcomptenz on our Microsoft Dynamics AX environment and are very impressed with the level of Maintenance and Support they consistently deliver. Their engineers are knowledgeable, and their onsite and offshore team is very well managed. They bring creative solutions to the table in a timely manner, at very reasonable cost. We look forward to growing our relationship with them."</p>
+                          <h3>Dan O'Donnell, <span>FAF Inc.</h3> </div>
+                      </div>
+                  </div>
+                </div>
+                
+                <!-- Carousel Buttons Next/Prev --> 
+                <a data-slide="prev" href="#quote-carousel" class="left carousel-control"><img src="themes/custom/korone/images/testimonial-arrow-left.png" width="14" height="23" alt=""></a>
+                 <a data-slide="next" href="#quote-carousel" class="right carousel-control"><img src="themes/custom/korone/images/testimonial-arrow-right.png" width="14" height="23" alt=""></a> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

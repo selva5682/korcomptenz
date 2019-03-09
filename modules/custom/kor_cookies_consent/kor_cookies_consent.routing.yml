@@ -1,0 +1,10 @@
+kor_cookies_consent.ip_cookies_consent:
+  path: '/admin/config/system/ip_cookies_consent'
+  defaults:
+    _controller: '\Drupal\kor_cookies_consent\Controller\DisplayCookiesconsentController::display'
+    _title: 'Cookies Consent List'
+  requirements:
+    _permission: 'administer site configuration'   
+       
+
+

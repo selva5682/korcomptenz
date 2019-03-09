@@ -1,0 +1,8 @@
+name: 'Main Block Blog Section'
+description: A simple module to Main Blog Section Block.
+core: 8.x
+package: Custom
+dependencies:
+- node
+- block
+type: module

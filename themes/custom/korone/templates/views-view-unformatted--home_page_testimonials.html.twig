@@ -1,0 +1,121 @@
+{#
+/**
+ * @file
+ * Theme override for a main view template.
+ *
+ * Available variables:
+ * - attributes: Remaining HTML attributes for the element.
+ * - css_name: A css-safe version of the view name.
+ * - css_class: The user-specified classes names, if any.
+ * - header: The optional header.
+ * - footer: The optional footer.
+ * - rows: The results of the view query, if any.
+ * - empty: The content to display if there are no rows.
+ * - pager: The optional pager next/prev links to display.
+ * - exposed: Exposed widget form/info to display.
+ * - feed_icons: Optional feed icons to display.
+ * - more: An optional link to the next page of results.
+ * - title: Title of the view, only used when displaying in the admin preview.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the view title.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the view title.
+ * - attachment_before: An optional attachment view to be displayed before the
+ *   view content.
+ * - attachment_after: An optional attachment view to be displayed after the
+ *   view content.
+ * - dom_id: Unique id for every view being printed to give unique class for
+ *   Javascript.
+ *
+ * @see template_preprocess_views_view()
+ */
+#}
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if title %}
+    {{ title }}
+  {% endif %}
+  {{ title_suffix }}
+  {% if header %}
+    <div class="view-header">
+      {{ header }}
+    </div>
+  {% endif %}
+  {% if exposed %}
+		{{ exposed }}
+  {% endif %}
+  {% if attachment_before %}
+    <div class="attachment attachment-before">
+      {{ attachment_before }}
+    </div>
+  {% endif %}
+	<div class="carousel slide" id="testimonial" data-ride="carousel">
+		<div class="carousel-inner">
+			{% for row in rows %}
+				{% set photo = file_url(row['content']['#row']._entity.field_image.entity.fileuri) %} 
+				{% set body = row['content']['#row']._entity.body.value|raw %} 
+				{% if loop.index0 == '0' %}
+					{% set is_active = 'active' %}
+				{% else %}
+					{% set is_active = '' %}
+				{% endif %}	
+				<div class="carousel-item {{ is_active }}">
+					<div class="col-10 offset-1 text-center">
+						<!--<p>{{ body | length > 200 ? body | slice(0, 200) | raw ~ '...' : body|raw }}</p>-->	
+						<p>{{ row['content']['#row']._entity.body.value|raw }}</p>	
+						<strong>{{ row['content']['#row']._entity.title.value|raw }}<br />
+							{{ row['content']['#row']._entity.field_sub_heading.value|raw }}
+						</strong>
+					</div>	
+				</div>
+			{% endfor %}
+		</div>
+		<a class="carousel-control-prev" href="#testimonial" data-slide="prev"> 
+			<strong class="carousel-control-prev-icon"></strong> 
+		</a> 
+		<a class="carousel-control-next" href="#testimonial" data-slide="next"> 
+			<strong class="carousel-control-next-icon"></strong> 
+		</a> 
+	</div>
+ 
+  {% if pager|render|trim %}
+    <div class="clearfix resource-pager">
+      <div class="container">
+        <div class="detailed-pager detailed-pager--bottom clearfix" style="margin-top: -62px;">
+          <div class="row">
+            <div class="col-sm-12">
+              {{ pager }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if attachment_after %}
+    <div class="attachment attachment-after">
+      {{ attachment_after }}
+    </div>
+  {% endif %}
+  {% if more %}
+    {{ more }}
+  {% endif %}
+  {% if footer %}
+    <div class="view-footer">
+      {{ footer }}
+    </div>
+  {% endif %}
+  {% if feed_icons %}
+    <div class="feed-icons">
+      {{ feed_icons }}
+    </div>
+  {% endif %}
+</div>

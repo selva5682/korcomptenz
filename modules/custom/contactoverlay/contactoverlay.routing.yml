@@ -1,0 +1,15 @@
+contactoverlay:
+  path: '/say_hello'
+  defaults:
+    _title: 'Hello Title'
+    _controller: '\Drupal\contactoverlay\Controller\ContactoverlayController::content'
+  requirements:
+    _permission: 'access content'
+contactoverlay.modal:
+  path: 'modal-example/modal/{js}'
+  defaults:
+    _title: 'Modal'
+    _controller: '\Drupal\contactoverlay\Controller\ContactoverlayController::modal'
+  requirements:
+    _permission: 'access content'
+    js: 'nojs|ajax'

@@ -1,0 +1,72 @@
+name: Korone
+type: theme
+description: 'Custom Theme Korone.'
+package: Core
+# version: VERSION
+# core: 8.x
+libraries:
+  - korone/global-styling
+
+regions:
+ header_top_highlighted_first: 'Header Top Highlighted First'
+ header_top_highlighted_second: 'Header Top Highlighted Second'
+ header_top_first: 'Header Top First'
+ header_top_second: 'Header Top Second'
+ header_first: 'Header First'
+ header: Header
+ header_right_top: 'HeaderRight Top'
+ secondary_menu: 'Secondary menu'
+ primary_menu: 'Primary menu'
+ banner: 'Banner'
+ inner_page_banner: 'Inner Page Banner'
+ home_banner: 'Home Banner' 
+ highlighted: 'Highlighted'
+ content_bottom_first: 'Content Bottom First'
+ content_bottom_second: 'Content Bottom Second'
+ content_top: 'Content Top'
+ content_top_highlighted: 'Content Top Highlighted'
+ media_background_first: 'Media Background First'
+ media_background_second: 'Media Background Second'
+ content: Content
+ sidebar_first: Sidebar First
+ sidebar_second: Sidebar Second
+ case_studies_full: 'Case Studies Full Width'
+ business_solutions: 'Business Solutions'
+ business_solutions_img: 'Business Solutions Images'
+ testimonials: 'Testimonials'
+ total_transformation_blog: 'Total Transformation Blog'
+ news_events: 'News & Events'
+ kentico_supercharged: Kentico Supercharged
+ home_tab_slider: Home Tab Slider
+ home_business_solutions: Home Business Solutions
+ home_cloud_solutions: Home Cloud Solutions
+ microsoft_partner_logo: 'Microsoft Partner Logo'
+ footer_top_content: 'Footer Top Cotent'
+ footer_top_first: 'Footer Top First'
+ footer_top_second: 'Footer Top Second'  
+ footer_features: Footer Features
+ footer_microsoft_dynamics: Footer Microsoft Dynamics
+ footer_total_transformation_blog: Footer Total Transformation Blog
+ footer_simple_news_letter: Footer Simple Newsletter
+ footer_contact_form: Footer Short Contact Form
+ footer_services: Footer Services
+ footer_video: Footer Video
+ footer_first: Footer First
+ footer_second: Footer Second
+ footer_third: 'Footer Third'
+ footer_fourth: 'Footer Fourth'
+ footer_fifth: 'Footer Fifth'
+ footer_sixth: 'Footer Sixth'
+ footer_seventh: 'Footer Seventh'
+ footer_eight: 'Footer Eight' 
+ footer_bottom: 'Footer Bottom'
+ sub_footer_first: 'Subfooter First'
+ sub_footer_second: 'Subfooter Second'
+ salesforce_webform: 'Salesforce Webforms'
+ cookies_consent_footer: 'Cookies Consent Footer'
+ hidden_blocks_collection: 'Hidden blocks collection'
+ footer: Footer
+version: '8.0.0'
+core: '8.x'
+project: 'drupal'
+datestamp: 1447942689

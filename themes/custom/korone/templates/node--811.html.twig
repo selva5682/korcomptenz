@@ -1,0 +1,172 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+     Only "getter" methods (method names starting with "get", "has", or "is")
+     and a few common methods such as "id" and "label" are available. Calling
+     other methods (such as node.delete) will result in an exception.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+ * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,   
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,    
+	'image-bg',
+	'page-title-2',
+	'innerBanner',
+	
+  ]
+%}
+<!--Inner Banner-->
+<div class="main-container innerpage">
+  <section {{ attributes.addClass(classes) }}>
+    <div class="background-image-holder">
+	<img class="background-image" src={{ file_url(content.field_smp_banner_img|field_target_entity.uri.value) }} alt="ddff" /></div>
+    {% if 'microsoft-dynamics-business-solutions' in url or 'microsoft-dynamics365' in url or 'microsoft-dynamics-nav' in url or 'microsoft-dynamics-gp' in url or 'microsoft-dynamics-ax' in url or 'microsoft-dynamics-crm' in url or 'microsoft-dynamics-bi' in url or 'e-commerce-interface-with-dynamics-ax-2009' in url or 'leading-manufacturing-company' in url  or 'microsoft-dynamics-ax-support' in url  or 'branch-medical-group' in url%}
+	<div class="bannerIocn"><img src="themes/custom/korone/images/banner-logo.png"   alt=""/></div>
+	{% endif %}
+	<div class="container">
+      <h1>{{ content.field_smp_banner_title|field_value }}</h1>
+      <p>{{ content.field_smp_banner_sub_title|field_value }}</p> 	 
+	  </div>
+  </section>
+  {{ content.body }}
+  <!-- <section class="responsiveContent responsiveTopOut">
+    <div class="container">
+	<div class="responsiveTop">
+        
+      </div>	  
+	  </div>
+  </section> -->
+  
+<section>
+<div class="container-fluid mtsstop">
+
+<div class="container">
+<div class="row form2 magento">
+<div class="col-sm-12">
+
+
+<h1>Magento is popular, it's deep, it works </h1>
+<p>Magento is deep.  As one of the world's most popular CMS systems and the online storefront of choice for millions of ecommerce customers, the platform supports billions of dollars in transactions.  The front end is only part of the ecommerce puzzle, however, and properly integrating Magento into your broader enterprise resource planning stack can be critical to your success.</p>
+
+<p>That's why KORCOMPTENZ specializes in both Magento and ERP services powered by Microsoft Dynamics and SAP HANA, plus rich business intelligence and analytics experience.  This allows us to deliver full-service, enterprise-class projects leveraging best-practices architecture for the integration, security, scalability, and performance. 
+
+</p>
+</div>
+</div>
+
+</div><!-- container-fluid -->
+</section>
+
+
+<div class="clearfix"></div>
+
+<div class="container-fluid rmcol11">
+<div class="container">
+<div class="row">
+<h2 class="text-center w3cwt3">Magento Managed Services </h2>
+<div class="col-20mo">
+<div class="inaiomo">
+<img class="center-block" src="/themes/custom/korone/images/magento/Magento-Web--Development.png" alt="" />
+<p class="text-center">Magento Web <br /> Development </p>
+</div>
+</div>
+
+<div class="col-20mo">
+<div class="inaiomo">
+<img class="center-block" src="/themes/custom/korone/images/magento/ERP--Integration.png" alt="" />
+<p class="text-center">ERP <br />Integration</p>
+</div>
+</div>
+
+<div class="col-20mo">
+<div class="inaiomo">
+<img class="center-block" src="/themes/custom/korone/images/magento/Business-Intelligence-.png" alt="" />
+<p class="text-center">Business Intelligence + <br /> Analytics </p>
+</div>
+</div>
+
+<div class="col-20mo">
+<div class="inaiomo">
+<img class="center-block" src="/themes/custom/korone/images/magento/Custom-Themes-.png" alt="" />
+<p class="text-center">Custom  + <br /> Themes Plugins</p>
+</div>
+</div>
+
+<div class="col-20mo">
+<div class="inaiomo">
+<img class="center-block" src="/themes/custom/korone/images/magento/Upgrades.png" alt="" />
+<p class="text-center">Upgrades + <br /> Migrations</p>
+</div>
+</div>
+<div class="col-20mo">
+<div class="inaiomo">
+<img class="center-block" src="/themes/custom/korone/images/magento/Third-Party--System-.png" alt="" />
+<p class="text-center">Third-Party <br /> System Integration</p>
+</div>
+</div>
+<div class="col-20mo">
+<div class="inaiomo">
+<img class="center-block" src="/themes/custom/korone/images/magento/Support--Maintenance.png" alt="" />
+<p class="text-center">Support +  <br /> Maintenance</p>
+</div>
+</div>
+</div>
+</div>
+</div><!--container-fluid-->
+

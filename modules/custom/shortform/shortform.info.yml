@@ -1,0 +1,4 @@
+name: 'Short Contact Form'
+description: 'Short Contact Form with Overlay'
+core: 8.x
+type: module

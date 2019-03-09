@@ -1,0 +1,259 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a single page.
+ *
+ * The doctype, html, head and body tags are not in this template. Instead they
+ * can be found in the html.html.twig template normally located in the
+ * core/modules/system directory.
+ *
+ * Available variables:
+ *
+ * General utility variables:
+ * - base_path: The base URL path of the Drupal installation. Will usually be
+ *   "/" unless you have installed Drupal in a sub-directory.
+ * - is_front: A flag indicating if the current page is the front page.
+ * - logged_in: A flag indicating if the user is registered and signed in.
+ * - is_admin: A flag indicating if the user has permission to access
+ *   administration pages.
+ *
+ * Site identity:
+ * - front_page: The URL of the front page. Use this instead of base_path when
+ *   linking to the front page. This includes the language domain or prefix.
+ * - logo: The url of the logo image, as defined in theme settings.
+ * - site_name: The name of the site. This is empty when displaying the site
+ *   name has been disabled in the theme settings.
+ * - site_slogan: The slogan of the site. This is empty when displaying the site
+ *   slogan has been disabled in theme settings.
+
+ * Page content (in order of occurrence in the default page.html.twig):
+ * - node: Fully loaded node, if there is an automatically-loaded node
+ *   associated with the page and the node ID is the second argument in the
+ *   page's path (e.g. node/12345 and node/12345/revisions, but not
+ *   comment/reply/12345).
+ *
+ * Regions:
+ * - page.header: Items for the header region.
+ * - page.highlighted: Items for the highlighted region.
+ * - page.primary_menu: Items for the primary menu region.
+ * - page.secondary_menu: Items for the secondary menu region.
+ * - page.featured_top: Items for the featured top region.
+ * - page.content: The main content of the current page.
+ * - page.sidebar_first: Items for the first sidebar.
+ * - page.sidebar_second: Items for the second sidebar.
+ * - page.featured_bottom_first: Items for the first featured bottom region.
+ * - page.featured_bottom_second: Items for the second featured bottom region.
+ * - page.featured_bottom_third: Items for the third featured bottom region.
+ * - page.footer_first: Items for the first footer column.
+ * - page.footer_second: Items for the second footer column.
+ * - page.footer_third: Items for the third footer column.
+ * - page.footer_fourth: Items for the fourth footer column.
+ * - page.footer_fifth: Items for the fifth footer column.
+ * - page.breadcrumb: Items for the breadcrumb region.
+ *
+ * @see template_preprocess_page()
+ * @see bartik_preprocess_page()
+ * @see html.html.twig
+ */
+#}
+{% include '@korone/header-cmshome.html.twig' %} 
+<!--Content-->
+<div class="main-container innerpage">
+ <section class="image-bg ms365-bg-banner PatientJourneyBannerNew">
+    <div class="PatientJourneyBannerNewIn">
+      <div class="PatientJourneyBannerRight">
+         <h2>Looking for Office 365 migration?</h2>
+         <div class="row mb10">
+		 <div class="col-md-12">
+         <h3>Plan your migration from Exchange to Office 365</h3>
+         </div>
+         </div>
+         
+         <div class="row mb10">
+         <div class="col-md-12">
+		 <h3>Migrate all emails, calendars, and contents with <br />limited downtime</h3>
+         </div>
+         </div>
+		 
+         <div class="row mb10">
+		 <div class="col-md-12">
+          <h3>Evaluate your current usage and identify the ideal <br />Office 365 subscription for your needs</h3>
+         </div>
+		 </div>
+		 
+		 <div class="row mb10">
+         <div class="col-md-12">
+         <h3>Training and support, plus configuration of add-on <br />tools at no cost</h3>
+         </div>
+         </div>
+         
+	   </div>
+    <div class="bi-banner-form">
+     <h2>Sign up for a Free Consultation</h2>
+<div class="col-md-12">
+{{ page.kentico_supercharged }}
+</div>
+     </div>
+    </div>
+  </section>
+<a name="thankyoumsg"></a></div>
+<section class="responsiveContent responsiveTopOut">
+<div class="cms-pdf">
+ {{ page.content }}
+
+<div class="container-fluid office-365-new">
+<div class="container">
+<h1>Top 10 Benefits of Migrating to Microsoft Office 365</h1>
+
+<p>Along with the advantages of Word, PowerPoint, and Excel <strong>Microsoft Office 365</strong> offers much more than a traditional email application.</p>
+
+<div class="col-md-12">
+<div class="col-sm-3 sap-s4-hana-text">
+<div class="mb30 responsiveBottom responsiveBottom-2"><img alt="Yammer" class="center-block blog-img-width" src="themes/custom/korone/images/blog-images/Energize-yammer.png" />
+<h4>Yammer</h4>
+
+<p><strong>Energize your Organisation with Yammer</strong> an enterprise social tool that can help increase team productivity.</p>
+</div>
+</div>
+
+<div class="col-sm-3 sap-s4-hana-text">
+<div class="mb15 responsiveBottom responsiveBottom-2"><img alt="Emails" class="center-block blog-img-width" src="/themes/custom/korone/images/blog-images/accessibility-email.png" />
+<h4>Accessibility</h4>
+
+<p><strong>Anytime and Anywhere accessibility</strong> on email through the cloud-based email, helps you stay on top of your work through mobile or web.</p>
+</div>
+</div>
+
+<div class="col-sm-3 sap-s4-hana-text">
+<div class="mb15 responsiveBottom responsiveBottom-2"><img alt="Ownership" class="center-block blog-img-width" src="/themes/custom/korone/images/blog-images/Low-cost.png" />
+<h4>Ownership</h4>
+
+<p><strong>Low cost of ownership</strong> than keeping everything secured under traditional models and or dedicated team.</p>
+</div>
+</div>
+
+<div class="col-sm-3 sap-s4-hana-text">
+<div class="mb15 responsiveBottom responsiveBottom-2"><img alt="Protection" class="center-block blog-img-width" src="/themes/custom/korone/images/blog-images/span-free.png" />
+<h4>Protection</h4>
+
+<p><strong>Spam free Protection</strong> through <strong>Microsoft Office 365</strong> ensuring your email and network is free from spam, computer viruses and malware.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-12">
+<div class="col-sm-3 sap-s4-hana-text">
+<div class="mb30 responsiveBottom responsiveBottom-2"><img alt="SharePoint" class="center-block blog-img-width" src="/themes/custom/korone/images/blog-images/sharepoint.png" />
+<h4>SharePoint</h4>
+
+<p>With Microsoft Office 365 learn how you can combine document library, calendar, contacts, and other informational features with best-in-class workflow through <strong>SharePoint</strong>.</p>
+</div>
+</div>
+
+<div class="col-sm-3 sap-s4-hana-text">
+<div class="mb15 responsiveBottom responsiveBottom-2"><img alt="Downtime" class="center-block blog-img-width" src="/themes/custom/korone/images/blog-images/downtime.png" />
+<h4>No Downtime</h4>
+
+<p><strong>No Downtime</strong> with Microsoft having multiple datacentres, located all over the world, If there is an outage at one datacentre, another can act as a backup.</p>
+</div>
+</div>
+
+<div class="col-sm-3 sap-s4-hana-text">
+<div class="mb15 responsiveBottom responsiveBottom-2"><img alt="Storage" class="center-block blog-img-width" src="/themes/custom/korone/images/blog-images/storage.png" />
+<h4>Storage</h4>
+
+<p><strong>Larger mailbox storage</strong> – save every email, without the need to delete emails to optimize on storage, the maximum limit for each email is 50 GB, go easy on housekeeping.</p>
+</div>
+</div>
+
+<div class="col-sm-3 sap-s4-hana-text">
+<div class="mb30 responsiveBottom responsiveBottom-2"><img alt="Compatibility" class="center-block blog-img-width" src="/themes/custom/korone/images/blog-images/Compatibility-of-email.png" />
+<h4>Compatibility</h4>
+
+<p><strong>Compatibility of email with other desktop systems</strong>: Many companies can't upgrade all of their desktop systems to the latest operating system. That's not necessary to use Office 365.</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-12 mb60">
+<div class="col-sm-6 sap-s4-hana-text">
+<div class="mb15 responsiveBottom responsiveBottom-2 mobile-viweBottom"><img alt="Versions" class="center-block blog-img-width" src="/themes/custom/korone/images/blog-images/Get-up-to-date-version.png" />
+<h4>Versions</h4>
+
+<p><strong>Get up to date version</strong> with Office 365, companies and their users get all the features and functionality of the very latest versions of Microsoft's server and Office products. Antivirus signatures are kept up to date, and security measures are applied in accordance with the Microsoft Trustworthy Computing initiative.</p>
+</div>
+</div>
+
+<div class="col-sm-6 sap-s4-hana-text">
+<div class="mb15 responsiveBottom responsiveBottom-2 mobile-viweBottom"><img alt="Compliant" class="center-block blog-img-width" src="/themes/custom/korone/images/blog-images/policies.png" />
+<h4>Compliant</h4>
+
+<p>MS Office is Compliant with government and industry regulations like ISO 27001 standards, completed SAS70 Type I and II audits, and achieved the EU Safe Harbour seal. Microsoft has also added controls for helping customers comply with HIPAA (Health Insurance Portability and Accountability Act) and FERPA (Family Educational Rights and Privacy Act). <strong>Being Compliant is a big deal!</strong> Up-to-date versions.</p>
+</div>
+</div>
+</div>
+</div><!--container-->
+</div><!-- container-fluid -->
+</div>
+
+ {% if page.footer_total_transformation_blog %}
+  <div class="container-fluid coldbl1">
+	<div class="container">
+		<div class="row form2">
+		<div class="col-sm-12"><h3 class="text-center">SUGGESTED READS</h3></div>
+		<div class="clearfix"></div>
+			<div class="col-md-12">
+			<div class="col-md-1"></div>
+			<div class="suggsld col-md-10">
+       			 {{ page.footer_total_transformation_blog }}
+			</div>
+			<div class="col-md-1"></div>
+        	</div>
+    	</div>    
+ 	 </div>
+  {% endif %}
+  
+</section>
+  <!-- thank ydou Modal -->
+  {% if page.footer_features %}
+  <section class="responsiveBottomOut">
+    <div class="container">
+      <div class="responsiveBottom">
+        {{ page.footer_features }}
+      </div>
+    </div>
+    
+  </section>
+  {% endif %}
+  {% if page.footer_video %}
+ <section class="responsiveContent ">    
+    <div class="videoPresentation">
+	 {{ page.footer_video }}      
+    </div>
+  </section> 
+  {% endif %}
+ 
+ {% if page.footer_services %}
+ <section class="ProductBottom ServicesTxt">
+	 {{ page.footer_services }}
+</section> 	 
+  {% endif %}
+  
+  {% if page.footer_first %}
+  <section class="blueband">
+  <div class="fullwidth ">
+  {{ page.footer_first }}
+  </div>
+  </section>
+  {% endif %}
+  {% if page.footer_second %}
+  <section class="greybandOut">
+    <div class="container">
+	{{ page.footer_second }}      
+    </div>
+  </section>
+  {% endif %}
+</div>
+<!--Content End-->
+
+{% include '@korone/footer.html.twig' %}

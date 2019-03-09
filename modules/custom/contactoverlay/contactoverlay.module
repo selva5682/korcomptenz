@@ -1,0 +1,51 @@
+<?php
+use Drupal\Core\Form\FormStateInterface;
+
+
+function contactoverlay_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+	
+ if($form_id == 'webform_submission_contact_node_2_form') {   
+ //echo $form_id;
+//$redirect = $form_state->getRedirect();
+	//print_r($form_state->redirect);
+   //$form_state->no_redirect'] === TRUE;
+   //$form_state->no_redirect === TRUE;
+   $form->disableRedirect();
+   //$form['actions']['submit']['#submit'][] = 'contactoverlay_form_submit';
+   //if ($form_state->isRedirectDisabled()) {
+	//   echo '--------------------';
+//}
+   //$form_state['redirect'] === FALSE;
+   
+  // exit;
+   //$form_state['redirect'] = 'node';
+ }
+}
+/*function contactoverlay_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+	
+    if($form['#form_id'] == 'webform_submission_contact_node_2_form') {
+	
+      foreach (array_keys($form['dactions']) as $action) {
+        //if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+          //$form['actions']['submit']['#submit'][] = 'contactoverlay_form_submit';
+		  $form['submit'] = array(
+										'#type' => 'submit',
+										'#value' => t('Google Map'),
+										'#submit' => array('my_mod_google_callback'),
+										'#name' => 'google',
+									  );
+		  //$form['actions']['submit']['#validate'][] = 'mymodule_node_form_validate';
+      //}
+	 
+    }	
+	 print_r($form);
+	  	echo 'eee';exit;
+  }
+}
+
+function contactoverlay_form_submit($form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  drupal_set_message('I am here');
+   print_r($form_state);
+  echo 'ddddddddd';
+  exit;
+}*/
